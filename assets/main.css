@@ -1,0 +1,68 @@
+/* assets/main.css */
+/* 1) Tailwind layers */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 2) CSS variables for brand colours */
+:root {
+    --brand-dark:   #1f2937; /* dark slate */
+    --brand-orange: #f38b2a; /* CTA accent */
+    --brand-light:  #f4f5f7; /* light grey bg */
+}
+
+/* 3) Base element tweaks (no @apply needed) */
+@layer base {
+    html,
+    body {
+        font-family: 'Inter', sans-serif;
+        color: var(--brand-dark);
+        background-color: var(--brand-light);
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: 'Montserrat', sans-serif;
+        color: var(--brand-dark);
+        font-weight: 700;
+    }
+
+    a {
+        color: var(--brand-dark);
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: var(--brand-orange);
+    }
+}
+
+/* 4) Re-usable component shortcuts */
+@layer components {
+    /* Orange CTA button */
+    .btn-orange {
+        /* core utilities only */
+        @apply text-white font-semibold rounded-md px-6 py-3 transition;
+
+        /* custom colour via CSS var */
+        background-color: var(--brand-orange);
+    }
+
+    .btn-orange:hover {
+        background-color: #ea7a17; /* slightly darker orange */
+    }
+
+    /* White info card */
+    .card-box {
+        @apply bg-white rounded-xl shadow-md p-6 text-center;
+    }
+
+    /* Boxed section wrapper */
+    .section-boxed {
+        @apply max-w-7xl mx-auto w-full px-6;
+    }
+}
