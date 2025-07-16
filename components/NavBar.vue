@@ -1,8 +1,7 @@
 <template>
     <!-- top header -->
     <nav
-        class="sticky top-0 z-50 bg-brand-light/90 backdrop-blur
-           supports-[backdrop-filter]:bg-brand-light/70 border-b border-brand-dark/10">
+        class="sticky top-0 z-50 bg-[#f4f5f7] border-b border-brand-dark/10">
         <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
 
             <!-- logo -->
@@ -32,11 +31,11 @@
             <!-- desktop / mobile links -->
             <ul
                 :class="[
-          'list-none gap-12 text-lg font-semibold tracking-wide',
-          isOpen
-            ? 'flex flex-col absolute top-full left-0 w-full bg-brand-light px-6 py-4 border-b border-brand-dark/10'
-            : 'hidden sm:flex'     // hidden on mobile, flex on ≥ sm
-        ]"
+                    'list-none gap-12 text-lg font-semibold tracking-wide',
+                    isOpen
+                      ? 'flex flex-col absolute top-full right-0 left-auto w-2/5 sm:w-auto bg-[#f4f5f7] px-6 py-4 border-b border-brand-dark/10 items-end text-right ml-auto shadow-lg'
+                      : 'hidden sm:flex'
+                  ]"
             >
                 <li><NuxtLink to="/"        class="hover:text-brand-orange" @click="isOpen = false">Home</NuxtLink></li>
                 <li><NuxtLink to="/about"   class="hover:text-brand-orange" @click="isOpen = false">About</NuxtLink></li>

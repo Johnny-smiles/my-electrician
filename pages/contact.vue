@@ -7,7 +7,7 @@
                 name="estimate"
                 method="POST"
                 data-netlify="true"
-                netlify-honeypot="bot-field"
+                data-netlify-honeypot="bot-field"
                 class="space-y-6"
             >
                 <input type="hidden" name="form-name" value="estimate" />
@@ -62,12 +62,6 @@
                 </button>
             </form>
         </section>
-
-        <Footer
-            name="Your Electrician"
-            phone="555-123-4567"
-            email="info@yourelectrician.co"
-        />
     </main>
 </template>
 

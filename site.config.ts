@@ -1,20 +1,20 @@
 export const siteConfig = {
-    siteName: "Alyssa's Chair",
-    siteUrl: 'https://alyssaschair.com',
-    phone: '+1-612-555-1234',
-    email: 'info@alyssaschair.com',
+    siteName: "Your Electrician",
+    siteUrl: 'https://yourelectrician.co',
+    phone: '+1-763-248-9801',
+    email: 'hireyourelectrician@gmail.com',
     location: {
         city: 'Minneapolis', state: 'MN', zip: '55401', country: 'US', latitude: '44.9778', longitude: '-93.2650'
     },
-    description: "Alyssa's Chair specializes in elegant bridal hair styling in Minneapolis, MN. Our experienced stylists craft stunning bridal looks tailored to your unique vision.",
-    hours: 'Tu 12:00-20:00, We-Th 10:00-20:00, Fr 10:00-14:00, Sa 09:00-15:00',
-    socialImage: '/Abeille_FINAL_Abeille_Sedona_Hor.jpg',
-    favicon: '/favicon-glow.png',
+    description: "Your Electrician provides licensed, bonded and insured electrical services for homes and businesses across the Minneapolis–St Paul metro area.",
+    hours: 'Mo-Fr 08:00-18:00, Sa 09:00-14:00',
+    socialImage: '/social-preview.png',
+    favicon: '/favicon.png',
     theme: {
-        primaryColor: '#d97706',     // warm amber
-        secondaryColor: '#fef3c7',   // soft cream
-        accentColor: '#fcd34d',      // sunflower
-        fontFamily: ['Playfair Display', 'serif'],
-        borderRadius: '1rem'
+        primaryColor: '#ea580c',
+        secondaryColor: '#fefce8',
+        accentColor: '#ffedd5',
+        fontFamily: ['Inter', 'sans-serif'],
+        borderRadius: '0.5rem'
     }
 }

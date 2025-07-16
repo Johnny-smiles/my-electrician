@@ -34,9 +34,9 @@ export default defineNuxtConfig({
         { name: 'twitter:image',       content: 'https://yourelectrician.co/social-preview.png' }
       ],
       link: [
-        { rel: 'icon',                 type: 'image/png', href: '/favicon.png' },
-        { rel: 'apple-touch-icon',                              href: '/apple-touch-icon.png' },
-        { rel: 'apple-touch-icon-precomposed',                  href: '/apple-touch-icon-precomposed.png' },
+        // { rel: 'icon',                 type: 'image/png', href: '/favicon.png' },
+        // { rel: 'apple-touch-icon',                              href: '/apple-touch-icon.png' },
+        // { rel: 'apple-touch-icon-precomposed',                  href: '/apple-touch-icon-precomposed.png' },
         { rel: 'canonical',                                     href: 'https://yourelectrician.co' },
         { rel: 'stylesheet',                                    href: 'https://fonts.googleapis.com/css2?family=Russo+One&display=swap' }
 

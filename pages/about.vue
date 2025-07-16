@@ -23,15 +23,8 @@
                 Request a Free Estimate</NuxtLink> today.
             </p>
         </section>
-
-        <Footer
-            name="Your Electrician"
-            phone="555-123-4567"
-            email="info@yourelectrician.co"
-        />
     </main>
 </template>
 
 <script setup>
-import Footer from '~/components/Footer.vue'
 </script>
