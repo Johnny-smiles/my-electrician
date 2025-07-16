@@ -1,5 +1,9 @@
 node_modules/
 .nuxt/
-dist/
+dist
 .env
 .DS_Store
+.idea/vcs.xml
+.idea
+.output/
+dist/
