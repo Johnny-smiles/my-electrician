@@ -22,7 +22,7 @@
                 </div>
 
                 <div>
-                    <NuxtLink to="/electrical-remodeling">
+                    <NuxtLink to="/home-remodeling">
                         <ServiceCardSimple
                             title="Emergency"
                             description="24/7 emergency electrical support."
