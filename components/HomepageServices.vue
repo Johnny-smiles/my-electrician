@@ -3,26 +3,45 @@
         <div class="max-w-7xl mx-auto px-6">
             <!-- four‑wide grid on lg, two‑wide on md, single on mobile -->
             <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
-                <ServiceCardSimple
-                    title="Residential"
-                    description="Expert electrical services for your home."
-                />
+                <div>
+                    <NuxtLink to="/home-builds">
+                        <ServiceCardSimple
+                            title="Residential"
+                            description="Expert electrical services for your home."
+                        />
+                    </NuxtLink>
+                </div>
 
-                <ServiceCardSimple
-                    title="Commercial"
-                    description="Professional wiring for your business."
-                />
+                <div>
+                    <NuxtLink to="/commercial-lighting">
+                        <ServiceCardSimple
+                            title="Commercial"
+                            description="Professional wiring for your business."
+                        />
+                    </NuxtLink>
+                </div>
 
-                <ServiceCardSimple
-                    title="Emergency"
-                    description="24/7 emergency electrical support."
-                />
+                <div>
+                    <NuxtLink to="/electrical-remodeling">
+                        <ServiceCardSimple
+                            title="Emergency"
+                            description="24/7 emergency electrical support."
+                        />
+                    </NuxtLink>
+                </div>
 
-                <ServiceCardSimple
-                    title="EV Chargers"
-                    description="Installations and upgrades for home or fleet."
-                />
+                <div>
+                    <NuxtLink to="/ev-charger-installation">
+                        <ServiceCardSimple
+                            title="EV Chargers"
+                            description="Installations and upgrades for home or fleet."
+                        />
+                    </NuxtLink>
+                </div>
             </div>
+
+
+
         </div>
     </section>
 </template>

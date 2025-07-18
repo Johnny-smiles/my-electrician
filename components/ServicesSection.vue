@@ -5,87 +5,50 @@
                 Full‑Service Electrical Expertise
             </h2>
 
-<!--            <div class="grid gap-12 md:grid-cols-2">-->
-<!--                <ServiceCard-->
-<!--                    title="Home Builds"-->
-<!--                    img="/images/service-home-builds.jpg"-->
-<!--                    alt="Electrician wiring a new home"-->
-<!--                    :items="[-->
-<!--            'Complete rough‑in & finish wiring',-->
-<!--            'Panel installations & service upgrades',-->
-<!--            'Energy‑efficient lighting design'-->
-<!--          ]"-->
-<!--                />    -->
-
-                <div class="grid gap-12 md:grid-cols-2">
-                <ServiceCard
-                    title="Home Builds"
-                    :items="[
-            'Complete rough‑in & finish wiring',
-            'Panel installations & service upgrades',
-            'Energy‑efficient lighting design'
-          ]"
-                />
-
-<!--                <ServiceCard-->
-<!--                    title="Home Remodeling"-->
-<!--                    img="/images/service-remodel.jpg"-->
-<!--                    alt="Electrician upgrading kitchen wiring"-->
-<!--                    :items="[-->
-<!--            'Room additions & kitchen rewires',-->
-<!--            'Code‑compliance corrections',-->
-<!--            'Smart‑home device integration'-->
-<!--          ]"-->
-<!--                />        -->
-
+            <div class="grid gap-12 md:grid-cols-2">
+                <NuxtLink to="/home-builds" class="block hover:no-underline">
                     <ServiceCard
-                    title="Home Remodeling"
-                    :items="[
-            'Room additions & kitchen rewires',
-            'Code‑compliance corrections',
-            'Smart‑home device integration'
-          ]"
-                />
+                        title="Home Builds"
+                        :items="[
+                          'Complete rough‑in & finish wiring',
+                          'Panel installations & service upgrades',
+                          'Energy‑efficient lighting design'
+                        ]"
+                    />
+                </NuxtLink>
 
-<!--                <ServiceCard-->
-<!--                    title="Office & Commercial Lighting"-->
-<!--                    img="/images/service-commercial-lighting.jpg"-->
-<!--                    alt="LED lighting in an office"-->
-<!--                    :items="[-->
-<!--            'LED retrofits & maintenance',-->
-<!--            'Emergency & exit lighting',-->
-<!--            'Occupancy‑sensor solutions'-->
-<!--          ]"-->
-<!--                />   -->
-
+                <NuxtLink to="/home-remodeling" class="block hover:no-underline">
                     <ServiceCard
-                    title="Office & Commercial Lighting"
-                    :items="[
-            'LED retrofits & maintenance',
-            'Emergency & exit lighting',
-            'Occupancy‑sensor solutions'
-          ]"
-                />
+                        title="Home Remodeling"
+                        :items="[
+                          'Room additions & kitchen rewires',
+                          'Code‑compliance corrections',
+                          'Smart‑home device integration'
+                        ]"
+                    />
+                </NuxtLink>
 
-<!--                <ServiceCard-->
-<!--                    title="Security & Safety"-->
-<!--                    img="/images/service-security.jpg"-->
-<!--                    alt="Installing outdoor security lighting"-->
-<!--                    :items="[-->
-<!--            'Outdoor motion & flood lighting',-->
-<!--            'CCTV & doorbell cameras',-->
-<!--            'Whole‑house surge protection'-->
-<!--          ]"-->
-<!--                />              -->
-
+                <NuxtLink to="/commercial-lighting" class="block hover:no-underline">
                     <ServiceCard
-                    title="Security & Safety"
-                    :items="[
-            'Outdoor motion & flood lighting',
-            'CCTV & doorbell cameras',
-            'Whole‑house surge protection'
-          ]"
-                />
+                        title="Office & Commercial Lighting"
+                        :items="[
+                          'LED retrofits & maintenance',
+                          'Emergency & exit lighting',
+                          'Occupancy‑sensor solutions'
+                        ]"
+                    />
+                </NuxtLink>
+
+                <NuxtLink to="/ev-charger-installation" class="block hover:no-underline">
+                    <ServiceCard
+                        title="EV Charger Installation"
+                        :items="[
+                          'Level 2 home charger setup',
+                          'Fleet charging station design',
+                          'Permit & code compliance'
+                        ]"
+                    />
+                </NuxtLink>
             </div>
         </div>
     </section>

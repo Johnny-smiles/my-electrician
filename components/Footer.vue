@@ -27,12 +27,12 @@
             <!-- cta -->
             <div>
                 <h3 class="text-lg font-semibold mb-3">Need Help Fast?</h3>
-                <NuxtLink
-                    to="/contact"
+                <a
+                    href="tel:7632489801"
                     class="inline-block mt-2 px-6 py-3 bg-orange-500 text-white rounded-md font-medium hover:bg-orange-600 transition"
                 >
-                    Request a Free Estimate
-                </NuxtLink>
+                    Call Now
+                </a>
             </div>
         </div>
 
