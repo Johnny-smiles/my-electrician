@@ -24,8 +24,8 @@
                 <div>
                     <NuxtLink to="/home-remodeling">
                         <ServiceCardSimple
-                            title="Emergency"
-                            description="24/7 emergency electrical support."
+                            title="Remodel"
+                            description="Rewiring & upgrades for modern living"
                         />
                     </NuxtLink>
                 </div>

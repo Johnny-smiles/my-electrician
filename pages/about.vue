@@ -22,6 +22,13 @@
                 quick repair, we’re ready to help. <NuxtLink to="/contact" class="text-brand-orange">
                 Request a Free Estimate</NuxtLink> today.
             </p>
+
+            <!-- Owner's Family Photo (smaller and underneath text) -->
+            <NuxtImg
+              src="/aboutFamily.jpeg"
+              alt="The owner's family of Your Electrician"
+              class="w-full max-w-md mx-auto mt-10 rounded-lg shadow-md object-cover"
+            />
         </section>
     </main>
 </template>

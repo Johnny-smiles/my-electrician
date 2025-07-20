@@ -1,5 +1,5 @@
 <template>
-    <section class="relative h-[70vh] min-h-[400px] flex items-center justify-center">
+    <section class="relative h-[40vh] min-h-[260px] md:h-[50vh] flex items-center justify-center">
         <NuxtImg
             src="/hero.png"
             alt="Electrician working on breaker panel"

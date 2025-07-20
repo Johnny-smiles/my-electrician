@@ -3,23 +3,28 @@
         <!-- HERO -->
         <section class="relative h-[50vh] bg-black">
             <!-- Uncomment and provide a real image when ready -->
-            <!--
             <NuxtImg
-              src="/images/service-commercial-lighting.jpg"
+              src="/commercialLighting.png"
               alt="Commercial LED lighting install in Minneapolis office"
               class="absolute inset-0 w-full h-full object-cover opacity-70"
             />
-            -->
             <div
                 class="relative z-10 flex flex-col justify-center items-center h-full text-white text-center px-4"
             >
-                <h1 class="text-4xl md:text-6xl font-bold mb-2">
+                <h1 class="text-4xl md:text-6xl font-logo electrician-text uppercase mb-2">
                     Office &amp; Commercial Lighting
                 </h1>
                 <p class="text-xl max-w-xl">
                     Energy‑efficient LED retrofits, exit lighting,<br />
                     and occupancy‑sensor solutions for your workplace.
                 </p>
+                <!-- Call to Action Button -->
+                <NuxtLink
+                    to="/contact"
+                    class="inline-block mt-8 px-8 py-3 rounded-md bg-orange-500 text-white font-semibold hover:bg-orange-600 transition"
+                >
+                    Request a Free Estimate
+                </NuxtLink>
             </div>
         </section>
 
@@ -110,3 +115,19 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+
+.font-logo {
+    font-family: 'Russo One', sans-serif;
+}
+
+.electrician-text {
+    color: white;
+    text-shadow:
+        2px 2px 0 #7c3aed,       /* base shadow (deep brown-like tone) */
+        4px 4px 0 #f97316,       /* orange-500 offset */
+        6px 6px 0 rgba(0, 0, 0, 0.3); /* dark drop shadow */
+}
+</style>

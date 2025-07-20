@@ -3,14 +3,24 @@
         <section class="max-w-4xl mx-auto px-6 py-20">
             <h1 class="text-4xl md:text-5xl font-bold mb-8">Request a Free Estimate</h1>
 
+            <!-- Confirmation message -->
+            <div
+                v-if="showConfirmation"
+                class="mb-8 p-4 rounded-md bg-green-100 text-green-800 border border-green-300 text-lg font-medium"
+            >
+                Thank you! Your request has been received. We'll be in touch soon.
+            </div>
+
             <form
-                name="estimate"
+                v-if="!showConfirmation"
+                name="contact"
                 method="POST"
                 data-netlify="true"
                 data-netlify-honeypot="bot-field"
                 class="space-y-6"
             >
-                <input type="hidden" name="form-name" value="estimate" />
+                <!-- Netlify required hidden input -->
+                <input type="hidden" name="form-name" value="contact" />
                 <p class="hidden">
                     <label>Don’t fill this out <input name="bot-field" /></label>
                 </p>
@@ -66,5 +76,21 @@
 </template>
 
 <script setup>
-import Footer from '~/components/Footer.vue'
+import { ref, onMounted } from 'vue'
+
+const showConfirmation = ref(false)
+
+onMounted(() => {
+    // Netlify appends ?success or #success to the URL after a successful submission
+    if (typeof window !== 'undefined') {
+        const params = new URLSearchParams(window.location.search)
+        if (params.has('success') || window.location.hash === '#success') {
+            showConfirmation.value = true
+        }
+        // Also handle Netlify's default behavior: /contact/thanks/
+        if (window.location.pathname.endsWith('/thanks/')) {
+            showConfirmation.value = true
+        }
+    }
+})
 </script>

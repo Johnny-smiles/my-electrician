@@ -14,25 +14,25 @@
                 <p>{{ email }}</p>
             </div>
 
-            <!-- links -->
-            <div>
-                <h3 class="text-lg font-semibold mb-3">Company</h3>
-                <ul class="list-none space-y-2">
-                    <li><NuxtLink to="/about" class="hover:text-brand-orange">About</NuxtLink></li>
-                    <li><NuxtLink to="/services" class="hover:text-brand-orange">Services</NuxtLink></li>
-                    <li><NuxtLink to="/contact" class="hover:text-brand-orange">Contact</NuxtLink></li>
-                </ul>
-            </div>
-
-            <!-- cta -->
-            <div>
-                <h3 class="text-lg font-semibold mb-3">Need Help Fast?</h3>
-                <a
-                    href="tel:7632489801"
-                    class="inline-block mt-2 px-6 py-3 bg-orange-500 text-white rounded-md font-medium hover:bg-orange-600 transition"
-                >
-                    Call Now
-                </a>
+            <!-- links + cta side by side on mobile, stacked on md+ -->
+            <div class="w-full flex flex-row gap-6 justify-between md:block md:w-auto">
+                <div class="flex-1 min-w-0">
+                    <h3 class="text-lg font-semibold mb-3">Company</h3>
+                    <ul class="list-none space-y-2">
+                        <li><NuxtLink to="/about" class="hover:text-brand-orange">About</NuxtLink></li>
+                        <li><NuxtLink to="/services" class="hover:text-brand-orange">Services</NuxtLink></li>
+                        <li><NuxtLink to="/contact" class="hover:text-brand-orange">Contact</NuxtLink></li>
+                    </ul>
+                </div>
+                <div class="flex-1 min-w-0">
+                    <h3 class="text-lg font-semibold mb-3">Need Help Fast?</h3>
+                    <a
+                        href="tel:7632489801"
+                        class="inline-block mt-2 px-6 py-3 bg-orange-500 text-white rounded-md font-medium hover:bg-orange-600 transition"
+                    >
+                        Call Now
+                    </a>
+                </div>
             </div>
         </div>
 
