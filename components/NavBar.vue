@@ -9,8 +9,8 @@
                 <NuxtImg
                     src="/logo1.png"
                     alt="Your Electrician logo"
-                    width="240"
-                    height="80"
+                    class="max-h-20 w-auto"
+                    priority
                 />
             </NuxtLink>
 
@@ -58,17 +58,24 @@
                   <li><NuxtLink to="/home-remodeling" class="block px-4 py-2 hover:bg-brand-light" @click="closeMenus">Remodeling</NuxtLink></li>
                   <li><NuxtLink to="/commercial-lighting"      class="block px-4 py-2 hover:bg-brand-light" @click="closeMenus">Commercial</NuxtLink></li>
                   <li><NuxtLink to="/ev-charger-installation"              class="block px-4 py-2 hover:bg-brand-light" @click="closeMenus">EV Chargers</NuxtLink></li>
+                  <li class="border-t mx-2 my-1"></li>
+                  <li><NuxtLink to="/recent-work" class="block px-4 py-2 hover:bg-brand-light" @click="closeMenus">Recent&nbsp;Work</NuxtLink></li>
                 </ul>
               </li>
 
-              <!-- Services sub‑links in mobile drawer -->
+              <!-- Services + recent‑work sublinks in mobile drawer -->
               <li class="sm:hidden flex flex-col items-end space-y-2 w-full">
                 <NuxtLink to="/home-builds"     class="hover:text-brand-orange" @click="isOpen = false">Residential</NuxtLink>
                 <NuxtLink to="/home-remodeling" class="hover:text-brand-orange" @click="isOpen = false">Remodeling</NuxtLink>
                 <NuxtLink to="/commercial-lighting"      class="hover:text-brand-orange" @click="isOpen = false">Commercial</NuxtLink>
-                <NuxtLink to="/ev-charger-installation"              class="hover:text-brand-orange" @click="isOpen = false">EV Chargers</NuxtLink>
+                <NuxtLink to="/ev-charger-installation"  class="hover:text-brand-orange" @click="isOpen = false">EV&nbsp;Chargers</NuxtLink>
+                <NuxtLink to="/recent-work" class="hover:text-brand-orange" @click="isOpen = false">Recent&nbsp;Work</NuxtLink>
               </li>
 
+              <!-- Recent‑work top‑level link (desktop) -->
+              <li class="hidden sm:block">
+                <NuxtLink to="/recent-work" class="hover:text-brand-orange" @click="closeMenus">Recent&nbsp;Work</NuxtLink>
+              </li>
 
               <!-- CTA buttons (desktop) -->
               <li class="hidden sm:block">
