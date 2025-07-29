@@ -12,7 +12,6 @@
             </div>
 
             <form
-                v-if="!showConfirmation"
                 name="contact"
                 method="POST"
                 data-netlify="true"
