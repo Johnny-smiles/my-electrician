@@ -83,7 +83,6 @@
                           :src="img.src"
                           :alt="img.alt"
                           class="w-full aspect-[3/4] object-cover rounded-lg shadow-sm hover:shadow-lg transition"
-                          loading="lazy"
                         />
                     </SwiperSlide>
                 </Swiper>
