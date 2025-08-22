@@ -21,7 +21,7 @@
                     <h3 class="text-lg font-semibold mb-3">Company</h3>
                     <ul class="list-none space-y-2">
                         <li><NuxtLink to="/about" class="hover:text-brand-orange">About</NuxtLink></li>
-                        <li><NuxtLink to="#services" class="hover:text-brand-orange">Services</NuxtLink></li>
+                        <li><NuxtLink to="/services" class="hover:text-brand-orange">Services</NuxtLink></li>
                         <li><NuxtLink to="/recent-work" class="hover:text-brand-orange">Recent&nbsp;Work</NuxtLink></li>
                         <li><NuxtLink to="/contact" class="hover:text-brand-orange">Contact</NuxtLink></li>
                     </ul>
