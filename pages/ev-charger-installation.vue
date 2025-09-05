@@ -8,7 +8,6 @@
                 width="1800"
                 height="900"
                 sizes="(max-width: 1024px) 100vw, 1200px"
-                format="avif,webp"
                 preload
                 fetchpriority="high"
                 placeholder
