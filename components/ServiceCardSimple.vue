@@ -1,5 +1,5 @@
 <template>
-    <div class="card-box text-center">
+    <div class="card-box text-center border-t-2 border-brand-dark pt-2 animate-fade-in">
         <h3 class="text-2xl md:text-3xl font-semibold text-brand-dark mb-3">
             {{ title }}
         </h3>

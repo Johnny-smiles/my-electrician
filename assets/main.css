@@ -66,3 +66,33 @@
         @apply max-w-7xl mx-auto w-full px-6;
     }
 }
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn 1s ease-out forwards; /* Increased duration from 0.5s to 1s */
+}
+
+.grid > div:nth-child(1) .animate-fade-in {
+    animation-delay: 0.2s;
+}
+
+.grid > div:nth-child(2) .animate-fade-in {
+    animation-delay: 0.4s;
+}
+
+.grid > div:nth-child(3) .animate-fade-in {
+    animation-delay: 0.6s;
+}
+
+.grid > div:nth-child(4) .animate-fade-in {
+    animation-delay: 0.8s;
+}

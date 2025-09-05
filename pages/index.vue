@@ -1,5 +1,5 @@
 <template>
-    <main class="flex flex-col min-h-screen bg-brand-sand">
+    <main class="flex flex-col bg-brand-sand">
         <HeroSection />
 
         <!-- boxed services section with top/bottom spacing -->
