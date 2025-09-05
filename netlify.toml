@@ -1,0 +1,46 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+# Nuxt build output (JS/CSS in /_nuxt)
+[[headers]]
+  for = "/_nuxt/*"
+  [headers.values]
+  Cache-Control = "public, max-age=604800"
+
+# Root-level images (hero.png, logo1.png, etc.)
+[[headers]]  # PNG
+  for = "/*.png"
+  [headers.values]
+  Cache-Control = "public, max-age=604800"
+
+[[headers]]  # JPG
+  for = "/*.jpg"
+  [headers.values]
+  Cache-Control = "public, max-age=604800"
+
+[[headers]]  # JPEG
+  for = "/*.jpeg"
+  [headers.values]
+  Cache-Control = "public, max-age=604800"
+
+[[headers]]  # WEBP
+  for = "/*.webp"
+  [headers.values]
+  Cache-Control = "public, max-age=604800"
+
+[[headers]]  # AVIF
+  for = "/*.avif"
+  [headers.values]
+  Cache-Control = "public, max-age=604800"
+
+[[headers]]  # SVG
+  for = "/*.svg"
+  [headers.values]
+  Cache-Control = "public, max-age=604800"
+
+# Recent projects gallery images (/recent/*)
+[[headers]]
+  for = "/recent/*"
+  [headers.values]
+  Cache-Control = "public, max-age=604800"

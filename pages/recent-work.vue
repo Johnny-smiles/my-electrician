@@ -2,9 +2,19 @@
     <main>
         <!-- HERO -------------------------------------------------------- -->
         <section class="relative h-[40vh] md:h-[50vh] bg-black">
-            <NuxtImg src="/recentProjectsHero.png"
-                     alt="Collage of recent electrical projects"
-                     class="absolute inset-0 w-full h-full object-cover opacity-70"/>
+            <NuxtImg
+                src="/recentProjectsHero.png"
+                alt="Collage of recent electrical projects"
+                width="1800"
+                height="900"
+                sizes="(max-width: 1024px) 100vw, 1200px"
+                format="avif,webp"
+                preload
+                fetchpriority="high"
+                placeholder
+                class="absolute inset-0 w-full h-full object-cover opacity-70"
+            />
+
             <div
                 class="relative z-10 flex flex-col justify-center items-center h-full text-center px-4 text-white">
                 <h1 class="text-4xl md:text-6xl font-logo electrician-text uppercase mb-2">

@@ -1,10 +1,19 @@
 <template>
     <section class="relative h-[40vh] min-h-[260px] md:h-[50vh] flex items-center justify-center">
+
         <NuxtImg
             src="/hero.png"
             alt="Electrician working on breaker panel"
-            class="absolute inset-0 w-full h-full object-cover"
+            width="1800"
+            height="900"
+            sizes="(max-width: 1024px) 100vw, 1200px"
+            format="avif,webp"
+            preload
+            fetchpriority="high"
+            placeholder
+            class="absolute inset-0 w-full h-full object-cover opacity-70"
         />
+
         <div class="absolute inset-0 bg-black/60" />
 
         <div class="relative z-10 text-center text-white px-4 drop-shadow-[0_4px_8px_rgba(0,0,0,0.45)]">
@@ -39,3 +48,5 @@
         6px 6px 0 rgba(0, 0, 0, 0.3); /* dark drop shadow */
 }
 </style>
+<script setup lang="ts">
+</script>

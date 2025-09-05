@@ -3,9 +3,16 @@
         <!-- HERO -->
         <section class="relative h-[50vh] bg-black">
             <NuxtImg
-              src="/homeBuilds.png"
-              alt="Electrician wiring a new home build"
-              class="absolute inset-0 w-full h-full object-cover opacity-70"
+                src="/homeBuilds.png"
+                alt="Electrician wiring a new home build"
+                width="1800"
+                height="900"
+                sizes="(max-width: 1024px) 100vw, 1200px"
+                format="avif,webp"
+                preload
+                fetchpriority="high"
+                placeholder
+                class="absolute inset-0 w-full h-full object-cover opacity-70"
             />
 
             <div

@@ -2,7 +2,19 @@
     <main>
         <section class="relative h-[50vh] bg-black">
             <!-- Uncomment and use your image if desired -->
-             <NuxtImg src="/EVCharger.png" alt="EV charger install" class="absolute w-full h-full object-cover opacity-70" />
+            <NuxtImg
+                src="/EVCharger.png"
+                alt="EV charger install"
+                width="1800"
+                height="900"
+                sizes="(max-width: 1024px) 100vw, 1200px"
+                format="avif,webp"
+                preload
+                fetchpriority="high"
+                placeholder
+                class="absolute inset-0 w-full h-full object-cover opacity-70"
+            />
+
             <div class="relative z-10 flex flex-col justify-center items-center h-full text-white text-center px-4">
                 <h1 class="text-4xl md:text-6xl font-logo electrician-text uppercase mb-2">
                     EV Charger Installation

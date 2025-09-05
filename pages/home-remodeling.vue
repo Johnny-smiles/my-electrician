@@ -4,9 +4,15 @@
         <section class="relative h-[50vh] bg-black">
             <!-- Optional background image (uncomment & replace when ready) -->
             <NuxtImg
-              src="/residentalRemodel.png"
-              alt="Electrician upgrading kitchen wiring"
-              class="absolute inset-0 w-full h-full object-cover opacity-70"
+                src="/residentalRemodel.png"
+                alt="Electrician upgrading kitchen wiring"
+                width="1800"
+                height="900"
+                sizes="(max-width: 1024px) 100vw, 1200px"
+                format="avif,webp"
+                preload
+                fetchpriority="high"
+                class="absolute inset-0 w-full h-full object-cover opacity-70"
             />
             <div
                 class="relative z-10 flex flex-col justify-center items-center h-full text-white text-center px-4"

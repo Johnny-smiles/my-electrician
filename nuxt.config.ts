@@ -34,12 +34,11 @@ export default defineNuxtConfig({
         { name: 'twitter:image',       content: 'https://yourelectrician.co/social-preview.png' }
       ],
       link: [
-        // { rel: 'icon',                 type: 'image/png', href: '/favicon.png' },
-        // { rel: 'apple-touch-icon',                              href: '/apple-touch-icon.png' },
-        // { rel: 'apple-touch-icon-precomposed',                  href: '/apple-touch-icon-precomposed.png' },
-        { rel: 'canonical',                                     href: 'https://yourelectrician.co' },
-        { rel: 'stylesheet',                                    href: 'https://fonts.googleapis.com/css2?family=Russo+One&display=swap' }
-
+        { rel: 'canonical',  href: 'https://yourelectrician.co' },
+        { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Russo+One&display=swap' },
+        { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
+        { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
+        { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Russo+One&display=swap' }
       ],
       script: [
         /* Plausible Analytics */
@@ -48,21 +47,28 @@ export default defineNuxtConfig({
           defer: true,
           'data-domain': 'yourelectrician.co'
         },
-        /* Google Analytics (v4) */
-        { src: 'https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX', async: true },
         {
           type: 'text/javascript',
           innerHTML: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-XXXXXXXXXX');
-          `
+      (function(w,d,s,l,i){
+        w[l]=w[l]||[];
+        w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});
+        var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),
+            dl=l!='dataLayer'?'&l='+l:'';
+        j.async=true;
+        j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+        f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-WH87J4BK');
+    `
         }
       ],
     }
   },
-
+  image: {
+    quality: 75,
+    screens: { xs: 480, sm: 640, md: 768, lg: 1024, xl: 1280, '2xl': 1536 }
+  },
   css: ['~/assets/main.css'],
 
   modules: [
