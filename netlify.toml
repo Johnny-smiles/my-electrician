@@ -1,6 +1,10 @@
 [build]
-  command = "npm run build"
-  publish = "dist"
+  command = "npm run generate"
+  publish = ".output/public"
+
+# (Optional) If you use Netlify Functions, keep this to match the UI.
+[functions]
+  directory = "netlify/functions"
 
 # Nuxt build output (JS/CSS in /_nuxt)
 [[headers]]
