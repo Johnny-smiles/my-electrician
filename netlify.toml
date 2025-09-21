@@ -2,49 +2,98 @@
   command = "npm run generate"
   publish = ".output/public"
 
-# (Optional) If you use Netlify Functions, keep this to match the UI.
 [functions]
   directory = "netlify/functions"
 
-# Nuxt build output (JS/CSS in /_nuxt)
+# ─────────────────────────────────────────────────────────────
+# Canonical domain: redirect Netlify subdomain → yourelectrician.co
+[[redirects]]
+  from = "/*"
+  to   = "https://yourelectrician.co/:splat"
+  status = 301
+  force = true
+  conditions = { Host = ["your-electrician.netlify.app"] }
+
+# Client-side routing fallback (Nuxt static)
+[[redirects]]
+  from = "/*"
+  to   = "/200.html"
+  status = 200
+
+# ─────────────────────────────────────────────────────────────
+# Caching
+
+# Nuxt build assets (hashed)
 [[headers]]
   for = "/_nuxt/*"
   [headers.values]
-  Cache-Control = "public, max-age=604800"
+  Cache-Control = "public, max-age=31536000, immutable"
 
-# Root-level images (hero.png, logo1.png, etc.)
+# (If you use Nuxt Image / IPX; safe to include)
+[[headers]]
+  for = "/_ipx/*"
+  [headers.values]
+  Cache-Control = "public, max-age=31536000, immutable"
+
+# Root-level images & public images
 [[headers]]  # PNG
   for = "/*.png"
   [headers.values]
-  Cache-Control = "public, max-age=604800"
+  Cache-Control = "public, max-age=31536000, immutable"
 
 [[headers]]  # JPG
   for = "/*.jpg"
   [headers.values]
-  Cache-Control = "public, max-age=604800"
+  Cache-Control = "public, max-age=31536000, immutable"
 
 [[headers]]  # JPEG
   for = "/*.jpeg"
   [headers.values]
-  Cache-Control = "public, max-age=604800"
+  Cache-Control = "public, max-age=31536000, immutable"
 
 [[headers]]  # WEBP
   for = "/*.webp"
   [headers.values]
-  Cache-Control = "public, max-age=604800"
+  Cache-Control = "public, max-age=31536000, immutable"
 
 [[headers]]  # AVIF
   for = "/*.avif"
   [headers.values]
-  Cache-Control = "public, max-age=604800"
+  Cache-Control = "public, max-age=31536000, immutable"
 
 [[headers]]  # SVG
   for = "/*.svg"
   [headers.values]
-  Cache-Control = "public, max-age=604800"
+  Cache-Control = "public, max-age=31536000, immutable"
 
-# Recent projects gallery images (/recent/*)
+# Gallery images (/recent/*)
 [[headers]]
   for = "/recent/*"
   [headers.values]
-  Cache-Control = "public, max-age=604800"
+  Cache-Control = "public, max-age=31536000, immutable"
+
+# HTML should revalidate quickly
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+  Cache-Control = "public, max-age=0, must-revalidate"
+
+# ─────────────────────────────────────────────────────────────
+# Security headers (recommended)
+[[headers]]
+  for = "/*"
+  [headers.values]
+  X-Content-Type-Options = "nosniff"
+  X-Frame-Options = "SAMEORIGIN"
+  Referrer-Policy = "strict-origin-when-cross-origin"
+  Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+  Strict-Transport-Security = "max-age=63072000; includeSubDomains; preload"
+
+# ─────────────────────────────────────────────────────────────
+# (Optional) Make Deploy Previews noindex
+# Uncomment to keep previews out of Google
+# [[headers]]
+#   for = "/*"
+#   [headers.values]
+#   X-Robots-Tag = "noindex, nofollow"
+#   # Apply this rule only to deploy-previews via Netlify UI “Context rules”
