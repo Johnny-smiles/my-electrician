@@ -2,6 +2,16 @@
     <main class="flex flex-col bg-brand-sand">
         <HeroSection />
 
+        <section class="max-w-4xl mx-auto w-full px-6 py-10 text-lg text-brand-dark/80">
+            <p>
+                From fixture installs to full rewires, our licensed team handles it all—take a look at the
+                <NuxtLink to="/services" class="text-brand-orange font-semibold hover:underline">
+                    electrical services we offer
+                </NuxtLink>
+                and find the right fit for your home or business.
+            </p>
+        </section>
+
         <!-- boxed services section with top/bottom spacing -->
         <section class="my-12 max-w-7xl mx-auto w-full px-6">
             <HomepageServices />

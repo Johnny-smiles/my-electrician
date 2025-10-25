@@ -3,6 +3,23 @@
         <section class="max-w-4xl mx-auto px-6 py-20">
             <h1 class="text-4xl md:text-5xl font-bold mb-8">Request a Free Estimate</h1>
 
+            <div class="space-y-4 text-lg text-brand-dark/80 mb-8">
+                <p>
+                    Not sure what to include? Browse our
+                    <NuxtLink to="/services" class="text-brand-orange font-semibold hover:underline">
+                        full list of electrical services
+                    </NuxtLink>
+                    to get ideas and note the upgrades you need.
+                </p>
+                <p>
+                    Want to know who will show up at your door?
+                    <NuxtLink to="/about" class="text-brand-orange font-semibold hover:underline">
+                        Learn about our local team
+                    </NuxtLink>
+                    before you submit the form.
+                </p>
+            </div>
+
             <!-- Confirmation message -->
             <div
                 v-if="showConfirmation"

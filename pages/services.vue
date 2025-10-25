@@ -11,6 +11,16 @@
             <FaqSection />
         </section>
 
+        <section class="next-step" style="margin-top:2rem; padding-top:1rem; border-top:1px solid #ddd;">
+            <p class="text-center text-lg">
+                Need an electrician now?
+                <NuxtLink to="/contact" class="text-brand-orange font-semibold hover:underline">
+                    Request service
+                </NuxtLink>
+                and we’ll get you scheduled.
+            </p>
+        </section>
+
     </main>
 </template>
 

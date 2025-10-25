@@ -40,9 +40,12 @@
             </div>
         </div>
 
-        <p class="text-center text-sm mt-10 border-t border-brand-dark/10 pt-6">
-            &copy; {{ new Date().getFullYear() }} {{ name }}. All rights reserved.
-        </p>
+        <div class="text-center text-sm mt-10 border-t border-brand-dark/10 pt-6">
+            <p>&copy; {{ new Date().getFullYear() }} {{ name }}. All rights reserved.</p>
+            <p class="mt-2">
+                Website by <a href="https://barnabasmn.com/" target="_blank" rel="noopener noreferrer" class="text-brand-orange hover:underline">Barnabas MN</a>
+            </p>
+        </div>
     </footer>
 </template>
 
