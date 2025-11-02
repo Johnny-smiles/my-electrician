@@ -27,7 +27,7 @@
                     to="/contact"
                     class="inline-block mt-8 px-8 py-3 rounded-md bg-orange-500 text-white font-semibold hover:bg-orange-600 transition"
                 >
-                    Request a Free Estimate
+                    Request Quote
                 </NuxtLink>
             </div>
 
@@ -35,30 +35,43 @@
 
         <!-- CONTENT -->
         <section class="max-w-5xl mx-auto px-6 py-16">
-            <h2 class="text-3xl font-semibold mb-6">
-                Modernize &amp; Future‑Proof Your Home
-            </h2>
-            <p class="mb-4 text-lg">
-                Whether you’re adding a new room, updating an old panel, or integrating
-                smart‑home devices, our licensed electricians deliver efficient,
-                code‑compliant remodeling solutions that keep your family safe and your
-                home powered for the future.
-            </p>
+            <div class="prose max-w-none">
+                <h2 class="text-2xl font-semibold mb-6">Electrical for Home Remodeling &amp; Additions</h2>
+                <p class="text-lg mb-4">
+                    Remodeling your kitchen, bath, basement, or whole home? Our licensed team handles <strong>circuits, lighting, outlets, and panel upgrades</strong>
+                    so your new space is beautiful, functional, and fully up to code.
+                </p>
 
-            <ul class="list-disc pl-6 space-y-2 text-lg">
-                <li>Room additions &amp; kitchen rewires</li>
-                <li>Code‑compliance corrections</li>
-                <li>Smart‑home device integration</li>
-                <li>Service panel upgrades &amp; load calculations</li>
-            </ul>
+                <h3 class="mt-6 text-xl font-semibold">Remodel Electrical Services</h3>
+                <ul class="list-disc pl-6 space-y-2 text-lg">
+                    <li><strong>Kitchen &amp; Bath:</strong> Dedicated appliance circuits, GFCI/AFCI protection, task &amp; accent lighting.</li>
+                    <li><strong>Basements &amp; Additions:</strong> New circuits, subpanels, egress lighting, and low-voltage prewire.</li>
+                    <li><strong>Lighting Design:</strong> Recessed, pendants, under-cabinet, and smart dimmers.</li>
+                    <li><strong>Safety &amp; Code:</strong> Grounding/bonding, smoke/CO wiring, and surge protection.</li>
+                </ul>
 
-            <div class="mt-10">
-                <NuxtLink
-                    to="/contact"
-                    class="btn bg-orange-500 text-white px-6 py-3 rounded-md font-semibold hover:bg-orange-600 transition"
-                >
-                    Request a Quote
-                </NuxtLink>
+                <h3 class="mt-6 text-xl font-semibold">Our Remodeling Process</h3>
+                <ol class="list-decimal pl-6 space-y-2 text-lg">
+                    <li><strong>Walkthrough &amp; Plan:</strong> We review drawings, loads, and switching locations.</li>
+                    <li><strong>Transparent Quote:</strong> Clear scope, allowances, and timeline expectations.</li>
+                    <li><strong>Coordination:</strong> We schedule with your GC/trades to keep the project moving.</li>
+                    <li><strong>Inspection &amp; Final:</strong> Pass inspection and handoff a tidy, labeled system.</li>
+                </ol>
+
+                <h3 class="mt-6 text-xl font-semibold">Remodel FAQs</h3>
+                <details class="border rounded p-4">
+                    <summary class="font-medium cursor-pointer">Will my panel handle the new load?</summary>
+                    <p class="mt-2 text-lg">We run load calculations and recommend panel or service upgrades only if needed.</p>
+                </details>
+                <details class="border rounded p-4 mt-3">
+                    <summary class="font-medium cursor-pointer">Can you add smart lighting?</summary>
+                    <p class="mt-2 text-lg">Yes—dimmers, scenes, and voice/app control that match your fixtures and budget.</p>
+                </details>
+
+                <div class="mt-6 p-4 bg-gray-50 rounded-lg">
+                    <p class="font-semibold">Planning a remodel?</p>
+                    <p class="text-lg">Send us your plans or photos—get expert guidance and an accurate, itemized bid.</p>
+                </div>
             </div>
         </section>
     </main>

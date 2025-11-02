@@ -37,7 +37,7 @@ interface FAQ { q: string; a: string }
 const faqs: FAQ[] = [
     { q: 'Are you licensed and insured?',  a: 'Yes—Your Electrician is fully licensed, bonded and insured for residential and commercial work.' },
     { q: 'Do you offer 24/7 emergency service?', a: 'Absolutely. Call us anytime for urgent electrical issues and we’ll dispatch a technician.' },
-    { q: 'How soon can I book an estimate?',     a: 'Most estimates are scheduled within 1–2 business days. Use the “Request a Free Estimate” button or call us.' },
+    { q: 'How soon can I book an estimate?',     a: 'Most estimates are scheduled within 1–2 business days. Use the “Request Quote” button or call us.' },
     { q: 'What areas do you serve?',             a: 'We cover the greater metro area including neighboring suburbs. Contact us to confirm we service your ZIP code.' }
 ]
 

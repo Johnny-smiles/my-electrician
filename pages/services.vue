@@ -15,7 +15,7 @@
             <p class="text-center text-lg">
                 Need an electrician now?
                 <NuxtLink to="/contact" class="text-brand-orange font-semibold hover:underline">
-                    Request service
+                    Request Quote
                 </NuxtLink>
                 and we’ll get you scheduled.
             </p>

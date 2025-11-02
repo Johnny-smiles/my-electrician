@@ -34,6 +34,7 @@ export default defineNuxtConfig({
         { name: 'twitter:image',       content: 'https://yourelectrician.co/social-preview.png' }
       ],
       link: [
+        { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
         { rel: 'canonical',  href: 'https://yourelectrician.co' },
         { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Russo+One&display=swap' },
         { rel: 'preconnect', href: 'https://fonts.googleapis.com' },

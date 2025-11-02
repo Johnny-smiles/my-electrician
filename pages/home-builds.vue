@@ -28,36 +28,40 @@
                     to="/contact"
                     class="inline-block mt-8 px-8 py-3 rounded-md bg-orange-500 text-white font-semibold hover:bg-orange-600 transition"
                 >
-                    Request a Free Estimate
+                    Request Quote
                 </NuxtLink>
             </div>
         </section>
 
         <!-- CONTENT -->
         <section class="max-w-5xl mx-auto px-6 py-16">
-            <h2 class="text-3xl font-semibold mb-6">
-                Powering Your Dream Home from the Ground Up
-            </h2>
-            <p class="mb-4 text-lg">
-                Our licensed electricians handle every stage of residential wiring—from
-                panel installation to final fixture testing—ensuring your new home is
-                future‑proofed, energy‑efficient, and ready for smart‑home technology.
-            </p>
+            <div class="prose max-w-none">
+                <h2 class="text-2xl font-semibold mb-6">Electrical for New Home Builds</h2>
+                <p class="text-lg mb-4">
+                    Building a new home? We provide turnkey <strong>residential electrical</strong>—from service and rough-in to final trim—delivering
+                    reliable power distribution, thoughtful lighting, and future-ready wiring for EVs, solar, and smart tech.
+                </p>
 
-            <ul class="list-disc pl-6 space-y-2 text-lg">
-                <li>Complete rough‑in &amp; finish wiring</li>
-                <li>Panel installations &amp; service upgrades</li>
-                <li>Energy‑efficient lighting design</li>
-                <li>Smart‑home ready infrastructure</li>
-            </ul>
+                <h3 class="mt-6 text-xl font-semibold">What's Included</h3>
+                <ul class="list-disc pl-6 space-y-2 text-lg">
+                    <li><strong>Service &amp; Panels:</strong> Properly sized service, main panel, and subpanels with clear labeling.</li>
+                    <li><strong>Room-by-Room Layout:</strong> Outlet spacing, dedicated circuits, and code-correct protection.</li>
+                    <li><strong>Lighting &amp; Controls:</strong> Efficient fixtures, dimming, 3-way/4-way switching, and smart options.</li>
+                    <li><strong>Low-Voltage &amp; Future-Proofing:</strong> Data, speakers, cameras, EV prewire, and solar readiness.</li>
+                </ul>
 
-            <div class="mt-10">
-                <NuxtLink
-                    to="/contact"
-                    class="btn bg-orange-500 text-white px-6 py-3 rounded-md font-semibold hover:bg-orange-600 transition"
-                >
-                    Request a Quote
-                </NuxtLink>
+                <h3 class="mt-6 text-xl font-semibold">Builder-Friendly Process</h3>
+                <ol class="list-decimal pl-6 space-y-2 text-lg">
+                    <li><strong>Plan Review:</strong> Load calcs, panel schedules, and value-engineered fixture selections.</li>
+                    <li><strong>Reliable Scheduling:</strong> We hit rough-in and trim milestones to keep closing on track.</li>
+                    <li><strong>Quality Assurance:</strong> Straight cuts, consistent heights, and a clean jobsite.</li>
+                    <li><strong>Final Inspection:</strong> Code-compliant sign-off and homeowner walkthrough.</li>
+                </ol>
+
+                <div class="mt-6 p-4 bg-gray-50 rounded-lg">
+                    <p class="font-semibold">Building soon?</p>
+                    <p class="text-lg">Share your prints and scope—get a competitive bid and a partner who delivers on time.</p>
+                </div>
             </div>
         </section>
     </main>

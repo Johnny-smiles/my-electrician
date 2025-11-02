@@ -1,7 +1,7 @@
 <template>
     <main>
         <section class="max-w-4xl mx-auto px-6 py-20">
-            <h1 class="text-4xl md:text-5xl font-bold mb-8">Request a Free Estimate</h1>
+            <h1 class="text-4xl md:text-5xl font-bold mb-8">Request Quote</h1>
 
             <div class="space-y-4 text-lg text-brand-dark/80 mb-8">
                 <p>

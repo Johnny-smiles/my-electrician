@@ -81,11 +81,11 @@
               <li class="hidden sm:block">
                 <a href="tel:7632489801"
                    class="inline-block bg-orange-500 text-white px-4 py-2 rounded-md mr-3 font-semibold hover:bg-orange-600 transition">
-                  Call&nbsp;Now
+                  Call Now
                 </a>
                 <NuxtLink to="/contact"
                    class="inline-block bg-orange-500 text-white px-4 py-2 rounded-md font-semibold hover:bg-orange-600 transition">
-                  Request&nbsp;Quote
+                  Request Quote
                 </NuxtLink>
               </li>
             </ul>

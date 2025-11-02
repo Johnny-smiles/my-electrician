@@ -22,7 +22,7 @@
             <p>
                 Whether you’re planning a remodel, upgrading a panel or just need a
                 quick repair, we’re ready to help. <NuxtLink to="/contact" class="text-brand-orange">
-                Request a Free Estimate</NuxtLink> today.
+                Request Quote</NuxtLink> today.
             </p>
 
             <!-- Owner's Family Photo (smaller and underneath text) -->
@@ -37,7 +37,7 @@
             <p>
                 Need an electrician now?
                 <NuxtLink to="/contact" class="text-brand-orange font-semibold hover:underline">
-                    Request service
+                    Request Quote
                 </NuxtLink>
                 and we’ll get you scheduled.
             </p>

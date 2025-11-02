@@ -4,7 +4,7 @@
             <!-- four‑wide grid on lg, two‑wide on md, single on mobile -->
             <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
                 <div>
-                    <NuxtLink to="/home-builds">
+                    <NuxtLink to="/home-builds" class="block transition-transform duration-300 hover:scale-105 cursor-pointer">
                         <ServiceCardSimple
                             title="Residential"
                             description="Expert electrical services for your home."
@@ -13,7 +13,7 @@
                 </div>
 
                 <div>
-                    <NuxtLink to="/commercial-lighting">
+                    <NuxtLink to="/commercial-lighting" class="block transition-transform duration-300 hover:scale-105 cursor-pointer">
                         <ServiceCardSimple
                             title="Commercial"
                             description="Professional wiring for your business."
@@ -22,7 +22,7 @@
                 </div>
 
                 <div>
-                    <NuxtLink to="/home-remodeling">
+                    <NuxtLink to="/home-remodeling" class="block transition-transform duration-300 hover:scale-105 cursor-pointer">
                         <ServiceCardSimple
                             title="Remodel"
                             description="Rewiring & upgrades for modern living"
@@ -31,7 +31,7 @@
                 </div>
 
                 <div>
-                    <NuxtLink to="/ev-charger-installation">
+                    <NuxtLink to="/ev-charger-installation" class="block transition-transform duration-300 hover:scale-105 cursor-pointer">
                         <ServiceCardSimple
                             title="EV Chargers"
                             description="Installations and upgrades for home or fleet."

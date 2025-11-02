@@ -42,9 +42,20 @@
 
         <!-- GALLERY / CAROUSEL ------------------------------------------ -->
         <section id="gallery" class="max-w-7xl mx-auto px-6 py-16">
-            <h2 class="text-3xl font-semibold mb-10 text-center">
+            <h2 class="text-3xl font-semibold mb-4 text-center">
                 Project Highlights
             </h2>
+            
+            <!-- Swipe indicator for mobile -->
+            <div class="flex items-center justify-center gap-2 mb-10 md:hidden">
+                <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                </svg>
+                <span class="text-sm text-gray-600 font-medium">Swipe to view more</span>
+                <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                </svg>
+            </div>
 
             <!-- Swiper wrapper with custom navigation -->
             <div class="relative">
@@ -84,14 +95,14 @@
                         640: { slidesPerView: 1.2 },
                         1024: { slidesPerView: 3, spaceBetween: 24 }
                     }"
-                    class="w-full"
+                    class="w-full swiper-grab"
                     @swiper="onSwiper"
                 >
                     <SwiperSlide v-for="(img, i) in images" :key="i">
                         <NuxtImg
                           :src="img.src"
                           :alt="img.alt"
-                          class="w-full aspect-[3/4] object-cover rounded-lg shadow-sm hover:shadow-lg transition"
+                          class="w-full aspect-[3/4] object-cover rounded-lg shadow-sm hover:shadow-lg transition cursor-grab active:cursor-grabbing"
                         />
                     </SwiperSlide>
                 </Swiper>
@@ -217,5 +228,26 @@ export default {
         2px 2px 0 #7c3aed,
         4px 4px 0 #f97316,
         6px 6px 0 rgba(0, 0, 0, 0.3);
+}
+
+/* Swiper grab cursor indication */
+:deep(.swiper-grab) {
+    cursor: grab;
+}
+
+:deep(.swiper-grab:active) {
+    cursor: grabbing;
+}
+
+/* Make pagination dots more prominent */
+:deep(.swiper-pagination-bullet) {
+    opacity: 0.5;
+    background: #f97316;
+}
+
+:deep(.swiper-pagination-bullet-active) {
+    opacity: 1;
+    background: #f97316;
+    transform: scale(1.2);
 }
 </style>

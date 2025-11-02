@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Lightning bolt - simplified for better visibility at small sizes -->
+  <path d="M 50 12 L 32 52 L 42 52 L 38 88 L 68 28 L 58 28 L 62 12 Z" 
+        fill="#f97316" 
+        stroke="#7c3aed" 
+        stroke-width="2.5"
+        stroke-linejoin="round"/>
+</svg>
+

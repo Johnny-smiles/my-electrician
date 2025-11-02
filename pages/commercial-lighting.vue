@@ -30,36 +30,43 @@
                     to="/contact"
                     class="inline-block mt-8 px-8 py-3 rounded-md bg-orange-500 text-white font-semibold hover:bg-orange-600 transition"
                 >
-                    Request a Free Estimate
+                    Request Quote
                 </NuxtLink>
             </div>
         </section>
 
         <!-- CONTENT -->
         <section class="max-w-5xl mx-auto px-6 py-16">
-            <h2 class="text-3xl font-semibold mb-6">
-                Bright, Safe &amp; Efficient Lighting
-            </h2>
-            <p class="mb-4 text-lg">
-                From modern office renovations to large‑scale industrial retrofits, our
-                licensed electricians design and install lighting systems that boost
-                productivity, safety, and energy savings.
-            </p>
+            <div class="prose max-w-none">
+                <h2 class="text-2xl font-semibold mb-6">Commercial Lighting Design, Retrofits &amp; Maintenance</h2>
+                <p class="text-lg mb-4">
+                    Brighten your business with efficient, long-lasting <strong>LED lighting</strong> that lowers utility costs and elevates the customer experience.
+                    From retail and offices to warehouses and restaurants, we engineer lighting that's safer, cleaner, and easier to maintain.
+                </p>
 
-            <ul class="list-disc pl-6 space-y-2 text-lg">
-                <li>LED retrofits and fixture upgrades</li>
-                <li>Emergency &amp; exit lighting systems</li>
-                <li>Occupancy‑sensor and motion‑lighting controls</li>
-                <li>Routine maintenance and lighting audits</li>
-            </ul>
+                <h3 class="mt-6 text-xl font-semibold">What We Deliver</h3>
+                <ul class="list-disc pl-6 space-y-2 text-lg">
+                    <li><strong>LED Retrofits:</strong> Replace outdated fixtures to cut energy use by 40–70%.</li>
+                    <li><strong>New Construction &amp; TI:</strong> Photometrics, layout, and controls for code compliance.</li>
+                    <li><strong>Smart Controls:</strong> Sensors, scheduling, and dimming for comfort and savings.</li>
+                    <li><strong>Exterior &amp; Safety:</strong> Parking lot, egress, and emergency lighting solutions.</li>
+                    <li><strong>Maintenance Plans:</strong> Proactive service to prevent outages and downtime.</li>
+                </ul>
 
-            <div class="mt-10">
-                <NuxtLink
-                    to="/contact"
-                    class="btn bg-orange-500 text-white px-6 py-3 rounded-md font-semibold hover:bg-orange-600 transition"
-                >
-                    Request a Quote
-                </NuxtLink>
+                <h3 class="mt-6 text-xl font-semibold">Benefits for Your Facility</h3>
+                <ol class="list-decimal pl-6 space-y-2 text-lg">
+                    <li><strong>Lower Bills:</strong> Energy-efficient LEDs deliver immediate savings and utility rebates.</li>
+                    <li><strong>Better Experience:</strong> Correct CRI and color temperature improve visibility and mood.</li>
+                    <li><strong>Safer Spaces:</strong> Well-lit entries, aisles, and exits reduce risk.</li>
+                </ol>
+
+                <h3 class="mt-6 text-xl font-semibold">Industries We Serve</h3>
+                <p class="text-lg">Retail, office, hospitality, medical, manufacturing, warehouse, multi-family, and more.</p>
+
+                <div class="mt-6 p-4 bg-gray-50 rounded-lg">
+                    <p class="font-semibold">Need a lighting audit?</p>
+                    <p class="text-lg">We'll evaluate your current fixtures, estimate savings, and provide a clear retrofit plan with ROI.</p>
+                </div>
             </div>
         </section>
     </main>
