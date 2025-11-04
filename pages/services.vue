@@ -14,7 +14,13 @@
         <section class="next-step" style="margin-top:2rem; padding-top:1rem; border-top:1px solid #ddd;">
             <p class="text-center text-lg">
                 Need an electrician now?
-                <NuxtLink to="/contact" class="text-brand-orange font-semibold hover:underline">
+                <NuxtLink
+                    to="/contact"
+                    class="text-brand-orange font-semibold hover:underline"
+                    data-analytics-event="cta_click"
+                    data-analytics-label="services_request_quote_footer"
+                    data-analytics-type="form"
+                >
                     Request Quote
                 </NuxtLink>
                 and we’ll get you scheduled.

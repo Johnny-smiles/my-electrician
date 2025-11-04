@@ -29,6 +29,9 @@
                   href="https://www.facebook.com/share/1ArHV6nQsA/?mibextid=wwXIfr"
                   target="_blank"
                   rel="noopener"
+                  data-analytics-event="cta_click"
+                  data-analytics-label="recent_work_facebook"
+                  data-analytics-type="social"
                   class="inline-flex items-center gap-2 mt-8 px-8 py-3 rounded-md bg-orange-500 text-white font-semibold hover:bg-orange-600 transition"
                 >
                   <!-- Facebook icon -->
@@ -112,6 +115,9 @@
             <div class="mt-12 text-center">
                 <NuxtLink
                     to="/contact"
+                    data-analytics-event="cta_click"
+                    data-analytics-label="recent_work_request_quote"
+                    data-analytics-type="form"
                     class="inline-block mt-4 px-6 py-3 bg-orange-500 text-white rounded-md font-medium hover:bg-orange-600 transition">
                     Request&nbsp;Quote
                 </NuxtLink>

@@ -80,10 +80,16 @@
               <!-- CTA buttons (desktop) -->
               <li class="hidden sm:block">
                 <a href="tel:7632489801"
+                   data-analytics-event="cta_click"
+                   data-analytics-label="nav_call_now"
+                   data-analytics-type="phone"
                    class="inline-block bg-orange-500 text-white px-4 py-2 rounded-md mr-3 font-semibold hover:bg-orange-600 transition">
                   Call Now
                 </a>
                 <NuxtLink to="/contact"
+                   data-analytics-event="cta_click"
+                   data-analytics-label="nav_request_quote"
+                   data-analytics-type="form"
                    class="inline-block bg-orange-500 text-white px-4 py-2 rounded-md font-semibold hover:bg-orange-600 transition">
                   Request Quote
                 </NuxtLink>

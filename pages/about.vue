@@ -21,8 +21,17 @@
 
             <p>
                 Whether you’re planning a remodel, upgrading a panel or just need a
-                quick repair, we’re ready to help. <NuxtLink to="/contact" class="text-brand-orange">
-                Request Quote</NuxtLink> today.
+                quick repair, we’re ready to help.
+                <NuxtLink
+                    to="/contact"
+                    class="text-brand-orange"
+                    data-analytics-event="cta_click"
+                    data-analytics-label="about_request_quote_inline"
+                    data-analytics-type="form"
+                >
+                    Request Quote
+                </NuxtLink>
+                today.
             </p>
 
             <!-- Owner's Family Photo (smaller and underneath text) -->
@@ -36,7 +45,13 @@
         <section class="next-step" style="margin-top:2rem; padding-top:1rem; border-top:1px solid #ddd;">
             <p>
                 Need an electrician now?
-                <NuxtLink to="/contact" class="text-brand-orange font-semibold hover:underline">
+                <NuxtLink
+                    to="/contact"
+                    class="text-brand-orange font-semibold hover:underline"
+                    data-analytics-event="cta_click"
+                    data-analytics-label="about_request_quote_footer"
+                    data-analytics-type="form"
+                >
                     Request Quote
                 </NuxtLink>
                 and we’ll get you scheduled.

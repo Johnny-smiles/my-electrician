@@ -24,6 +24,9 @@
                 <!-- Call to Action Button -->
                 <NuxtLink
                     to="/contact"
+                    data-analytics-event="cta_click"
+                    data-analytics-label="ev_charger_request_quote"
+                    data-analytics-type="form"
                     class="inline-block mt-8 px-8 py-3 rounded-md bg-orange-500 text-white font-semibold hover:bg-orange-600 transition"
                 >
                     Request Quote

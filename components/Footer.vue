@@ -33,6 +33,9 @@
                 <h3 class="text-lg font-semibold mb-3">Need Help Fast?</h3>
                 <a
                     href="tel:7632489801"
+                    data-analytics-event="cta_click"
+                    data-analytics-label="footer_call_now"
+                    data-analytics-type="phone"
                     class="inline-block mt-2 px-6 py-3 bg-orange-500 text-white rounded-md font-medium hover:bg-orange-600 transition"
                 >
                     Call&nbsp;Now
