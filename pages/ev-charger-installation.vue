@@ -84,64 +84,70 @@
 </template>
 
 <script setup lang="ts">
+const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://yourelectrician.co' },
+        { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://yourelectrician.co/services' },
+        { '@type': 'ListItem', position: 3, name: 'EV Charger Installation', item: 'https://yourelectrician.co/ev-charger-installation' }
+    ]
+}
+
+const serviceSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'EV Charger Installation',
+    provider: {
+        '@type': 'Electrician',
+        '@id': 'https://yourelectrician.co/#business',
+        name: 'Your Electrician',
+        telephone: '763-248-9801',
+        email: 'hireyourelectrician@gmail.com',
+        address: { '@type': 'PostalAddress', addressLocality: 'Minneapolis', addressRegion: 'MN', postalCode: '55401', addressCountry: 'US' }
+    },
+    areaServed: { '@type': 'City', name: 'Minneapolis', containedInPlace: { '@type': 'State', name: 'Minnesota' } },
+    serviceType: 'Electric Vehicle Charging Installation',
+    description: 'Install and upgrade EV chargers for residential homes and commercial fleets. Code-compliant and efficient charger setup.'
+}
+
+const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+        {
+            '@type': 'Question',
+            name: 'How fast will Level 2 charge?',
+            acceptedAnswer: { '@type': 'Answer', text: 'With a 40–60A circuit, most vehicles add ~25–45 miles of range per hour, depending on the charger and car.' }
+        },
+        {
+            '@type': 'Question',
+            name: 'Can you install EV chargers outdoors?',
+            acceptedAnswer: { '@type': 'Answer', text: 'Absolutely. We use weather-rated equipment and proper GFCI/AFCI protection where required.' }
+        }
+    ]
+}
+
 useHead({
-    title: 'EV Charger Installation | Your Electrician',
+    title: 'EV Charger Installation | Minneapolis MN | Your Electrician',
     meta: [
         {
             name: 'description',
-            content:
-                'Licensed EV charger installers for homes and businesses. Fast installs, smart chargers, and code-compliant service.'
+            content: 'Licensed EV charger installers for homes and businesses in Minneapolis. Fast Level 2 installs, smart chargers, and code-compliant service.'
         }
+    ],
+    link: [
+        { rel: 'canonical', href: 'https://yourelectrician.co/ev-charger-installation' }
+    ],
+    script: [
+        { type: 'application/ld+json', children: JSON.stringify(serviceSchema) },
+        { type: 'application/ld+json', children: JSON.stringify(faqSchema) },
+        { type: 'application/ld+json', children: JSON.stringify(breadcrumbSchema) }
     ]
 })
 </script>
 
-<script lang="ts">
-export default {
-    head() {
-        return {
-            script: [
-                {
-                    type: 'application/ld+json',
-                    children: JSON.stringify({
-                        "@context": "https://schema.org",
-                        "@type": "Service",
-                        "name": "EV Charger Installation",
-                        "provider": {
-                            "@type": "LocalBusiness",
-                            "name": "Your Electrician",
-                            "telephone": "763-248-9801",
-                            "email": "hireyourelectrician@gmail.com",
-                            "address": {
-                                "@type": "PostalAddress",
-                                "addressLocality": "Minneapolis",
-                                "addressRegion": "MN",
-                                "postalCode": "55401",
-                                "addressCountry": "US"
-                            }
-                        },
-                        "areaServed": {
-                            "@type": "Place",
-                            "address": {
-                                "@type": "PostalAddress",
-                                "addressLocality": "Minneapolis",
-                                "addressRegion": "MN"
-                            }
-                        },
-                        "serviceType": "Electric Vehicle Charging Installation",
-                        "description":
-                            "Install and upgrade EV chargers for residential homes and commercial fleets. Code-compliant and efficient charger setup."
-                    })
-                }
-            ]
-        }
-    }
-}
-</script>
-
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
-
 .font-logo {
     font-family: 'Russo One', sans-serif;
 }
@@ -149,8 +155,8 @@ export default {
 .electrician-text {
     color: white;
     text-shadow:
-        2px 2px 0 #7c3aed,       /* base shadow (deep brown-like tone) */
-        4px 4px 0 #f97316,       /* orange-500 offset */
-        6px 6px 0 rgba(0, 0, 0, 0.3); /* dark drop shadow */
+        2px 2px 0 #7c3aed,
+        4px 4px 0 #f97316,
+        6px 6px 0 rgba(0, 0, 0, 0.3);
 }
 </style>

@@ -34,9 +34,39 @@
                 </p>
                 
                 <p>
-                    Serving Minneapolis, St. Paul, and surrounding communities, we bring years of experience and a commitment to safety 
+                    Serving Minneapolis, St. Paul, and surrounding communities, we bring years of experience and a commitment to safety
                     and quality. Contact us today for a free estimate on your next electrical project.
                 </p>
+            </div>
+        </section>
+
+        <!-- Service Areas for local SEO -->
+        <section class="max-w-4xl mx-auto w-full px-6 py-10 border-t border-brand-dark/10">
+            <h2 class="text-2xl font-semibold mb-4 text-center">Proudly Serving the Twin Cities Metro</h2>
+            <p class="text-brand-dark/70 text-center mb-4">
+                We provide residential and commercial electrical services throughout the Minneapolis-St. Paul area, including:
+            </p>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-x-8 gap-y-1 text-brand-dark/60 text-center text-sm">
+                <span>Minneapolis</span>
+                <span>St. Paul</span>
+                <span>Bloomington</span>
+                <span>Plymouth</span>
+                <span>Maple Grove</span>
+                <span>Brooklyn Park</span>
+                <span>Eagan</span>
+                <span>Eden Prairie</span>
+                <span>Burnsville</span>
+                <span>Minnetonka</span>
+                <span>Edina</span>
+                <span>Richfield</span>
+                <span>St. Louis Park</span>
+                <span>Fridley</span>
+                <span>Coon Rapids</span>
+                <span>Woodbury</span>
+                <span>Lakeville</span>
+                <span>Shakopee</span>
+                <span>Champlin</span>
+                <span>Rogers</span>
             </div>
         </section>
 
@@ -55,11 +85,15 @@ import { useHead }       from '#imports'
    -----------------------------------------------------------------*/
 const structuredData = {
     '@context': 'https://schema.org',
-    '@type':    'LocalBusiness',
+    '@type':    'Electrician',
+    '@id':      `${siteConfig.siteUrl}/#business`,
     name:        siteConfig.siteName,
     url:         siteConfig.siteUrl,
     telephone:   siteConfig.phone,
+    email:       siteConfig.email,
     description: siteConfig.description,
+    image:       `${siteConfig.siteUrl}/hero.png`,
+    priceRange:  '$$',
     address: {
         '@type':           'PostalAddress',
         addressLocality:   siteConfig.location.city,
@@ -72,10 +106,30 @@ const structuredData = {
         '@type':    'GeoCoordinates',
         latitude:   siteConfig.location.latitude,
         longitude:  siteConfig.location.longitude
+    },
+    sameAs: [
+        'https://www.facebook.com/share/1ArHV6nQsA/?mibextid=wwXIfr'
+    ],
+    areaServed: [
+        { '@type': 'City', name: 'Minneapolis', containedInPlace: { '@type': 'State', name: 'Minnesota' } },
+        { '@type': 'City', name: 'St. Paul', containedInPlace: { '@type': 'State', name: 'Minnesota' } }
+    ],
+    hasOfferCatalog: {
+        '@type': 'OfferCatalog',
+        name: 'Electrical Services',
+        itemListElement: [
+            { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'New Home Electrical Wiring', url: `${siteConfig.siteUrl}/home-builds` } },
+            { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Home Electrical Remodeling', url: `${siteConfig.siteUrl}/home-remodeling` } },
+            { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Commercial Lighting Services', url: `${siteConfig.siteUrl}/commercial-lighting` } },
+            { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'EV Charger Installation', url: `${siteConfig.siteUrl}/ev-charger-installation` } }
+        ]
     }
 }
 
 useHead({
+    link: [
+        { rel: 'canonical', href: 'https://yourelectrician.co' }
+    ],
     script: [
         {
             type: 'application/ld+json',

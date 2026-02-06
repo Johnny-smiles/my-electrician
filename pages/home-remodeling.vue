@@ -82,65 +82,70 @@
 
 <!-- SEO & meta tags -->
 <script setup lang="ts">
+const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://yourelectrician.co' },
+        { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://yourelectrician.co/services' },
+        { '@type': 'ListItem', position: 3, name: 'Home Remodeling', item: 'https://yourelectrician.co/home-remodeling' }
+    ]
+}
+
+const serviceSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'Home Electrical Remodeling',
+    provider: {
+        '@type': 'Electrician',
+        '@id': 'https://yourelectrician.co/#business',
+        name: 'Your Electrician',
+        telephone: '763-248-9801',
+        email: 'hireyourelectrician@gmail.com',
+        address: { '@type': 'PostalAddress', addressLocality: 'Minneapolis', addressRegion: 'MN', postalCode: '55401', addressCountry: 'US' }
+    },
+    areaServed: { '@type': 'City', name: 'Minneapolis', containedInPlace: { '@type': 'State', name: 'Minnesota' } },
+    serviceType: 'Electrical Remodeling Services',
+    description: 'Upgrade and remodel your home\'s electrical system including rewiring, smart-home integration, and code-compliance corrections.'
+}
+
+const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+        {
+            '@type': 'Question',
+            name: 'Will my panel handle the new load?',
+            acceptedAnswer: { '@type': 'Answer', text: 'We run load calculations and recommend panel or service upgrades only if needed.' }
+        },
+        {
+            '@type': 'Question',
+            name: 'Can you add smart lighting during a remodel?',
+            acceptedAnswer: { '@type': 'Answer', text: 'Yes—dimmers, scenes, and voice/app control that match your fixtures and budget.' }
+        }
+    ]
+}
+
 useHead({
     title: 'Electrical Remodeling Services | Minneapolis MN | Your Electrician',
     meta: [
         {
             name: 'description',
-            content:
-                'Electrical remodeling services for home upgrades, room additions, and smart devices. Licensed and insured electricians serving Minneapolis.'
+            content: 'Electrical remodeling services for home upgrades, room additions, and smart devices. Licensed and insured electricians serving Minneapolis.'
         }
+    ],
+    link: [
+        { rel: 'canonical', href: 'https://yourelectrician.co/home-remodeling' }
+    ],
+    script: [
+        { type: 'application/ld+json', children: JSON.stringify(serviceSchema) },
+        { type: 'application/ld+json', children: JSON.stringify(faqSchema) },
+        { type: 'application/ld+json', children: JSON.stringify(breadcrumbSchema) }
     ]
 })
 </script>
 
-<!-- JSON‑LD Structured Data -->
-<script lang="ts">
-export default {
-    head() {
-        return {
-            script: [
-                {
-                    type: 'application/ld+json',
-                    children: JSON.stringify({
-                        "@context": "https://schema.org",
-                        "@type": "Service",
-                        "name": "Home Electrical Remodeling",
-                        "provider": {
-                            "@type": "LocalBusiness",
-                            "name": "Your Electrician",
-                            "telephone": "763-248-9801",
-                            "email": "hireyourelectrician@gmail.com",
-                            "address": {
-                                "@type": "PostalAddress",
-                                "addressLocality": "Minneapolis",
-                                "addressRegion": "MN",
-                                "postalCode": "55401",
-                                "addressCountry": "US"
-                            }
-                        },
-                        "areaServed": {
-                            "@type": "Place",
-                            "address": {
-                                "@type": "PostalAddress",
-                                "addressLocality": "Minneapolis",
-                                "addressRegion": "MN"
-                            }
-                        },
-                        "serviceType": "Electrical Remodeling Services",
-                        "description":
-                            "Upgrade and remodel your home's electrical system including rewiring, smart‑home integration, and code‑compliance corrections."
-                    })
-                }
-            ]
-        }
-    }
-}
-</script>
-
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
-
 .font-logo {
     font-family: 'Russo One', sans-serif;
 }
@@ -148,8 +153,8 @@ export default {
 .electrician-text {
     color: white;
     text-shadow:
-        2px 2px 0 #7c3aed,       /* base shadow (deep brown-like tone) */
-        4px 4px 0 #f97316,       /* orange-500 offset */
-        6px 6px 0 rgba(0, 0, 0, 0.3); /* dark drop shadow */
+        2px 2px 0 #7c3aed,
+        4px 4px 0 #f97316,
+        6px 6px 0 rgba(0, 0, 0, 0.3);
 }
 </style>

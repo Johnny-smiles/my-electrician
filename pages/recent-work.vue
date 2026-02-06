@@ -159,17 +159,7 @@ function onSwiper(swiper: any) {
 /* ------------------------------------------------------------------ */
 /*  Page‑level SEO                                                    */
 /* ------------------------------------------------------------------ */
-useHead({
-    title: 'Recent Electrical Projects | Your Electrician',
-    meta: [
-        {
-            name: 'description',
-            content:
-                'Gallery of recent home wiring, commercial lighting, and EV‑charger installations completed by Your Electrician in Minneapolis, MN.'
-        },
-        { property: 'og:image', content: '/images/recent-work-hero.jpg' }
-    ]
-})
+/* breadcrumb + useHead called after images array below */
 
 /* ------------------------------------------------------------------ */
 /*  Images (exact filenames you provided)                             */
@@ -188,42 +178,51 @@ const images = [
     // { src: '/recent/IMG_1651.JPEG', alt: 'Garage work‑bench outlets' },
     { src: '/recent/IMG_1666.JPG',  alt: 'Meter main combo installation' },
     { src: '/recent/IMG_1667.JPG',  alt: 'Service disconnect & meter' },
-    { src: '/recent/IMG_1790.JPEG', alt: 'Shop‑vac dedicated circuit' }
+    { src: '/recent/IMG_1790.JPEG', alt: 'Shop-vac dedicated circuit' }
 ]
-</script>
 
-<script lang="ts">
-/* ------------------------------------------------------------------ */
-/*  Structured‑data (Image gallery)                                   */
-/* ------------------------------------------------------------------ */
-export default {
-    head () {
-        return {
-            script: [
-                {
-                    type: 'application/ld+json',
-                    children: JSON.stringify({
-                        '@context': 'https://schema.org',
-                        '@type'   : 'CollectionPage',
-                        name      : 'Recent Work – Your Electrician',
-                        description: 'A gallery of recent residential and commercial electrical projects.',
-                        image     : images.map(img => img.src),
-                        mainEntity: images.map(img => ({
-                            '@type'    : 'ImageObject',
-                            contentUrl : img.src,
-                            caption    : img.alt
-                        }))
-                    })
-                }
-            ]
-        }
-    }
+const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://yourelectrician.co' },
+        { '@type': 'ListItem', position: 2, name: 'Recent Work', item: 'https://yourelectrician.co/recent-work' }
+    ]
 }
+
+const collectionSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: 'Recent Work - Your Electrician',
+    description: 'A gallery of recent residential and commercial electrical projects.',
+    image: images.map(img => img.src),
+    mainEntity: images.map(img => ({
+        '@type': 'ImageObject',
+        contentUrl: img.src,
+        caption: img.alt
+    }))
+}
+
+useHead({
+    title: 'Recent Electrical Projects | Minneapolis MN | Your Electrician',
+    meta: [
+        {
+            name: 'description',
+            content: 'Gallery of recent home wiring, commercial lighting, and EV-charger installations completed by Your Electrician in Minneapolis, MN.'
+        },
+        { property: 'og:image', content: '/recentProjectsHero.png' }
+    ],
+    link: [
+        { rel: 'canonical', href: 'https://yourelectrician.co/recent-work' }
+    ],
+    script: [
+        { type: 'application/ld+json', children: JSON.stringify(collectionSchema) },
+        { type: 'application/ld+json', children: JSON.stringify(breadcrumbSchema) }
+    ]
+})
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
-
 .font-logo {
     font-family: 'Russo One', sans-serif;
 }

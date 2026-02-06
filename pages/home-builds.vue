@@ -21,9 +21,8 @@
                     New Home Electrical Wiring
                 </h1>
                 <p class="text-xl max-w-xl">
-                    Safe, code‑compliant wiring for new builds and custom homes.
+                    Safe, code-compliant wiring for new builds and custom homes.
                 </p>
-                <!-- Call to Action Button -->
                 <NuxtLink
                     to="/contact"
                     data-analytics-event="cta_click"
@@ -70,67 +69,53 @@
     </main>
 </template>
 
-<!-- SEO & meta tags -->
 <script setup lang="ts">
+const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://yourelectrician.co' },
+        { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://yourelectrician.co/services' },
+        { '@type': 'ListItem', position: 3, name: 'New Home Wiring', item: 'https://yourelectrician.co/home-builds' }
+    ]
+}
+
+const serviceSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'Home Electrical Wiring',
+    provider: {
+        '@type': 'Electrician',
+        '@id': 'https://yourelectrician.co/#business',
+        name: 'Your Electrician',
+        telephone: '763-248-9801',
+        email: 'hireyourelectrician@gmail.com',
+        address: { '@type': 'PostalAddress', addressLocality: 'Minneapolis', addressRegion: 'MN', postalCode: '55401', addressCountry: 'US' }
+    },
+    areaServed: { '@type': 'City', name: 'Minneapolis', containedInPlace: { '@type': 'State', name: 'Minnesota' } },
+    serviceType: 'New Home Electrical Wiring',
+    description: 'Complete electrical wiring for new home construction including panel installation, lighting design, and smart-home readiness.'
+}
+
 useHead({
-    title: 'Home Electrical Wiring | New Builds | Your Electrician',
+    title: 'New Home Electrical Wiring | Minneapolis MN | Your Electrician',
     meta: [
         {
             name: 'description',
-            content:
-                'Professional home electrical wiring for new construction. Rough‑in, panel upgrades, lighting design, and smart‑home readiness in Minneapolis, MN.'
+            content: 'Professional home electrical wiring for new construction in Minneapolis. Rough-in, panel upgrades, lighting design, and smart-home readiness.'
         }
+    ],
+    link: [
+        { rel: 'canonical', href: 'https://yourelectrician.co/home-builds' }
+    ],
+    script: [
+        { type: 'application/ld+json', children: JSON.stringify(serviceSchema) },
+        { type: 'application/ld+json', children: JSON.stringify(breadcrumbSchema) }
     ]
 })
 </script>
 
-<!-- JSON‑LD Structured Data -->
-<script lang="ts">
-export default {
-    head() {
-        return {
-            script: [
-                {
-                    type: 'application/ld+json',
-                    children: JSON.stringify({
-                        "@context": "https://schema.org",
-                        "@type": "Service",
-                        "name": "Home Electrical Wiring",
-                        "provider": {
-                            "@type": "LocalBusiness",
-                            "name": "Your Electrician",
-                            "telephone": "763-248-9801",
-                            "email": "hireyourelectrician@gmail.com",
-                            "address": {
-                                "@type": "PostalAddress",
-                                "addressLocality": "Minneapolis",
-                                "addressRegion": "MN",
-                                "postalCode": "55401",
-                                "addressCountry": "US"
-                            }
-                        },
-                        "areaServed": {
-                            "@type": "Place",
-                            "address": {
-                                "@type": "PostalAddress",
-                                "addressLocality": "Minneapolis",
-                                "addressRegion": "MN"
-                            }
-                        },
-                        "serviceType": "New Home Electrical Wiring",
-                        "description":
-                            "Complete electrical wiring for new home construction including panel installation, lighting design, and smart‑home readiness."
-                    })
-                }
-            ]
-        }
-    }
-}
-</script>
-
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
-
 .font-logo {
     font-family: 'Russo One', sans-serif;
 }
@@ -138,8 +123,8 @@ export default {
 .electrician-text {
     color: white;
     text-shadow:
-        2px 2px 0 #7c3aed,       /* base shadow (deep brown-like tone) */
-        4px 4px 0 #f97316,       /* orange-500 offset */
-        6px 6px 0 rgba(0, 0, 0, 0.3); /* dark drop shadow */
+        2px 2px 0 #7c3aed,
+        4px 4px 0 #f97316,
+        6px 6px 0 rgba(0, 0, 0, 0.3);
 }
 </style>
