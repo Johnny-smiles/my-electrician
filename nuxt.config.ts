@@ -1,9 +1,14 @@
 // nuxt.config.ts
+import { serviceAreas } from './data/areas'
+
 export default defineNuxtConfig({
   // Enable SSR + static output
   ssr: true,
   nitro: {
-    preset: 'static'
+    preset: 'static',
+    prerender: {
+      routes: serviceAreas.map(a => `/areas/${a.slug}`)
+    }
   },
 
   // <head> config for “Your Electrician”

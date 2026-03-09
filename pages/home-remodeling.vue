@@ -41,6 +41,7 @@
             <div class="prose max-w-none">
                 <h2 class="text-2xl font-semibold mb-6">Electrical for Home Remodeling &amp; Additions</h2>
                 <p class="text-lg mb-4">
+                    <strong>Your Electrician</strong> provides home electrical remodeling services in Minneapolis–St. Paul, MN.
                     Remodeling your kitchen, bath, basement, or whole home? Our licensed team handles <strong>circuits, lighting, outlets, and panel upgrades</strong>
                     so your new space is beautiful, functional, and fully up to code.
                 </p>

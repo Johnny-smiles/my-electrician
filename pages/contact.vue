@@ -3,6 +3,11 @@
         <section class="max-w-4xl mx-auto px-6 py-20">
             <h1 class="text-4xl md:text-5xl font-bold mb-4">Request a Free Electrical Quote</h1>
 
+            <p class="text-lg text-brand-dark/80 mb-4">
+                <strong>Your Electrician</strong> provides licensed electrical services in Minneapolis–St. Paul, MN.
+                Contact us for a free, no-obligation estimate on your residential or commercial project.
+            </p>
+
             <p class="text-lg text-brand-dark/80 mb-6">
                 Fill out the form below and we'll respond within one business day with a detailed, no-obligation estimate
                 for your project. Whether it's a panel upgrade, kitchen remodel, EV charger, or commercial lighting retrofit,

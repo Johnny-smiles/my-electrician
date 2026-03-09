@@ -39,6 +39,7 @@
                 <h2 class="text-2xl font-semibold mb-6">EV Charger Installation in Your Home or Business</h2>
 
                 <p class="text-lg mb-4">
+                    <strong>Your Electrician</strong> provides EV charger installation in Minneapolis–St. Paul, MN.
                     Power up with safe, code-compliant <strong>EV charger installation</strong> from licensed electricians.
                     We design and install Level 2 charging stations that fit your panel capacity, parking layout,
                     and daily driving needs—so you can wake up to a full battery every day.

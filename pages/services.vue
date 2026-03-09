@@ -55,28 +55,8 @@
             <p class="text-lg text-brand-dark/80 mb-4">
                 We provide electrical services throughout the Minneapolis-St. Paul metro area and surrounding communities, including:
             </p>
-            <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-1 text-brand-dark/70">
-                <span>Minneapolis</span>
-                <span>St. Paul</span>
-                <span>Bloomington</span>
-                <span>Plymouth</span>
-                <span>Maple Grove</span>
-                <span>Brooklyn Park</span>
-                <span>Eagan</span>
-                <span>Eden Prairie</span>
-                <span>Burnsville</span>
-                <span>Minnetonka</span>
-                <span>Edina</span>
-                <span>Richfield</span>
-                <span>St. Louis Park</span>
-                <span>Fridley</span>
-                <span>Coon Rapids</span>
-                <span>Woodbury</span>
-                <span>Lakeville</span>
-                <span>Shakopee</span>
-                <span>Champlin</span>
-                <span>Rogers</span>
-                <span>Elk River</span>
+            <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-1">
+                <NuxtLink v-for="area in serviceAreas" :key="area.slug" :to="`/areas/${area.slug}`" class="text-brand-orange hover:underline">{{ area.name }}</NuxtLink>
             </div>
             <p class="text-brand-dark/60 mt-4 text-sm">
                 Don't see your city? <NuxtLink to="/contact" class="text-brand-orange hover:underline">Contact us</NuxtLink>—we likely cover your area.
@@ -105,6 +85,7 @@
 <script setup lang="ts">
 import ServicesSection from '~/components/ServicesSection.vue'
 import FaqSection      from '~/components/FaqSection.vue'
+import { serviceAreas } from '~/data/areas'
 
 const breadcrumbSchema = {
     '@context': 'https://schema.org',
@@ -121,29 +102,29 @@ const faqSchema = {
     mainEntity: [
         {
             '@type': 'Question',
-            name: 'Are you licensed and insured?',
-            acceptedAnswer: { '@type': 'Answer', text: 'Yes—Your Electrician is fully licensed, bonded and insured for residential and commercial work.' }
+            name: 'Do you provide electrical services in Minneapolis and St. Paul, MN?',
+            acceptedAnswer: { '@type': 'Answer', text: 'Yes — Your Electrician is fully licensed, bonded, and insured for residential and commercial electrical work throughout Minneapolis, St. Paul, and the surrounding Twin Cities metro.' }
         },
         {
             '@type': 'Question',
-            name: 'Do you offer 24/7 emergency service?',
-            acceptedAnswer: { '@type': 'Answer', text: 'Absolutely. Call us anytime for urgent electrical issues and we\'ll dispatch a technician.' }
+            name: 'What types of electrical work do you do in the Minneapolis metro?',
+            acceptedAnswer: { '@type': 'Answer', text: 'We handle new home wiring, panel upgrades, whole-house rewiring, EV charger installation, commercial lighting retrofits, kitchen and basement remodeling, smart home integration, and 24/7 emergency electrical repair.' }
         },
         {
             '@type': 'Question',
-            name: 'How soon can I book an estimate?',
-            acceptedAnswer: { '@type': 'Answer', text: 'Most estimates are scheduled within 1-2 business days. Use the "Request Quote" button or call us.' }
+            name: 'How quickly can you schedule an electrician in Minneapolis or St. Paul?',
+            acceptedAnswer: { '@type': 'Answer', text: 'Most estimates are scheduled within 1–2 business days. Use the "Request Quote" button or call 763-248-9801.' }
         },
         {
             '@type': 'Question',
-            name: 'What areas do you serve?',
-            acceptedAnswer: { '@type': 'Answer', text: 'We cover the greater Minneapolis-St. Paul metro area including neighboring suburbs like Bloomington, Plymouth, Maple Grove, Eagan, Eden Prairie, and more. Contact us to confirm we service your ZIP code.' }
+            name: 'Which Twin Cities suburbs do you serve?',
+            acceptedAnswer: { '@type': 'Answer', text: 'We serve Minneapolis, St. Paul, and surrounding communities including Bloomington, Plymouth, Maple Grove, Eagan, Eden Prairie, Burnsville, Minnetonka, Edina, Woodbury, and more. Contact us to confirm your area.' }
         }
     ]
 }
 
 useHead({
-    title: 'Electrical Services | Residential & Commercial | Your Electrician',
+    title: 'Electrical Services in Minneapolis–St. Paul, MN | Your Electrician',
     meta: [
         {
             name: 'description',

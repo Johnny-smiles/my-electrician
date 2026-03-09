@@ -40,6 +40,7 @@
             <div class="prose max-w-none">
                 <h2 class="text-2xl font-semibold mb-6">Electrical for New Home Builds</h2>
                 <p class="text-lg mb-4">
+                    <strong>Your Electrician</strong> provides new home electrical wiring in Minneapolis–St. Paul, MN.
                     Building a new home? We provide turnkey <strong>residential electrical</strong>—from service and rough-in to final trim—delivering
                     reliable power distribution, thoughtful lighting, and future-ready wiring for EVs, solar, and smart tech.
                 </p>

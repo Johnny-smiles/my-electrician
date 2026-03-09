@@ -41,6 +41,7 @@
             <div class="prose max-w-none">
                 <h2 class="text-2xl font-semibold mb-6">Commercial Lighting Design, Retrofits &amp; Maintenance</h2>
                 <p class="text-lg mb-4">
+                    <strong>Your Electrician</strong> provides commercial lighting services in Minneapolis–St. Paul, MN.
                     Brighten your business with efficient, long-lasting <strong>LED lighting</strong> that lowers utility costs and elevates the customer experience.
                     From retail and offices to warehouses and restaurants, we engineer lighting that's safer, cleaner, and easier to maintain.
                 </p>
