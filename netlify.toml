@@ -2,19 +2,138 @@
   command = "npm run generate"
   publish = ".output/public"
 
-[functions]
-  directory = "netlify/functions"
+# ─────────────────────────────────────────────────────────────
+# Bot / exploit-probe blocking
+# Netlify evaluates redirects top-down. Rules below fire BEFORE the SPA
+# catch-all, so common WordPress / phpMyAdmin / env-file / shell-probe
+# paths never reach the SPA fallback, never serve HTML + Plausible
+# script, never get counted as pageviews, never consume build bandwidth.
+# Returning 410 Gone (not 404) is the firmer signal to re-probing bots.
+# force = true ensures these win over any asset that might otherwise
+# match.
+
+# WordPress probes
+[[redirects]]
+  from   = "/wp-admin/*"
+  to     = "/404.html"
+  status = 410
+  force  = true
+[[redirects]]
+  from   = "/wp-login.php"
+  to     = "/404.html"
+  status = 410
+  force  = true
+[[redirects]]
+  from   = "/wp-content/*"
+  to     = "/404.html"
+  status = 410
+  force  = true
+[[redirects]]
+  from   = "/wp-includes/*"
+  to     = "/404.html"
+  status = 410
+  force  = true
+[[redirects]]
+  from   = "/wp-config.php"
+  to     = "/404.html"
+  status = 410
+  force  = true
+[[redirects]]
+  from   = "/xmlrpc.php"
+  to     = "/404.html"
+  status = 410
+  force  = true
+[[redirects]]
+  from   = "/wordpress/*"
+  to     = "/404.html"
+  status = 410
+  force  = true
+
+# phpMyAdmin / admin-console probes
+[[redirects]]
+  from   = "/phpmyadmin/*"
+  to     = "/404.html"
+  status = 410
+  force  = true
+[[redirects]]
+  from   = "/pma/*"
+  to     = "/404.html"
+  status = 410
+  force  = true
+[[redirects]]
+  from   = "/myadmin/*"
+  to     = "/404.html"
+  status = 410
+  force  = true
+[[redirects]]
+  from   = "/administrator/*"
+  to     = "/404.html"
+  status = 410
+  force  = true
+[[redirects]]
+  from   = "/admin.php"
+  to     = "/404.html"
+  status = 410
+  force  = true
+
+# Env / dotfile / secrets probes
+[[redirects]]
+  from   = "/.env"
+  to     = "/404.html"
+  status = 410
+  force  = true
+[[redirects]]
+  from   = "/.env.*"
+  to     = "/404.html"
+  status = 410
+  force  = true
+[[redirects]]
+  from   = "/.git/*"
+  to     = "/404.html"
+  status = 410
+  force  = true
+[[redirects]]
+  from   = "/.aws/*"
+  to     = "/404.html"
+  status = 410
+  force  = true
+[[redirects]]
+  from   = "/.ssh/*"
+  to     = "/404.html"
+  status = 410
+  force  = true
+[[redirects]]
+  from   = "/.htaccess"
+  to     = "/404.html"
+  status = 410
+  force  = true
+
+# Shell / RCE probes
+[[redirects]]
+  from   = "/shell.php"
+  to     = "/404.html"
+  status = 410
+  force  = true
+[[redirects]]
+  from   = "/cmd.php"
+  to     = "/404.html"
+  status = 410
+  force  = true
+[[redirects]]
+  from   = "/eval.php"
+  to     = "/404.html"
+  status = 410
+  force  = true
+
+# CGI probes
+[[redirects]]
+  from   = "/cgi-bin/*"
+  to     = "/404.html"
+  status = 410
+  force  = true
 
 # ─────────────────────────────────────────────────────────────
-# Canonical domain: redirect Netlify subdomain → yourelectrician.co
-[[redirects]]
-  from = "/*"
-  to   = "https://yourelectrician.co/:splat"
-  status = 301
-  force = true
-  conditions = { Host = ["your-electrician.netlify.app"] }
-
-# Client-side routing fallback (Nuxt static)
+# SPA fallback (Nuxt static). Keep LAST — everything above fires first.
 [[redirects]]
   from = "/*"
   to   = "/200.html"
@@ -23,50 +142,46 @@
 # ─────────────────────────────────────────────────────────────
 # Caching
 
-# Nuxt build assets (hashed)
+# Nuxt build assets (cache-busted filenames)
 [[headers]]
   for = "/_nuxt/*"
   [headers.values]
   Cache-Control = "public, max-age=31536000, immutable"
 
-# (If you use Nuxt Image / IPX; safe to include)
+# Nuxt Image / IPX generated variants
 [[headers]]
   for = "/_ipx/*"
   [headers.values]
   Cache-Control = "public, max-age=31536000, immutable"
 
-# Root-level images & public images
-[[headers]]  # PNG
-  for = "/*.png"
+# Public image folders (put your site images under /images/*)
+[[headers]]
+  for = "/images/*"
   [headers.values]
   Cache-Control = "public, max-age=31536000, immutable"
 
-[[headers]]  # JPG
-  for = "/*.jpg"
+# Root icons / social images
+[[headers]]
+  for = "/favicon.svg"
   [headers.values]
   Cache-Control = "public, max-age=31536000, immutable"
 
-[[headers]]  # JPEG
-  for = "/*.jpeg"
+[[headers]]
+  for = "/favicon.png"
   [headers.values]
   Cache-Control = "public, max-age=31536000, immutable"
 
-[[headers]]  # WEBP
-  for = "/*.webp"
+[[headers]]
+  for = "/og-image.svg"
   [headers.values]
   Cache-Control = "public, max-age=31536000, immutable"
 
-[[headers]]  # AVIF
-  for = "/*.avif"
+[[headers]]
+  for = "/og-image.jpg"
   [headers.values]
   Cache-Control = "public, max-age=31536000, immutable"
 
-[[headers]]  # SVG
-  for = "/*.svg"
-  [headers.values]
-  Cache-Control = "public, max-age=31536000, immutable"
-
-# Gallery images (/recent/*)
+# Recent projects gallery (if you serve images from /recent/*)
 [[headers]]
   for = "/recent/*"
   [headers.values]
@@ -79,7 +194,8 @@
   Cache-Control = "public, max-age=0, must-revalidate"
 
 # ─────────────────────────────────────────────────────────────
-# Security headers (recommended)
+# Security headers
+
 [[headers]]
   for = "/*"
   [headers.values]
@@ -89,11 +205,10 @@
   Permissions-Policy = "camera=(), microphone=(), geolocation=()"
   Strict-Transport-Security = "max-age=63072000; includeSubDomains; preload"
 
-# ─────────────────────────────────────────────────────────────
-# (Optional) Make Deploy Previews noindex
-# Uncomment to keep previews out of Google
-# [[headers]]
-#   for = "/*"
-#   [headers.values]
-#   X-Robots-Tag = "noindex, nofollow"
-#   # Apply this rule only to deploy-previews via Netlify UI “Context rules”
+# Canonical redirect for Netlify subdomain → custom domain
+# Uncomment and set the values once the client's custom domain is live.
+# [[redirects]]
+#   from = "/*"
+#   to   = "https://REPLACE_YOUR_DOMAIN/:splat"
+#   status = 301
+#   conditions = { Host = ["your-site.netlify.app"] }
