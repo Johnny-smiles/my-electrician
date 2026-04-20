@@ -1,1 +1,28 @@
-/*    /index.html   200
+# Bot / exploit-probe blocking (must come BEFORE the SPA catch-all).
+# Trailing ! forces the 410 to win over static files and subsequent rules.
+# Keep in sync with netlify.toml bot-protection section.
+/wp-admin/*          /404.html   410!
+/wp-login.php        /404.html   410!
+/wp-content/*        /404.html   410!
+/wp-includes/*       /404.html   410!
+/wp-config.php       /404.html   410!
+/xmlrpc.php          /404.html   410!
+/wordpress/*         /404.html   410!
+/phpmyadmin/*        /404.html   410!
+/pma/*               /404.html   410!
+/myadmin/*           /404.html   410!
+/administrator/*     /404.html   410!
+/admin.php           /404.html   410!
+/.env                /404.html   410!
+/.env.*              /404.html   410!
+/.git/*              /404.html   410!
+/.aws/*              /404.html   410!
+/.ssh/*              /404.html   410!
+/.htaccess           /404.html   410!
+/shell.php           /404.html   410!
+/cmd.php             /404.html   410!
+/eval.php            /404.html   410!
+/cgi-bin/*           /404.html   410!
+
+# SPA catch-all (preserved from existing config)
+/* /index.html 200
