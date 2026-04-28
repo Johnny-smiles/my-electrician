@@ -64,7 +64,7 @@
                             type="text"
                             name="name"
                             required
-                            class="w-full border border-brand-brown/30 rounded-md px-4 py-2 focus:outline-brand-orange"
+                            class="w-full border-2 border-gray-400 rounded-md px-4 py-2 focus:outline-brand-orange"
                         />
                     </div>
                     <div>
@@ -73,17 +73,18 @@
                             type="email"
                             name="email"
                             required
-                            class="w-full border border-brand-brown/30 rounded-md px-4 py-2 focus:outline-brand-orange"
+                            class="w-full border-2 border-gray-400 rounded-md px-4 py-2 focus:outline-brand-orange"
                         />
                     </div>
                 </div>
 
                 <div>
-                    <label class="block font-medium mb-1">Phone</label>
+                    <label class="block font-medium mb-1">Phone <span class="text-red-500">*</span></label>
                     <input
                         type="tel"
                         name="phone"
-                        class="w-full border border-brand-brown/30 rounded-md px-4 py-2 focus:outline-brand-orange"
+                        required
+                        class="w-full border-2 border-gray-400 rounded-md px-4 py-2 focus:outline-brand-orange"
                     />
                 </div>
 
@@ -92,7 +93,7 @@
                     <textarea
                         name="message"
                         rows="5"
-                        class="w-full border border-brand-brown/30 rounded-md px-4 py-2 focus:outline-brand-orange"
+                        class="w-full border-2 border-gray-400 rounded-md px-4 py-2 focus:outline-brand-orange"
                     ></textarea>
                 </div>
 
