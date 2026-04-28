@@ -68,7 +68,7 @@
                         />
                     </div>
                     <div>
-                        <label class="block font-medium mb-1">Email</label>
+                        <label class="block font-medium mb-1">Email <span class="text-red-500">*</span></label>
                         <input
                             type="email"
                             name="email"
