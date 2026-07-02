@@ -27,7 +27,7 @@
                 
                 <p>
                     Serving Minneapolis, St. Paul, and surrounding communities, we bring years of experience and a commitment to safety
-                    and quality. Contact us today for a free estimate on your next electrical project.
+                    and quality. Contact us today for a free estimate from an electrician near you.
                 </p>
             </div>
         </section>
@@ -97,7 +97,17 @@ const structuredData = {
     }
 }
 
+const pageTitle = 'Electrician in Minneapolis & St. Paul, MN | Your Electrician'
+const pageDescription = 'Licensed, bonded, and insured electrician for homes and businesses across the Minneapolis-St. Paul metro. New home wiring, remodeling, lighting, EV chargers.'
+
 useHead({
+    title: pageTitle,
+    meta: [
+        { name: 'description', content: pageDescription },
+        { property: 'og:title', content: pageTitle },
+        { property: 'og:description', content: pageDescription },
+        { property: 'og:url', content: 'https://yourelectrician.co' }
+    ],
     link: [
         { rel: 'canonical', href: 'https://yourelectrician.co' }
     ],

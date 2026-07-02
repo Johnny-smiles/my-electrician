@@ -5,7 +5,8 @@
 
             <p class="text-lg text-brand-dark/80 mb-4">
                 <strong>Your Electrician</strong> provides licensed electrical services in Minneapolis–St. Paul, MN.
-                Contact us for a free, no-obligation estimate on your residential or commercial project.
+                Contact us for a free, no-obligation estimate on your residential or commercial project —
+                trusted electricians near you in the Twin Cities.
             </p>
 
             <p class="text-lg text-brand-dark/80 mb-6">
@@ -120,13 +121,16 @@ const breadcrumbSchema = {
     ]
 }
 
+const pageTitle = 'Request a Quote | Your Electrician | Minneapolis MN'
+const pageDescription = 'Request a free electrical quote from Your Electrician. Residential and commercial projects in the Minneapolis-St. Paul metro. Fast response, transparent pricing.'
+
 useHead({
-    title: 'Request a Quote | Your Electrician | Minneapolis MN',
+    title: pageTitle,
     meta: [
-        {
-            name: 'description',
-            content: 'Request a free electrical quote from Your Electrician. Residential and commercial projects in the Minneapolis-St. Paul metro. Fast response, transparent pricing.'
-        }
+        { name: 'description', content: pageDescription },
+        { property: 'og:title', content: pageTitle },
+        { property: 'og:description', content: pageDescription },
+        { property: 'og:url', content: 'https://yourelectrician.co/contact' }
     ],
     link: [
         { rel: 'canonical', href: 'https://yourelectrician.co/contact' }

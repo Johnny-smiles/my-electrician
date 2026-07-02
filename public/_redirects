@@ -24,5 +24,6 @@
 /eval.php            /404.html   410!
 /cgi-bin/*           /404.html   410!
 
-# SPA catch-all (preserved from existing config)
-/* /index.html 200
+# Fully prerendered static site — serve the real 404 page for unknown URLs.
+# (Non-forced rule: existing prerendered files always win.)
+/* /404.html 404

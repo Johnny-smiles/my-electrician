@@ -42,7 +42,7 @@
                 <h2 class="text-2xl font-semibold mb-6">Electrical for Home Remodeling &amp; Additions</h2>
                 <p class="text-lg mb-4">
                     <strong>Your Electrician</strong> provides home electrical remodeling services in Minneapolis–St. Paul, MN.
-                    Remodeling your kitchen, bath, basement, or whole home? Our licensed team handles <strong>circuits, lighting, outlets, and panel upgrades</strong>
+                    Remodeling your kitchen, bath, basement, or whole home? Our licensed electricians near you handle <strong>circuits, lighting, outlets, and panel upgrades</strong>
                     so your new space is beautiful, functional, and fully up to code.
                 </p>
 
@@ -127,13 +127,16 @@ const faqSchema = {
     ]
 }
 
+const pageTitle = 'Electrical Remodeling | Minneapolis MN | Your Electrician'
+const pageDescription = 'Electrical remodeling services for home upgrades, room additions, and smart devices. Licensed and insured electricians serving Minneapolis.'
+
 useHead({
-    title: 'Electrical Remodeling Services | Minneapolis MN | Your Electrician',
+    title: pageTitle,
     meta: [
-        {
-            name: 'description',
-            content: 'Electrical remodeling services for home upgrades, room additions, and smart devices. Licensed and insured electricians serving Minneapolis.'
-        }
+        { name: 'description', content: pageDescription },
+        { property: 'og:title', content: pageTitle },
+        { property: 'og:description', content: pageDescription },
+        { property: 'og:url', content: 'https://yourelectrician.co/home-remodeling' }
     ],
     link: [
         { rel: 'canonical', href: 'https://yourelectrician.co/home-remodeling' }

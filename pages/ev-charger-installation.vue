@@ -40,7 +40,7 @@
 
                 <p class="text-lg mb-4">
                     <strong>Your Electrician</strong> provides EV charger installation in Minneapolis–St. Paul, MN.
-                    Power up with safe, code-compliant <strong>EV charger installation</strong> from licensed electricians.
+                    Power up with safe, code-compliant <strong>EV charger installation</strong> from licensed electricians near you.
                     We design and install Level 2 charging stations that fit your panel capacity, parking layout,
                     and daily driving needs—so you can wake up to a full battery every day.
                 </p>
@@ -129,13 +129,16 @@ const faqSchema = {
     ]
 }
 
+const pageTitle = 'EV Charger Installation | Minneapolis MN | Your Electrician'
+const pageDescription = 'Licensed EV charger installers for homes and businesses in Minneapolis. Fast Level 2 installs, smart chargers, and code-compliant service.'
+
 useHead({
-    title: 'EV Charger Installation | Minneapolis MN | Your Electrician',
+    title: pageTitle,
     meta: [
-        {
-            name: 'description',
-            content: 'Licensed EV charger installers for homes and businesses in Minneapolis. Fast Level 2 installs, smart chargers, and code-compliant service.'
-        }
+        { name: 'description', content: pageDescription },
+        { property: 'og:title', content: pageTitle },
+        { property: 'og:description', content: pageDescription },
+        { property: 'og:url', content: 'https://yourelectrician.co/ev-charger-installation' }
     ],
     link: [
         { rel: 'canonical', href: 'https://yourelectrician.co/ev-charger-installation' }

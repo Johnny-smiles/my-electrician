@@ -10,7 +10,7 @@
                 and home remodeling electrical work throughout {{ area.name }} and the greater Minneapolis–St. Paul metro area.
             </p>
             <p class="text-lg text-brand-dark/80 mb-6">
-                We're licensed, bonded, and insured — serving homeowners and businesses with transparent pricing
+                We're licensed, bonded, and insured — serving homeowners and businesses near you with transparent pricing
                 and code-compliant work on every job.
             </p>
             <div class="flex justify-center">
@@ -157,13 +157,16 @@ const breadcrumbSchema = {
     ]
 }
 
+const pageTitle = `Electrician in ${area.name}, MN | Your Electrician`
+const pageDescription = `Licensed electrician serving ${area.name}, MN. Residential wiring, panel upgrades, EV charger installation, and commercial electrical services. Call 763-248-9801.`
+
 useHead({
-    title: `Electrician in ${area.name}, MN | Your Electrician`,
+    title: pageTitle,
     meta: [
-        {
-            name: 'description',
-            content: `Licensed electrician serving ${area.name}, MN. Residential wiring, panel upgrades, EV charger installation, and commercial electrical services. Call 763-248-9801.`
-        }
+        { name: 'description', content: pageDescription },
+        { property: 'og:title', content: pageTitle },
+        { property: 'og:description', content: pageDescription },
+        { property: 'og:url', content: `https://yourelectrician.co/areas/${area.slug}` }
     ],
     link: [
         { rel: 'canonical', href: `https://yourelectrician.co/areas/${area.slug}` }

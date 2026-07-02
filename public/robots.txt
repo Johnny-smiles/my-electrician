@@ -28,3 +28,4 @@ User-agent: Applebot-Extended
 Allow: /
 
 Sitemap: https://yourelectrician.co/sitemap.xml
+LLMs-Txt: https://yourelectrician.co/llms.txt

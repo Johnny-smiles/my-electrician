@@ -21,7 +21,7 @@
                 </h1>
                 <p class="text-xl max-w-xl">
                     A glimpse of the wiring, lighting&nbsp;&amp; EV‑charging projects we’ve
-                    completed around Minneapolis–St&nbsp;Paul.
+                    completed for customers near you across Minneapolis–St&nbsp;Paul.
                 </p>
 
                 <!-- CTA → Facebook -->
@@ -203,14 +203,17 @@ const collectionSchema = {
     }))
 }
 
+const pageTitle = 'Recent Electrical Projects | Minneapolis | Your Electrician'
+const pageDescription = 'Gallery of recent home wiring, commercial lighting, and EV-charger installations completed by Your Electrician in Minneapolis, MN.'
+
 useHead({
-    title: 'Recent Electrical Projects | Minneapolis MN | Your Electrician',
+    title: pageTitle,
     meta: [
-        {
-            name: 'description',
-            content: 'Gallery of recent home wiring, commercial lighting, and EV-charger installations completed by Your Electrician in Minneapolis, MN.'
-        },
-        { property: 'og:image', content: '/recentProjectsHero.png' }
+        { name: 'description', content: pageDescription },
+        { property: 'og:title', content: pageTitle },
+        { property: 'og:description', content: pageDescription },
+        { property: 'og:url', content: 'https://yourelectrician.co/recent-work' },
+        { property: 'og:image', content: 'https://yourelectrician.co/recentProjectsHero.png' }
     ],
     link: [
         { rel: 'canonical', href: 'https://yourelectrician.co/recent-work' }

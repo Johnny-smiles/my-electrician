@@ -61,6 +61,24 @@
                     <li><strong>Final Inspection:</strong> Code-compliant sign-off and homeowner walkthrough.</li>
                 </ol>
 
+                <h3 class="mt-6 text-xl font-semibold">New Home Wiring FAQs</h3>
+                <details class="border rounded p-4">
+                    <summary class="font-medium cursor-pointer">Do you handle electrical wiring for new home builds in Minneapolis?</summary>
+                    <p class="mt-2 text-lg">Yes—Your Electrician provides turnkey electrical for new builds and custom homes across the Minneapolis–St. Paul metro. We handle everything from the service, main panel, and subpanels through rough-in and final trim.</p>
+                </details>
+                <details class="border rounded p-4 mt-3">
+                    <summary class="font-medium cursor-pointer">Do you work with builders and general contractors in the Twin Cities?</summary>
+                    <p class="mt-2 text-lg">Yes. We review plans and provide load calcs and panel schedules up front, then hit rough-in and trim milestones to keep your closing on track.</p>
+                </details>
+                <details class="border rounded p-4 mt-3">
+                    <summary class="font-medium cursor-pointer">Can an electrician near me prewire a new build for EV charging and solar?</summary>
+                    <p class="mt-2 text-lg">Yes. Our new-build packages include low-voltage and future-proofing options—data, speakers, cameras, EV prewire, and solar readiness.</p>
+                </details>
+                <details class="border rounded p-4 mt-3">
+                    <summary class="font-medium cursor-pointer">Is your new-construction wiring code-compliant?</summary>
+                    <p class="mt-2 text-lg">Yes. We deliver code-correct outlet spacing, dedicated circuits, and protection, and every project ends with a code-compliant inspection sign-off and homeowner walkthrough.</p>
+                </details>
+
                 <div class="mt-6 p-4 bg-gray-50 rounded-lg">
                     <p class="font-semibold">Building soon?</p>
                     <p class="text-lg">Share your prints and scope—get a competitive bid and a partner who delivers on time.</p>
@@ -98,19 +116,50 @@ const serviceSchema = {
     description: 'Complete electrical wiring for new home construction including panel installation, lighting design, and smart-home readiness.'
 }
 
-useHead({
-    title: 'New Home Electrical Wiring | Minneapolis MN | Your Electrician',
-    meta: [
+const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
         {
-            name: 'description',
-            content: 'Professional home electrical wiring for new construction in Minneapolis. Rough-in, panel upgrades, lighting design, and smart-home readiness.'
+            '@type': 'Question',
+            name: 'Do you handle electrical wiring for new home builds in Minneapolis?',
+            acceptedAnswer: { '@type': 'Answer', text: 'Yes—Your Electrician provides turnkey electrical for new builds and custom homes across the Minneapolis–St. Paul metro. We handle everything from the service, main panel, and subpanels through rough-in and final trim.' }
+        },
+        {
+            '@type': 'Question',
+            name: 'Do you work with builders and general contractors in the Twin Cities?',
+            acceptedAnswer: { '@type': 'Answer', text: 'Yes. We review plans and provide load calcs and panel schedules up front, then hit rough-in and trim milestones to keep your closing on track.' }
+        },
+        {
+            '@type': 'Question',
+            name: 'Can an electrician near me prewire a new build for EV charging and solar?',
+            acceptedAnswer: { '@type': 'Answer', text: 'Yes. Our new-build packages include low-voltage and future-proofing options—data, speakers, cameras, EV prewire, and solar readiness.' }
+        },
+        {
+            '@type': 'Question',
+            name: 'Is your new-construction wiring code-compliant?',
+            acceptedAnswer: { '@type': 'Answer', text: 'Yes. We deliver code-correct outlet spacing, dedicated circuits, and protection, and every project ends with a code-compliant inspection sign-off and homeowner walkthrough.' }
         }
+    ]
+}
+
+const pageTitle = 'New Home Electrical Wiring | Minneapolis | Your Electrician'
+const pageDescription = 'Professional home electrical wiring for new construction in Minneapolis. Rough-in, panel upgrades, lighting design, and smart-home readiness.'
+
+useHead({
+    title: pageTitle,
+    meta: [
+        { name: 'description', content: pageDescription },
+        { property: 'og:title', content: pageTitle },
+        { property: 'og:description', content: pageDescription },
+        { property: 'og:url', content: 'https://yourelectrician.co/home-builds' }
     ],
     link: [
         { rel: 'canonical', href: 'https://yourelectrician.co/home-builds' }
     ],
     script: [
         { type: 'application/ld+json', children: JSON.stringify(serviceSchema) },
+        { type: 'application/ld+json', children: JSON.stringify(faqSchema) },
         { type: 'application/ld+json', children: JSON.stringify(breadcrumbSchema) }
     ]
 })

@@ -60,7 +60,7 @@
 
         <section class="next-step" style="margin-top:2rem; padding-top:1rem; border-top:1px solid #ddd;">
             <p>
-                Need an electrician now?
+                Need an electrician near you?
                 <NuxtLink
                     to="/contact"
                     class="text-brand-orange font-semibold hover:underline"
@@ -86,13 +86,16 @@ const breadcrumbSchema = {
     ]
 }
 
+const pageTitle = 'About Us | Your Electrician | Minneapolis MN'
+const pageDescription = 'Your Electrician is a family-owned electrical company serving Minneapolis-St. Paul. We handle residential and commercial projects from new builds to repairs.'
+
 useHead({
-    title: 'About Us | Your Electrician | Minneapolis MN',
+    title: pageTitle,
     meta: [
-        {
-            name: 'description',
-            content: 'Your Electrician is a family-owned electrical company serving Minneapolis-St. Paul. We handle residential and commercial projects from new builds to repairs.'
-        }
+        { name: 'description', content: pageDescription },
+        { property: 'og:title', content: pageTitle },
+        { property: 'og:description', content: pageDescription },
+        { property: 'og:url', content: 'https://yourelectrician.co/about' }
     ],
     link: [
         { rel: 'canonical', href: 'https://yourelectrician.co/about' }

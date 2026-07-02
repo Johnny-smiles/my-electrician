@@ -53,7 +53,7 @@
         <section class="max-w-4xl mx-auto w-full px-6 py-10">
             <h2 class="text-2xl font-semibold mb-4">Areas We Serve</h2>
             <p class="text-lg text-brand-dark/80 mb-4">
-                We provide electrical services throughout the Minneapolis-St. Paul metro area and surrounding communities, including:
+                We provide electrical services near you throughout the Minneapolis-St. Paul metro area and surrounding communities, including:
             </p>
             <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-1">
                 <NuxtLink v-for="area in serviceAreas" :key="area.slug" :to="`/areas/${area.slug}`" class="text-brand-orange hover:underline">{{ area.name }}</NuxtLink>
@@ -123,13 +123,16 @@ const faqSchema = {
     ]
 }
 
+const pageTitle = 'Minneapolis–St. Paul Electrical Services | Your Electrician'
+const pageDescription = 'Full-service electrical contractor in Minneapolis MN. Home wiring, remodeling, commercial lighting, EV charger installation, panel upgrades, and more. Licensed & insured.'
+
 useHead({
-    title: 'Electrical Services in Minneapolis–St. Paul, MN | Your Electrician',
+    title: pageTitle,
     meta: [
-        {
-            name: 'description',
-            content: 'Full-service electrical contractor in Minneapolis MN. Home wiring, remodeling, commercial lighting, EV charger installation, panel upgrades, and more. Licensed & insured.'
-        }
+        { name: 'description', content: pageDescription },
+        { property: 'og:title', content: pageTitle },
+        { property: 'og:description', content: pageDescription },
+        { property: 'og:url', content: 'https://yourelectrician.co/services' }
     ],
     link: [
         { rel: 'canonical', href: 'https://yourelectrician.co/services' }

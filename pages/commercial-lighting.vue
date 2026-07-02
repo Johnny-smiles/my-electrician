@@ -65,6 +65,24 @@
                 <h3 class="mt-6 text-xl font-semibold">Industries We Serve</h3>
                 <p class="text-lg">Retail, office, hospitality, medical, manufacturing, warehouse, multi-family, and more.</p>
 
+                <h3 class="mt-6 text-xl font-semibold">Commercial Lighting FAQs</h3>
+                <details class="border rounded p-4">
+                    <summary class="font-medium cursor-pointer">Do you install commercial LED lighting in Minneapolis and St. Paul?</summary>
+                    <p class="mt-2 text-lg">Yes—Your Electrician provides commercial lighting design, retrofits, and maintenance across the Minneapolis–St. Paul metro. We work in retail, offices, hospitality, medical, warehouses, and multi-family buildings.</p>
+                </details>
+                <details class="border rounded p-4 mt-3">
+                    <summary class="font-medium cursor-pointer">How much energy can an LED retrofit save my business?</summary>
+                    <p class="mt-2 text-lg">Replacing outdated fixtures with LEDs typically cuts lighting energy use by 40-70%. Efficient LEDs deliver immediate savings and can qualify for utility rebates.</p>
+                </details>
+                <details class="border rounded p-4 mt-3">
+                    <summary class="font-medium cursor-pointer">Do you handle exit, emergency, and parking lot lighting?</summary>
+                    <p class="mt-2 text-lg">Yes. We install parking lot, egress, and emergency lighting, plus occupancy sensors and smart controls, so entries, aisles, and exits stay well-lit and code-compliant.</p>
+                </details>
+                <details class="border rounded p-4 mt-3">
+                    <summary class="font-medium cursor-pointer">Can I get a commercial lighting audit near me in the Twin Cities?</summary>
+                    <p class="mt-2 text-lg">Yes. We'll evaluate your current fixtures, estimate savings, and provide a clear retrofit plan with ROI for facilities throughout the Minneapolis–St. Paul metro.</p>
+                </details>
+
                 <div class="mt-6 p-4 bg-gray-50 rounded-lg">
                     <p class="font-semibold">Need a lighting audit?</p>
                     <p class="text-lg">We'll evaluate your current fixtures, estimate savings, and provide a clear retrofit plan with ROI.</p>
@@ -102,19 +120,50 @@ const serviceSchema = {
     description: 'Energy-efficient commercial lighting solutions, including LED upgrades, emergency lighting, and occupancy sensor integration.'
 }
 
-useHead({
-    title: 'Commercial Lighting Services | Minneapolis MN | Your Electrician',
-    meta: [
+const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
         {
-            name: 'description',
-            content: 'Energy-efficient commercial lighting installations including LED retrofits, emergency lighting, and occupancy sensors for offices and industrial spaces.'
+            '@type': 'Question',
+            name: 'Do you install commercial LED lighting in Minneapolis and St. Paul?',
+            acceptedAnswer: { '@type': 'Answer', text: 'Yes—Your Electrician provides commercial lighting design, retrofits, and maintenance across the Minneapolis–St. Paul metro. We work in retail, offices, hospitality, medical, warehouses, and multi-family buildings.' }
+        },
+        {
+            '@type': 'Question',
+            name: 'How much energy can an LED retrofit save my business?',
+            acceptedAnswer: { '@type': 'Answer', text: 'Replacing outdated fixtures with LEDs typically cuts lighting energy use by 40-70%. Efficient LEDs deliver immediate savings and can qualify for utility rebates.' }
+        },
+        {
+            '@type': 'Question',
+            name: 'Do you handle exit, emergency, and parking lot lighting?',
+            acceptedAnswer: { '@type': 'Answer', text: 'Yes. We install parking lot, egress, and emergency lighting, plus occupancy sensors and smart controls, so entries, aisles, and exits stay well-lit and code-compliant.' }
+        },
+        {
+            '@type': 'Question',
+            name: 'Can I get a commercial lighting audit near me in the Twin Cities?',
+            acceptedAnswer: { '@type': 'Answer', text: 'Yes. We\'ll evaluate your current fixtures, estimate savings, and provide a clear retrofit plan with ROI for facilities throughout the Minneapolis–St. Paul metro.' }
         }
+    ]
+}
+
+const pageTitle = 'Commercial Lighting | Minneapolis MN | Your Electrician'
+const pageDescription = 'Energy-efficient commercial lighting installations including LED retrofits, emergency lighting, and occupancy sensors for offices and industrial spaces.'
+
+useHead({
+    title: pageTitle,
+    meta: [
+        { name: 'description', content: pageDescription },
+        { property: 'og:title', content: pageTitle },
+        { property: 'og:description', content: pageDescription },
+        { property: 'og:url', content: 'https://yourelectrician.co/commercial-lighting' }
     ],
     link: [
         { rel: 'canonical', href: 'https://yourelectrician.co/commercial-lighting' }
     ],
     script: [
         { type: 'application/ld+json', children: JSON.stringify(serviceSchema) },
+        { type: 'application/ld+json', children: JSON.stringify(faqSchema) },
         { type: 'application/ld+json', children: JSON.stringify(breadcrumbSchema) }
     ]
 })

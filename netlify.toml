@@ -133,11 +133,13 @@
   force  = true
 
 # ─────────────────────────────────────────────────────────────
-# SPA fallback (Nuxt static). Keep LAST — everything above fires first.
+# 404 fallback (fully prerendered Nuxt static site). Keep LAST —
+# everything above fires first. Non-forced: prerendered files win.
+# Keep in sync with public/_redirects (which Netlify processes first).
 [[redirects]]
   from = "/*"
-  to   = "/200.html"
-  status = 200
+  to   = "/404.html"
+  status = 404
 
 # ─────────────────────────────────────────────────────────────
 # Caching

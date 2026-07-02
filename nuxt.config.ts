@@ -7,7 +7,7 @@ export default defineNuxtConfig({
   nitro: {
     preset: 'static',
     prerender: {
-      routes: serviceAreas.map(a => `/areas/${a.slug}`)
+      routes: ['/areas', ...serviceAreas.map(a => `/areas/${a.slug}`)]
     }
   },
 
@@ -15,7 +15,7 @@ export default defineNuxtConfig({
   app: {
     head: {
       htmlAttrs: { lang: 'en' },
-      title: 'Your Electrician — Residential & Commercial Electrical Services in Minneapolis–St Paul, MN',
+      title: 'Your Electrician | Electrical Services in Minneapolis, MN',
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -26,7 +26,7 @@ export default defineNuxtConfig({
         { name: 'robots', content: 'index, follow' },
 
         /* Open Graph */
-        { property: 'og:title',       content: 'Your Electrician — Residential & Commercial Electrical Services in Minneapolis–St Paul, MN' },
+        { property: 'og:title',       content: 'Your Electrician | Electrical Services in Minneapolis, MN' },
         { property: 'og:description', content: 'Your Electrician provides licensed, bonded and insured electrical services for homes and businesses across the Minneapolis–St Paul metro area.' },
         { property: 'og:image',       content: 'https://yourelectrician.co/social-preview.png' },
         { property: 'og:url',         content: 'https://yourelectrician.co' },
@@ -34,7 +34,7 @@ export default defineNuxtConfig({
 
         /* Twitter */
         { name: 'twitter:card',        content: 'summary_large_image' },
-        { name: 'twitter:title',       content: 'Your Electrician — Residential & Commercial Electrical Services in Minneapolis–St Paul, MN' },
+        { name: 'twitter:title',       content: 'Your Electrician | Electrical Services in Minneapolis, MN' },
         { name: 'twitter:description', content: 'Your Electrician provides licensed, bonded and insured electrical services for homes and businesses across the Minneapolis–St Paul metro area.' },
         { name: 'twitter:image',       content: 'https://yourelectrician.co/social-preview.png' }
       ],
