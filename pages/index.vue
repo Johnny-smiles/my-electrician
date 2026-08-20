@@ -62,7 +62,7 @@ const structuredData = {
     '@type':    'Electrician',
     '@id':      `${siteConfig.siteUrl}/#business`,
     name:        siteConfig.siteName,
-    url:         siteConfig.siteUrl,
+    url:         siteUrl(),
     telephone:   siteConfig.phone,
     email:       siteConfig.email,
     description: siteConfig.description,
@@ -89,10 +89,10 @@ const structuredData = {
         '@type': 'OfferCatalog',
         name: 'Electrical Services',
         itemListElement: [
-            { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'New Home Electrical Wiring', url: `${siteConfig.siteUrl}/home-builds` } },
-            { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Home Electrical Remodeling', url: `${siteConfig.siteUrl}/home-remodeling` } },
-            { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Commercial Lighting Services', url: `${siteConfig.siteUrl}/commercial-lighting` } },
-            { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'EV Charger Installation', url: `${siteConfig.siteUrl}/ev-charger-installation` } }
+            { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'New Home Electrical Wiring', url: siteUrl('/home-builds') } },
+            { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Home Electrical Remodeling', url: siteUrl('/home-remodeling') } },
+            { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Commercial Lighting Services', url: siteUrl('/commercial-lighting') } },
+            { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'EV Charger Installation', url: siteUrl('/ev-charger-installation') } }
         ]
     }
 }
@@ -106,10 +106,10 @@ useHead({
         { name: 'description', content: pageDescription },
         { property: 'og:title', content: pageTitle },
         { property: 'og:description', content: pageDescription },
-        { property: 'og:url', content: 'https://yourelectrician.co' }
+        { property: 'og:url', content: siteUrl() }
     ],
     link: [
-        { rel: 'canonical', href: 'https://yourelectrician.co' }
+        { rel: 'canonical', href: siteUrl() }
     ],
     script: [
         {

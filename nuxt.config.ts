@@ -29,7 +29,7 @@ export default defineNuxtConfig({
         { property: 'og:title',       content: 'Your Electrician | Electrical Services in Minneapolis, MN' },
         { property: 'og:description', content: 'Your Electrician provides licensed, bonded and insured electrical services for homes and businesses across the Minneapolis–St Paul metro area.' },
         { property: 'og:image',       content: 'https://yourelectrician.co/social-preview.png' },
-        { property: 'og:url',         content: 'https://yourelectrician.co' },
+        { property: 'og:url',         content: 'https://yourelectrician.co/' },
         { property: 'og:type',        content: 'website' },
 
         /* Twitter */
@@ -90,8 +90,9 @@ export default defineNuxtConfig({
 
   site: {
     url:  'https://yourelectrician.co',
-    name: 'your-electrician'
-    // Add more options here as needed (e.g., exclude, routes, etc.)
+    name: 'your-electrician',
+    // Netlify serves pages at trailing-slash URLs; sitemap entries must match.
+    trailingSlash: true
   },
 
   // Compatibility date

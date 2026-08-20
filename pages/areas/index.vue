@@ -58,8 +58,8 @@ const breadcrumbSchema = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://yourelectrician.co' },
-        { '@type': 'ListItem', position: 2, name: 'Service Areas', item: 'https://yourelectrician.co/areas' }
+        { '@type': 'ListItem', position: 1, name: 'Home', item: siteUrl() },
+        { '@type': 'ListItem', position: 2, name: 'Service Areas', item: siteUrl('/areas') }
     ]
 }
 
@@ -72,10 +72,10 @@ useHead({
         { name: 'description', content: pageDescription },
         { property: 'og:title', content: pageTitle },
         { property: 'og:description', content: pageDescription },
-        { property: 'og:url', content: 'https://yourelectrician.co/areas' }
+        { property: 'og:url', content: siteUrl('/areas') }
     ],
     link: [
-        { rel: 'canonical', href: 'https://yourelectrician.co/areas' }
+        { rel: 'canonical', href: siteUrl('/areas') }
     ],
     script: [
         { type: 'application/ld+json', children: JSON.stringify(breadcrumbSchema) }

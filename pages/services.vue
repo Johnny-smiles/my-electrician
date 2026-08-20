@@ -91,8 +91,8 @@ const breadcrumbSchema = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://yourelectrician.co' },
-        { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://yourelectrician.co/services' }
+        { '@type': 'ListItem', position: 1, name: 'Home', item: siteUrl() },
+        { '@type': 'ListItem', position: 2, name: 'Services', item: siteUrl('/services') }
     ]
 }
 
@@ -132,10 +132,10 @@ useHead({
         { name: 'description', content: pageDescription },
         { property: 'og:title', content: pageTitle },
         { property: 'og:description', content: pageDescription },
-        { property: 'og:url', content: 'https://yourelectrician.co/services' }
+        { property: 'og:url', content: siteUrl('/services') }
     ],
     link: [
-        { rel: 'canonical', href: 'https://yourelectrician.co/services' }
+        { rel: 'canonical', href: siteUrl('/services') }
     ],
     script: [
         { type: 'application/ld+json', children: JSON.stringify(faqSchema) },

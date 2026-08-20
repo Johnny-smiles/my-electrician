@@ -107,9 +107,9 @@ if (!area) {
 const structuredData = {
     '@context': 'https://schema.org',
     '@type': 'Electrician',
-    '@id': 'https://yourelectrician.co/#business',
+    '@id': `${siteUrl()}#business`,
     name: 'Your Electrician',
-    url: 'https://yourelectrician.co',
+    url: siteUrl(),
     telephone: '763-248-9801',
     email: 'hireyourelectrician@gmail.com',
     description: `Your Electrician provides licensed electrical services in ${area.name}, MN and throughout the Minneapolis–St. Paul metro area.`,
@@ -151,9 +151,9 @@ const breadcrumbSchema = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://yourelectrician.co' },
-        { '@type': 'ListItem', position: 2, name: 'Service Areas', item: 'https://yourelectrician.co/areas' },
-        { '@type': 'ListItem', position: 3, name: area.name, item: `https://yourelectrician.co/areas/${area.slug}` }
+        { '@type': 'ListItem', position: 1, name: 'Home', item: siteUrl() },
+        { '@type': 'ListItem', position: 2, name: 'Service Areas', item: siteUrl('/areas') },
+        { '@type': 'ListItem', position: 3, name: area.name, item: siteUrl(`/areas/${area.slug}`) }
     ]
 }
 
@@ -166,10 +166,10 @@ useHead({
         { name: 'description', content: pageDescription },
         { property: 'og:title', content: pageTitle },
         { property: 'og:description', content: pageDescription },
-        { property: 'og:url', content: `https://yourelectrician.co/areas/${area.slug}` }
+        { property: 'og:url', content: siteUrl(`/areas/${area.slug}`) }
     ],
     link: [
-        { rel: 'canonical', href: `https://yourelectrician.co/areas/${area.slug}` }
+        { rel: 'canonical', href: siteUrl(`/areas/${area.slug}`) }
     ],
     script: [
         { type: 'application/ld+json', children: JSON.stringify(structuredData) },
