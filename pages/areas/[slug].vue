@@ -4,11 +4,7 @@
         <!-- Intro -->
         <section class="max-w-4xl mx-auto w-full px-6 pt-16 pb-4">
             <h1 class="text-4xl md:text-5xl font-bold mb-6 text-center">Electrician in {{ area.name }}, MN</h1>
-            <p class="text-lg text-brand-dark/80 mb-4">
-                <strong>Your Electrician</strong> provides licensed electrical services in {{ area.name }}, MN.
-                Our team handles residential wiring, panel upgrades, EV charger installation, commercial lighting,
-                and home remodeling electrical work throughout {{ area.name }} and the greater Minneapolis–St. Paul metro area.
-            </p>
+            <p class="text-lg text-brand-dark/80 mb-4">{{ area.intro }}</p>
             <p class="text-lg text-brand-dark/80 mb-6">
                 We're licensed, bonded, and insured — serving homeowners and businesses near you with transparent pricing
                 and code-compliant work on every job.
@@ -49,10 +45,21 @@
             </div>
         </section>
 
+        <!-- Local work -->
+        <section class="max-w-4xl mx-auto w-full px-6 py-10 border-t border-brand-dark/10">
+            <h2 class="text-2xl font-semibold mb-4">Electrical Work in {{ area.name }} Homes</h2>
+            <p class="text-lg text-brand-dark/80 mb-4">{{ area.housingNote }}</p>
+            <p class="text-lg text-brand-dark/80">We serve {{ area.localAreas.join(', ') }} and the surrounding area.</p>
+        </section>
+
         <!-- FAQ -->
         <section class="max-w-4xl mx-auto w-full px-6 py-10 border-t border-brand-dark/10">
             <h2 class="text-2xl font-semibold mb-6">Electrical FAQ — {{ area.name }}, MN</h2>
             <div class="space-y-6 text-lg text-brand-dark/80">
+                <div>
+                    <p class="font-semibold">{{ area.cityFaq.question }}</p>
+                    <p class="mt-1">{{ area.cityFaq.answer }}</p>
+                </div>
                 <div>
                     <p class="font-semibold">What areas near {{ area.name }} do you serve?</p>
                     <p class="mt-1">We serve {{ area.name }} and all surrounding Minneapolis–St. Paul suburbs — including Minneapolis, St. Paul, Bloomington, Plymouth, Maple Grove, Eagan, Eden Prairie, and more. <NuxtLink to="/contact" class="text-brand-orange hover:underline">Contact us</NuxtLink> to confirm we cover your address.</p>
@@ -126,6 +133,11 @@ const faqSchema = {
     mainEntity: [
         {
             '@type': 'Question',
+            name: area.cityFaq.question,
+            acceptedAnswer: { '@type': 'Answer', text: area.cityFaq.answer }
+        },
+        {
+            '@type': 'Question',
             name: `What areas near ${area.name} do you serve?`,
             acceptedAnswer: { '@type': 'Answer', text: `We serve ${area.name} and all surrounding Minneapolis–St. Paul suburbs including Minneapolis, St. Paul, Bloomington, Plymouth, Maple Grove, Eagan, Eden Prairie, and more.` }
         },
@@ -158,7 +170,7 @@ const breadcrumbSchema = {
 }
 
 const pageTitle = `Electrician in ${area.name}, MN | Your Electrician`
-const pageDescription = `Licensed electrician serving ${area.name}, MN. Residential wiring, panel upgrades, EV charger installation, and commercial electrical services. Call 763-248-9801.`
+const pageDescription = area.metaDescription
 
 useHead({
     title: pageTitle,
