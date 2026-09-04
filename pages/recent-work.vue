@@ -2,15 +2,18 @@
     <main>
         <!-- HERO -------------------------------------------------------- -->
         <section class="relative h-[40vh] md:h-[50vh] bg-black">
+            <!-- Above-the-fold hero: eager + high priority, never lazy.
+                 width/height are the file's real pixel size (1536x1024). -->
             <NuxtImg
                 src="/recentProjectsHero.png"
                 alt="Collage of recent electrical projects"
-                width="1800"
-                height="900"
-                sizes="(max-width: 1024px) 100vw, 1200px"
+                width="1536"
+                height="1024"
+                sizes="xs:100vw sm:100vw md:100vw lg:1200px"
+                format="webp"
                 preload
+                loading="eager"
                 fetchpriority="high"
-                placeholder
                 class="absolute inset-0 w-full h-full object-cover opacity-70"
             />
 
@@ -102,9 +105,18 @@
                     @swiper="onSwiper"
                 >
                     <SwiperSlide v-for="(img, i) in images" :key="i">
+                        <!-- 600x800 matches the aspect-[3/4] card; without these
+                             the originals (0.7-3.3 MB each) were served full size. -->
                         <NuxtImg
                           :src="img.src"
                           :alt="img.alt"
+                          width="600"
+                          height="800"
+                          sizes="xs:100vw sm:50vw lg:33vw"
+                          format="webp"
+                          quality="75"
+                          fit="cover"
+                          loading="lazy"
                           class="w-full aspect-[3/4] object-cover rounded-lg shadow-sm hover:shadow-lg transition cursor-grab active:cursor-grabbing"
                         />
                     </SwiperSlide>
@@ -114,7 +126,7 @@
             <!-- Second CTA -->
             <div class="mt-12 text-center">
                 <NuxtLink
-                    to="/contact"
+                    to="/contact/"
                     data-analytics-event="cta_click"
                     data-analytics-label="recent_work_request_quote"
                     data-analytics-type="form"
@@ -165,20 +177,20 @@ function onSwiper(swiper: any) {
 /*  Images (exact filenames you provided)                             */
 /* ------------------------------------------------------------------ */
 const images = [
-    { src: '/recent/IMG_0025.JPG',  alt: 'Service panel on exterior wall' },
-    { src: '/recent/IMG_0047.JPEG', alt: 'Outdoor meter & conduit upgrade' },
-    { src: '/recent/IMG_0050.JPEG', alt: 'Breaker panel interior wiring' },
-    { src: '/recent/IMG_0301.JPG',  alt: 'Finished basement lighting' },
-    { src: '/recent/IMG_0304.JPG',  alt: 'Basement conduit runs' },
-    { src: '/recent/IMG_1217.JPG',  alt: 'EV charger receptacle install' },
-    { src: '/recent/IMG_1594.JPEG', alt: 'New sub‑panel installation' },
-    { src: '/recent/IMG_1596.JPEG', alt: 'Exterior GFCI outlet' },
-    { src: '/recent/IMG_1625.JPEG', alt: 'Bathroom exhaust + lighting' },
-    { src: '/recent/IMG_1640.JPEG', alt: 'Water heater circuit upgrade' },
-    // { src: '/recent/IMG_1651.JPEG', alt: 'Garage work‑bench outlets' },
-    { src: '/recent/IMG_1666.JPG',  alt: 'Meter main combo installation' },
-    { src: '/recent/IMG_1667.JPG',  alt: 'Service disconnect & meter' },
-    { src: '/recent/IMG_1790.JPEG', alt: 'Shop-vac dedicated circuit' }
+    { src: '/recent/IMG_0025.jpg',  alt: 'Service panel on exterior wall' },
+    { src: '/recent/IMG_0047.jpeg', alt: 'Outdoor meter & conduit upgrade' },
+    { src: '/recent/IMG_0050.jpeg', alt: 'Breaker panel interior wiring' },
+    { src: '/recent/IMG_0301.jpg',  alt: 'Finished basement lighting' },
+    { src: '/recent/IMG_0304.jpg',  alt: 'Basement conduit runs' },
+    { src: '/recent/IMG_1217.jpg',  alt: 'EV charger receptacle install' },
+    { src: '/recent/IMG_1594.jpeg', alt: 'New sub‑panel installation' },
+    { src: '/recent/IMG_1596.jpeg', alt: 'Exterior GFCI outlet' },
+    { src: '/recent/IMG_1625.jpeg', alt: 'Bathroom exhaust + lighting' },
+    { src: '/recent/IMG_1640.jpeg', alt: 'Water heater circuit upgrade' },
+    // { src: '/recent/IMG_1651.jpeg', alt: 'Garage work‑bench outlets' },
+    { src: '/recent/IMG_1666.jpg',  alt: 'Meter main combo installation' },
+    { src: '/recent/IMG_1667.jpg',  alt: 'Service disconnect & meter' },
+    { src: '/recent/IMG_1790.jpeg', alt: 'Shop-vac dedicated circuit' }
 ]
 
 const breadcrumbSchema = {
@@ -190,15 +202,20 @@ const breadcrumbSchema = {
     ]
 }
 
+/* Schema URLs must be absolute — a bare /recent/IMG_0025.jpg is not resolvable
+   by consumers that read the JSON-LD outside the page context. */
 const collectionSchema = {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
     name: 'Recent Work - Your Electrician',
     description: 'A gallery of recent residential and commercial electrical projects.',
-    image: images.map(img => img.src),
+    url: siteUrl('/recent-work'),
+    about: businessRef(),
+    image: images.map(img => siteAsset(img.src)),
     mainEntity: images.map(img => ({
         '@type': 'ImageObject',
-        contentUrl: img.src,
+        contentUrl: siteAsset(img.src),
+        url: siteAsset(img.src),
         caption: img.alt
     }))
 }
@@ -208,13 +225,12 @@ const pageDescription = 'Gallery of recent home wiring, commercial lighting, and
 
 useHead({
     title: pageTitle,
-    meta: [
-        { name: 'description', content: pageDescription },
-        { property: 'og:title', content: pageTitle },
-        { property: 'og:description', content: pageDescription },
-        { property: 'og:url', content: siteUrl('/recent-work') },
-        { property: 'og:image', content: 'https://yourelectrician.co/recentProjectsHero.png' }
-    ],
+    meta: socialMeta({
+        title: pageTitle,
+        description: pageDescription,
+        url: siteUrl('/recent-work'),
+        image: siteAsset('/recentProjectsHero.png')
+    }),
     link: [
         { rel: 'canonical', href: siteUrl('/recent-work') }
     ],
