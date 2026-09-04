@@ -5,7 +5,7 @@
   "scripts": {
     "build": "nuxt build",
     "watch": "nuxt dev",
-    "generate": "nuxt generate",
+    "generate": "nuxt generate && node scripts/verify-build.mjs",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
   },
