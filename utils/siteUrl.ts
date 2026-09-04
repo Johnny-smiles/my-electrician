@@ -11,3 +11,13 @@ export function siteUrl(path: string = '/'): string {
     const trimmed: string = path.replace(/^\/+/, '').replace(/\/+$/, '')
     return trimmed ? `${base}/${trimmed}/` : `${base}/`
 }
+
+/**
+ * Absolute URL for a file in /public (images, PDFs, ...).
+ * Unlike siteUrl() this never appends a trailing slash — a file URL with one
+ * is a different, non-existent resource.
+ */
+export function siteAsset(path: string): string {
+    const base: string = siteConfig.siteUrl.replace(/\/+$/, '')
+    return `${base}/${path.replace(/^\/+/, '')}`
+}
