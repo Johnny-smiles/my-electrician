@@ -18,14 +18,14 @@
             <div class="space-y-4 text-lg text-brand-dark/80 mb-8">
                 <p>
                     Not sure what to include? Browse our
-                    <NuxtLink to="/services" class="text-brand-orange font-semibold hover:underline">
+                    <NuxtLink to="/services/" class="text-brand-orange font-semibold hover:underline">
                         full list of electrical services
                     </NuxtLink>
                     to get ideas and note the upgrades you need.
                 </p>
                 <p>
                     Want to know who will show up at your door?
-                    <NuxtLink to="/about" class="text-brand-orange font-semibold hover:underline">
+                    <NuxtLink to="/about/" class="text-brand-orange font-semibold hover:underline">
                         Learn about our local team
                     </NuxtLink>
                     before you submit the form.
@@ -113,16 +113,11 @@ const breadcrumbSchema = {
 }
 
 const pageTitle = 'Request a Quote | Your Electrician | Minneapolis MN'
-const pageDescription = 'Request a free electrical quote from Your Electrician. Residential and commercial projects in the Minneapolis-St. Paul metro. Fast response, transparent pricing.'
+const pageDescription = 'Request a free quote from Your Electrician, licensed electricians in Minneapolis, MN. Residential and commercial projects, fast and clearly priced.'
 
 useHead({
     title: pageTitle,
-    meta: [
-        { name: 'description', content: pageDescription },
-        { property: 'og:title', content: pageTitle },
-        { property: 'og:description', content: pageDescription },
-        { property: 'og:url', content: siteUrl('/contact') }
-    ],
+    meta: socialMeta({ title: pageTitle, description: pageDescription, url: siteUrl('/contact') }),
     link: [
         { rel: 'canonical', href: siteUrl('/contact') }
     ],

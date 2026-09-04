@@ -1,16 +1,18 @@
 <template>
     <main>
         <section class="relative h-[50vh] bg-black">
-            <!-- Uncomment and use your image if desired -->
+            <!-- Above-the-fold hero: eager + high priority, never lazy.
+                 width/height are the file's real pixel size (1536x1024). -->
             <NuxtImg
                 src="/EVCharger.png"
                 alt="EV charger install"
-                width="1800"
-                height="900"
-                sizes="(max-width: 1024px) 100vw, 1200px"
+                width="1536"
+                height="1024"
+                sizes="xs:100vw sm:100vw md:100vw lg:1200px"
+                format="webp"
                 preload
+                loading="eager"
                 fetchpriority="high"
-                placeholder
                 class="absolute inset-0 w-full h-full object-cover opacity-70"
             />
 
@@ -23,7 +25,7 @@
                 </p>
                 <!-- Call to Action Button -->
                 <NuxtLink
-                    to="/contact"
+                    to="/contact/"
                     data-analytics-event="cta_click"
                     data-analytics-label="ev_charger_request_quote"
                     data-analytics-type="form"
@@ -99,15 +101,8 @@ const serviceSchema = {
     '@context': 'https://schema.org',
     '@type': 'Service',
     name: 'EV Charger Installation',
-    provider: {
-        '@type': 'Electrician',
-        '@id': `${siteUrl()}#business`,
-        name: 'Your Electrician',
-        telephone: '763-248-9801',
-        email: 'hireyourelectrician@gmail.com',
-        address: { '@type': 'PostalAddress', addressLocality: 'Minneapolis', addressRegion: 'MN', postalCode: '55401', addressCountry: 'US' }
-    },
-    areaServed: { '@type': 'City', name: 'Minneapolis', containedInPlace: { '@type': 'State', name: 'Minnesota' } },
+    provider: businessRef(),
+    areaServed: cityNode('Minneapolis'),
     serviceType: 'Electric Vehicle Charging Installation',
     description: 'Install and upgrade EV chargers for residential homes and commercial fleets. Code-compliant and efficient charger setup.'
 }
@@ -134,12 +129,7 @@ const pageDescription = 'Licensed EV charger installers for homes and businesses
 
 useHead({
     title: pageTitle,
-    meta: [
-        { name: 'description', content: pageDescription },
-        { property: 'og:title', content: pageTitle },
-        { property: 'og:description', content: pageDescription },
-        { property: 'og:url', content: siteUrl('/ev-charger-installation') }
-    ],
+    meta: socialMeta({ title: pageTitle, description: pageDescription, url: siteUrl('/ev-charger-installation') }),
     link: [
         { rel: 'canonical', href: siteUrl('/ev-charger-installation') }
     ],

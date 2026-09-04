@@ -11,7 +11,7 @@
             </p>
             <div class="flex justify-center">
                 <NuxtLink
-                    to="/contact"
+                    to="/contact/"
                     data-analytics-event="cta_click"
                     :data-analytics-label="`area_${area.slug}_request_quote`"
                     data-analytics-type="form"
@@ -27,20 +27,20 @@
             <h2 class="text-2xl font-semibold mb-4">Electrical Services in {{ area.name }}</h2>
             <div class="grid sm:grid-cols-2 gap-x-10 gap-y-3 text-lg text-brand-dark/80">
                 <ul class="list-disc pl-6 space-y-2">
-                    <li><NuxtLink to="/home-builds" class="text-brand-orange hover:underline">New home electrical wiring</NuxtLink></li>
-                    <li><NuxtLink to="/home-remodeling" class="text-brand-orange hover:underline">Home electrical remodeling</NuxtLink></li>
+                    <li><NuxtLink to="/home-builds/" class="text-brand-orange hover:underline">New home electrical wiring</NuxtLink></li>
+                    <li><NuxtLink to="/home-remodeling/" class="text-brand-orange hover:underline">Home electrical remodeling</NuxtLink></li>
                     <li>Panel upgrades and replacements</li>
                     <li>Whole-house rewiring</li>
                     <li>Dedicated circuits for appliances</li>
                     <li>Smoke and CO detector wiring</li>
                 </ul>
                 <ul class="list-disc pl-6 space-y-2">
-                    <li><NuxtLink to="/ev-charger-installation" class="text-brand-orange hover:underline">EV charger installation</NuxtLink></li>
-                    <li><NuxtLink to="/commercial-lighting" class="text-brand-orange hover:underline">Commercial lighting retrofits</NuxtLink></li>
+                    <li><NuxtLink to="/ev-charger-installation/" class="text-brand-orange hover:underline">EV charger installation</NuxtLink></li>
+                    <li><NuxtLink to="/commercial-lighting/" class="text-brand-orange hover:underline">Commercial lighting retrofits</NuxtLink></li>
                     <li>Smart home device installation</li>
                     <li>Outdoor and landscape lighting</li>
                     <li>Generator hookups and transfer switches</li>
-                    <li>24/7 emergency electrical repair</li>
+                    <li>Emergency electrical repair</li>
                 </ul>
             </div>
         </section>
@@ -62,7 +62,7 @@
                 </div>
                 <div>
                     <p class="font-semibold">What areas near {{ area.name }} do you serve?</p>
-                    <p class="mt-1">We serve {{ area.name }} and all surrounding Minneapolis–St. Paul suburbs — including Minneapolis, St. Paul, Bloomington, Plymouth, Maple Grove, Eagan, Eden Prairie, and more. <NuxtLink to="/contact" class="text-brand-orange hover:underline">Contact us</NuxtLink> to confirm we cover your address.</p>
+                    <p class="mt-1">We serve {{ area.name }} and all surrounding Minneapolis–St. Paul suburbs — including Minneapolis, St. Paul, Bloomington, Plymouth, Maple Grove, Eagan, Eden Prairie, and more. <NuxtLink to="/contact/" class="text-brand-orange hover:underline">Contact us</NuxtLink> to confirm we cover your address.</p>
                 </div>
                 <div>
                     <p class="font-semibold">Are you licensed to do electrical work in {{ area.name }}, MN?</p>
@@ -70,7 +70,7 @@
                 </div>
                 <div>
                     <p class="font-semibold">How quickly can you schedule an electrician in {{ area.name }}?</p>
-                    <p class="mt-1">Most estimates are scheduled within 1–2 business days. Call us at <a href="tel:7632489801" class="text-brand-orange hover:underline">763-248-9801</a> or <NuxtLink to="/contact" class="text-brand-orange hover:underline">request a quote online</NuxtLink>.</p>
+                    <p class="mt-1">Most estimates are scheduled within 1–2 business days. Call us at <a href="tel:7632489801" class="text-brand-orange hover:underline">763-248-9801</a> or <NuxtLink to="/contact/" class="text-brand-orange hover:underline">request a quote online</NuxtLink>.</p>
                 </div>
                 <div>
                     <p class="font-semibold">Do you install EV chargers in {{ area.name }}?</p>
@@ -83,7 +83,7 @@
         <section class="max-w-4xl mx-auto w-full px-6 py-10 text-center border-t border-brand-dark/10">
             <p class="text-lg text-brand-dark/80 mb-4">Ready to hire a licensed electrician in {{ area.name }}, MN?</p>
             <NuxtLink
-                to="/contact"
+                to="/contact/"
                 data-analytics-event="cta_click"
                 :data-analytics-label="`area_${area.slug}_cta_bottom`"
                 data-analytics-type="form"
@@ -111,20 +111,20 @@ if (!area) {
     throw createError({ statusCode: 404, statusMessage: 'Area not found' })
 }
 
-const structuredData = {
+/*
+ * The full Electrician node is emitted once, on the home page. Every city page
+ * points at it by @id from a city-scoped Service node, so Google sees one
+ * business serving several cities instead of five partial businesses.
+ */
+const serviceSchema = {
     '@context': 'https://schema.org',
-    '@type': 'Electrician',
-    '@id': `${siteUrl()}#business`,
-    name: 'Your Electrician',
-    url: siteUrl(),
-    telephone: '763-248-9801',
-    email: 'hireyourelectrician@gmail.com',
-    description: `Your Electrician provides licensed electrical services in ${area.name}, MN and throughout the Minneapolis–St. Paul metro area.`,
-    areaServed: {
-        '@type': 'City',
-        name: area.name,
-        containedInPlace: { '@type': 'State', name: 'Minnesota' }
-    }
+    '@type': 'Service',
+    name: `Electrical Services in ${area.name}, MN`,
+    serviceType: 'Electrical services',
+    url: siteUrl(`/areas/${area.slug}`),
+    provider: businessRef(),
+    areaServed: cityNode(area.name),
+    description: `Your Electrician provides licensed electrical services in ${area.name}, MN and throughout the Minneapolis–St. Paul metro area.`
 }
 
 const faqSchema = {
@@ -174,17 +174,12 @@ const pageDescription = area.metaDescription
 
 useHead({
     title: pageTitle,
-    meta: [
-        { name: 'description', content: pageDescription },
-        { property: 'og:title', content: pageTitle },
-        { property: 'og:description', content: pageDescription },
-        { property: 'og:url', content: siteUrl(`/areas/${area.slug}`) }
-    ],
+    meta: socialMeta({ title: pageTitle, description: pageDescription, url: siteUrl(`/areas/${area.slug}`) }),
     link: [
         { rel: 'canonical', href: siteUrl(`/areas/${area.slug}`) }
     ],
     script: [
-        { type: 'application/ld+json', children: JSON.stringify(structuredData) },
+        { type: 'application/ld+json', children: JSON.stringify(serviceSchema) },
         { type: 'application/ld+json', children: JSON.stringify(faqSchema) },
         { type: 'application/ld+json', children: JSON.stringify(breadcrumbSchema) }
     ]

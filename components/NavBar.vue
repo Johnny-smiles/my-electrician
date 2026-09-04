@@ -9,8 +9,12 @@
                 <NuxtImg
                     src="/logo1.png"
                     alt="Your Electrician logo"
+                    width="356"
+                    height="80"
+                    sizes="356px"
+                    format="webp"
+                    loading="eager"
                     class="max-h-20 w-auto"
-                    priority
                 />
             </NuxtLink>
 
@@ -38,7 +42,7 @@
               ]"
             >
               <li><NuxtLink to="/"        class="hover:text-brand-orange" @click="isOpen = false">Home</NuxtLink></li>
-              <li><NuxtLink to="/about"   class="hover:text-brand-orange" @click="isOpen = false">About</NuxtLink></li>
+              <li><NuxtLink to="/about/"   class="hover:text-brand-orange" @click="isOpen = false">About</NuxtLink></li>
 
               <!-- Services dropdown (desktop only, click-based) -->
               <li class="relative hidden sm:block">
@@ -54,27 +58,27 @@
                   v-if="servicesOpen"
                   class="absolute bg-white shadow-lg rounded-md mt-2 py-2 w-56 text-sm z-50"
                 >
-                  <li><NuxtLink to="/home-builds"     class="block px-4 py-2 hover:bg-brand-light" @click="closeMenus">Residential</NuxtLink></li>
-                  <li><NuxtLink to="/home-remodeling" class="block px-4 py-2 hover:bg-brand-light" @click="closeMenus">Remodeling</NuxtLink></li>
-                  <li><NuxtLink to="/commercial-lighting"      class="block px-4 py-2 hover:bg-brand-light" @click="closeMenus">Commercial</NuxtLink></li>
-                  <li><NuxtLink to="/ev-charger-installation"              class="block px-4 py-2 hover:bg-brand-light" @click="closeMenus">EV Chargers</NuxtLink></li>
+                  <li><NuxtLink to="/home-builds/"     class="block px-4 py-2 hover:bg-brand-light" @click="closeMenus">Residential</NuxtLink></li>
+                  <li><NuxtLink to="/home-remodeling/" class="block px-4 py-2 hover:bg-brand-light" @click="closeMenus">Remodeling</NuxtLink></li>
+                  <li><NuxtLink to="/commercial-lighting/"      class="block px-4 py-2 hover:bg-brand-light" @click="closeMenus">Commercial</NuxtLink></li>
+                  <li><NuxtLink to="/ev-charger-installation/"              class="block px-4 py-2 hover:bg-brand-light" @click="closeMenus">EV Chargers</NuxtLink></li>
                   <li class="border-t mx-2 my-1"></li>
-                  <li><NuxtLink to="/recent-work" class="block px-4 py-2 hover:bg-brand-light" @click="closeMenus">Recent&nbsp;Work</NuxtLink></li>
+                  <li><NuxtLink to="/recent-work/" class="block px-4 py-2 hover:bg-brand-light" @click="closeMenus">Recent&nbsp;Work</NuxtLink></li>
                 </ul>
               </li>
 
               <!-- Services + recent‑work sublinks in mobile drawer -->
               <li class="sm:hidden flex flex-col items-end space-y-2 w-full">
-                <NuxtLink to="/home-builds"     class="hover:text-brand-orange" @click="isOpen = false">Residential</NuxtLink>
-                <NuxtLink to="/home-remodeling" class="hover:text-brand-orange" @click="isOpen = false">Remodeling</NuxtLink>
-                <NuxtLink to="/commercial-lighting"      class="hover:text-brand-orange" @click="isOpen = false">Commercial</NuxtLink>
-                <NuxtLink to="/ev-charger-installation"  class="hover:text-brand-orange" @click="isOpen = false">EV&nbsp;Chargers</NuxtLink>
-                <NuxtLink to="/recent-work" class="hover:text-brand-orange" @click="isOpen = false">Recent&nbsp;Work</NuxtLink>
+                <NuxtLink to="/home-builds/"     class="hover:text-brand-orange" @click="isOpen = false">Residential</NuxtLink>
+                <NuxtLink to="/home-remodeling/" class="hover:text-brand-orange" @click="isOpen = false">Remodeling</NuxtLink>
+                <NuxtLink to="/commercial-lighting/"      class="hover:text-brand-orange" @click="isOpen = false">Commercial</NuxtLink>
+                <NuxtLink to="/ev-charger-installation/"  class="hover:text-brand-orange" @click="isOpen = false">EV&nbsp;Chargers</NuxtLink>
+                <NuxtLink to="/recent-work/" class="hover:text-brand-orange" @click="isOpen = false">Recent&nbsp;Work</NuxtLink>
               </li>
 
               <!-- Recent‑work top‑level link (desktop) -->
               <li class="hidden sm:block">
-                <NuxtLink to="/recent-work" class="hover:text-brand-orange" @click="closeMenus">Recent&nbsp;Work</NuxtLink>
+                <NuxtLink to="/recent-work/" class="hover:text-brand-orange" @click="closeMenus">Recent&nbsp;Work</NuxtLink>
               </li>
 
               <!-- CTA buttons (desktop) -->
@@ -86,7 +90,7 @@
                    class="inline-block bg-orange-500 text-white px-4 py-2 rounded-md mr-3 font-semibold hover:bg-orange-600 transition">
                   Call Now
                 </a>
-                <NuxtLink to="/contact"
+                <NuxtLink to="/contact/"
                    data-analytics-event="cta_click"
                    data-analytics-label="nav_request_quote"
                    data-analytics-type="form"
@@ -122,9 +126,4 @@ onMounted(() => {
 onBeforeUnmount(() => {
   document.removeEventListener('click', handleClickOutside)
 })
-
-const submitForm = async () => {
-  // Use fetch/axios to POST data
-  // Show a success message or redirect as needed
-}
 </script>

@@ -17,6 +17,11 @@
             v-if="img"
             :src="img"
             :alt="alt"
+            width="128"
+            height="128"
+            sizes="128px"
+            format="webp"
+            loading="lazy"
             class="w-28 h-28 md:w-32 md:h-32 object-cover rounded-lg flex-shrink-0"
         />
     </div>

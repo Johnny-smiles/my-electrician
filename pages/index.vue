@@ -39,7 +39,7 @@
                 We provide residential and commercial electrical services throughout the Minneapolis-St. Paul area, including:
             </p>
             <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-x-8 gap-y-1 text-center text-sm">
-                <NuxtLink v-for="area in serviceAreas" :key="area.slug" :to="`/areas/${area.slug}`" class="text-brand-orange hover:underline">{{ area.name }}</NuxtLink>
+                <NuxtLink v-for="area in serviceAreas" :key="area.slug" :to="`/areas/${area.slug}/`" class="text-brand-orange hover:underline">{{ area.name }}</NuxtLink>
             </div>
         </section>
 
@@ -49,65 +49,21 @@
 <script setup lang="ts">
 import HeroSection       from '~/components/HeroSection.vue'
 import HomepageServices  from '~/components/HomepageServices.vue'
-import Footer            from '~/components/Footer.vue'
-import { siteConfig }    from '~/site.config'
 import { useHead }       from '#imports'
 import { serviceAreas }  from '~/data/areas'
 
 /* ------------------------------------------------------------------
-   LocalBusiness structured data
+   The one canonical Electrician node for the whole site.
+   Every other page references it by @id (see composables/useBusinessSchema).
    -----------------------------------------------------------------*/
-const structuredData = {
-    '@context': 'https://schema.org',
-    '@type':    'Electrician',
-    '@id':      `${siteConfig.siteUrl}/#business`,
-    name:        siteConfig.siteName,
-    url:         siteUrl(),
-    telephone:   siteConfig.phone,
-    email:       siteConfig.email,
-    description: siteConfig.description,
-    image:       `${siteConfig.siteUrl}/hero.png`,
-    priceRange:  '$$',
-    address: {
-        '@type':           'PostalAddress',
-        addressLocality:   siteConfig.location.city,
-        addressRegion:     siteConfig.location.state,
-        postalCode:        siteConfig.location.zip,
-        addressCountry:    siteConfig.location.country
-    },
-    openingHours: siteConfig.hours,
-    geo: {
-        '@type':    'GeoCoordinates',
-        latitude:   siteConfig.location.latitude,
-        longitude:  siteConfig.location.longitude
-    },
-    sameAs: [
-        'https://www.facebook.com/share/1ArHV6nQsA/?mibextid=wwXIfr'
-    ],
-    areaServed: serviceAreas.map(a => ({ '@type': 'City', name: a.name, containedInPlace: { '@type': 'State', name: 'Minnesota' } })),
-    hasOfferCatalog: {
-        '@type': 'OfferCatalog',
-        name: 'Electrical Services',
-        itemListElement: [
-            { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'New Home Electrical Wiring', url: siteUrl('/home-builds') } },
-            { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Home Electrical Remodeling', url: siteUrl('/home-remodeling') } },
-            { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Commercial Lighting Services', url: siteUrl('/commercial-lighting') } },
-            { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'EV Charger Installation', url: siteUrl('/ev-charger-installation') } }
-        ]
-    }
-}
+const structuredData = businessSchema()
 
 const pageTitle = 'Electrician in Minneapolis & St. Paul, MN | Your Electrician'
-const pageDescription = 'Licensed, bonded, and insured electrician for homes and businesses across the Minneapolis-St. Paul metro. New home wiring, remodeling, lighting, EV chargers.'
+const pageDescription = 'Licensed, bonded, and insured electrician for homes and businesses in the Minneapolis-St. Paul metro. Wiring, remodeling, lighting, and EV chargers.'
 
 useHead({
     title: pageTitle,
-    meta: [
-        { name: 'description', content: pageDescription },
-        { property: 'og:title', content: pageTitle },
-        { property: 'og:description', content: pageDescription },
-        { property: 'og:url', content: siteUrl() }
-    ],
+    meta: socialMeta({ title: pageTitle, description: pageDescription, url: siteUrl() }),
     link: [
         { rel: 'canonical', href: siteUrl() }
     ],

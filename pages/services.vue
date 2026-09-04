@@ -11,7 +11,7 @@
             </p>
             <p class="text-lg text-brand-dark/80">
                 Every project starts with a free estimate and ends with a clean jobsite and passed inspection. Browse our core services
-                below and <NuxtLink to="/contact" class="text-brand-orange font-semibold hover:underline">request a quote</NuxtLink>
+                below and <NuxtLink to="/contact/" class="text-brand-orange font-semibold hover:underline">request a quote</NuxtLink>
                 to get started.
             </p>
         </section>
@@ -39,7 +39,7 @@
                     <li>Hot tub and pool wiring</li>
                     <li>Smart home device installation</li>
                     <li>Electrical safety inspections</li>
-                    <li>24/7 emergency electrical repair</li>
+                    <li>Emergency electrical repair</li>
                 </ul>
             </div>
         </section>
@@ -56,10 +56,10 @@
                 We provide electrical services near you throughout the Minneapolis-St. Paul metro area and surrounding communities, including:
             </p>
             <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-1">
-                <NuxtLink v-for="area in serviceAreas" :key="area.slug" :to="`/areas/${area.slug}`" class="text-brand-orange hover:underline">{{ area.name }}</NuxtLink>
+                <NuxtLink v-for="area in serviceAreas" :key="area.slug" :to="`/areas/${area.slug}/`" class="text-brand-orange hover:underline">{{ area.name }}</NuxtLink>
             </div>
             <p class="text-brand-dark/60 mt-4 text-sm">
-                Don't see your city? <NuxtLink to="/contact" class="text-brand-orange hover:underline">Contact us</NuxtLink>—we likely cover your area.
+                Don't see your city? <NuxtLink to="/contact/" class="text-brand-orange hover:underline">Contact us</NuxtLink>—we likely cover your area.
             </p>
         </section>
 
@@ -67,7 +67,7 @@
             <p class="text-center text-lg">
                 Need an electrician now?
                 <NuxtLink
-                    to="/contact"
+                    to="/contact/"
                     class="text-brand-orange font-semibold hover:underline"
                     data-analytics-event="cta_click"
                     data-analytics-label="services_request_quote_footer"
@@ -96,6 +96,13 @@ const breadcrumbSchema = {
     ]
 }
 
+/*
+ * NOTE: this FAQPage mirrors the visible Q&A in components/FaqSection.vue.
+ * That component keeps its questions in a local `const`, so there is no array
+ * to import; if FaqSection is ever refactored to export its FAQ data (or read
+ * it from data/), delete this literal and build the schema from that source so
+ * the two can't drift apart.
+ */
 const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
@@ -108,7 +115,7 @@ const faqSchema = {
         {
             '@type': 'Question',
             name: 'What types of electrical work do you do in the Minneapolis metro?',
-            acceptedAnswer: { '@type': 'Answer', text: 'We handle new home wiring, panel upgrades, whole-house rewiring, EV charger installation, commercial lighting retrofits, kitchen and basement remodeling, smart home integration, and 24/7 emergency electrical repair.' }
+            acceptedAnswer: { '@type': 'Answer', text: 'We handle new home wiring, panel upgrades, whole-house rewiring, EV charger installation, commercial lighting retrofits, kitchen and basement remodeling, smart home integration, and emergency electrical repair.' }
         },
         {
             '@type': 'Question',
@@ -124,16 +131,11 @@ const faqSchema = {
 }
 
 const pageTitle = 'Minneapolis–St. Paul Electrical Services | Your Electrician'
-const pageDescription = 'Full-service electrical contractor in Minneapolis MN. Home wiring, remodeling, commercial lighting, EV charger installation, panel upgrades, and more. Licensed & insured.'
+const pageDescription = 'Your Electrician is a licensed electrical contractor in Minneapolis, MN. Home wiring, remodeling, commercial lighting, EV chargers, and panel upgrades.'
 
 useHead({
     title: pageTitle,
-    meta: [
-        { name: 'description', content: pageDescription },
-        { property: 'og:title', content: pageTitle },
-        { property: 'og:description', content: pageDescription },
-        { property: 'og:url', content: siteUrl('/services') }
-    ],
+    meta: socialMeta({ title: pageTitle, description: pageDescription, url: siteUrl('/services') }),
     link: [
         { rel: 'canonical', href: siteUrl('/services') }
     ],

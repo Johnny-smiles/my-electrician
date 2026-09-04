@@ -7,6 +7,11 @@
                 <NuxtImg
                     src="/logo1.png"
                     alt="Your Electrician logo"
+                    width="284"
+                    height="64"
+                    sizes="284px"
+                    format="webp"
+                    loading="lazy"
                     class="max-h-16 w-auto mx-auto md:mx-0"
                 />
                 <p class="mt-4 font-semibold">{{ name }}</p>
@@ -20,10 +25,10 @@
                 <div class="w-full">
                     <h3 class="text-lg font-semibold mb-3">Company</h3>
                     <ul class="list-none space-y-2">
-                        <li><NuxtLink to="/about" class="hover:text-brand-orange">About</NuxtLink></li>
-                        <li><NuxtLink to="/services" class="hover:text-brand-orange">Services</NuxtLink></li>
-                        <li><NuxtLink to="/recent-work" class="hover:text-brand-orange">Recent&nbsp;Work</NuxtLink></li>
-                        <li><NuxtLink to="/contact" class="hover:text-brand-orange">Contact</NuxtLink></li>
+                        <li><NuxtLink to="/about/" class="hover:text-brand-orange">About</NuxtLink></li>
+                        <li><NuxtLink to="/services/" class="hover:text-brand-orange">Services</NuxtLink></li>
+                        <li><NuxtLink to="/recent-work/" class="hover:text-brand-orange">Recent&nbsp;Work</NuxtLink></li>
+                        <li><NuxtLink to="/contact/" class="hover:text-brand-orange">Contact</NuxtLink></li>
                     </ul>
                 </div>
             </div>

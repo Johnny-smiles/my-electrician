@@ -2,15 +2,18 @@
     <main>
         <!-- HERO -->
         <section class="relative h-[50vh] bg-black">
+            <!-- Above-the-fold hero: eager + high priority, never lazy.
+                 width/height are the file's real pixel size (1536x1024). -->
             <NuxtImg
                 src="/commercialLighting.png"
                 alt="Commercial LED lighting install in Minneapolis office"
-                width="1800"
-                height="900"
-                sizes="(max-width: 1024px) 100vw, 1200px"
+                width="1536"
+                height="1024"
+                sizes="xs:100vw sm:100vw md:100vw lg:1200px"
+                format="webp"
                 preload
+                loading="eager"
                 fetchpriority="high"
-                placeholder
                 class="absolute inset-0 w-full h-full object-cover opacity-70"
             />
 
@@ -25,7 +28,7 @@
                     and occupancy-sensor solutions for your workplace.
                 </p>
                 <NuxtLink
-                    to="/contact"
+                    to="/contact/"
                     data-analytics-event="cta_click"
                     data-analytics-label="commercial_lighting_request_quote"
                     data-analytics-type="form"
@@ -107,15 +110,8 @@ const serviceSchema = {
     '@context': 'https://schema.org',
     '@type': 'Service',
     name: 'Commercial Lighting Services',
-    provider: {
-        '@type': 'Electrician',
-        '@id': `${siteUrl()}#business`,
-        name: 'Your Electrician',
-        telephone: '763-248-9801',
-        email: 'hireyourelectrician@gmail.com',
-        address: { '@type': 'PostalAddress', addressLocality: 'Minneapolis', addressRegion: 'MN', postalCode: '55401', addressCountry: 'US' }
-    },
-    areaServed: { '@type': 'City', name: 'Minneapolis', containedInPlace: { '@type': 'State', name: 'Minnesota' } },
+    provider: businessRef(),
+    areaServed: cityNode('Minneapolis'),
     serviceType: 'Commercial Lighting Services',
     description: 'Energy-efficient commercial lighting solutions, including LED upgrades, emergency lighting, and occupancy sensor integration.'
 }
@@ -152,12 +148,7 @@ const pageDescription = 'Energy-efficient commercial lighting installations incl
 
 useHead({
     title: pageTitle,
-    meta: [
-        { name: 'description', content: pageDescription },
-        { property: 'og:title', content: pageTitle },
-        { property: 'og:description', content: pageDescription },
-        { property: 'og:url', content: siteUrl('/commercial-lighting') }
-    ],
+    meta: socialMeta({ title: pageTitle, description: pageDescription, url: siteUrl('/commercial-lighting') }),
     link: [
         { rel: 'canonical', href: siteUrl('/commercial-lighting') }
     ],

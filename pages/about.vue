@@ -6,16 +6,17 @@
             <p class="text-lg mb-4">
                 <strong>Your Electrician</strong> is a family-owned business serving homeowners and businesses across the
                 Minneapolis-St. Paul metro area. Our mission is simple: deliver safe,
-                code-compliant electrical work and five-star customer service—every time.
+                code-compliant electrical work and responsive, courteous customer service—every time.
             </p>
 
             <p class="text-lg mb-4">
                 From whole-home wiring on new builds to quick repairs, we handle
                 a wide range of electrical projects for homes and businesses.
-                Curious what that looks like day to day? <NuxtLink to="/services" class="text-brand-orange font-semibold hover:underline">
+                Curious what that looks like day to day? <NuxtLink to="/services/" class="text-brand-orange font-semibold hover:underline">
                 Explore our electrical services</NuxtLink> to see the projects we tackle most.
             </p>
 
+            <!-- TODO(client): confirm license #, insurance, and warranty terms before re-enabling this block. -->
             <!-- <h2 class="text-2xl font-semibold mt-10 mb-4">Why Homeowners and Builders Choose Us</h2>
 
             <ul class="list-disc pl-6 space-y-2 text-lg mb-6">
@@ -29,10 +30,10 @@
             <h2 class="text-2xl font-semibold mt-10 mb-4">Our Expertise</h2>
 
             <p class="text-lg mb-4">
-                We specialize in <NuxtLink to="/home-builds" class="text-brand-orange font-semibold hover:underline">new home electrical wiring</NuxtLink>,
-                <NuxtLink to="/home-remodeling" class="text-brand-orange font-semibold hover:underline">electrical remodeling</NuxtLink> for kitchens, basements, and additions,
-                <NuxtLink to="/commercial-lighting" class="text-brand-orange font-semibold hover:underline">commercial lighting</NuxtLink> retrofits and design,
-                and <NuxtLink to="/ev-charger-installation" class="text-brand-orange font-semibold hover:underline">EV charger installation</NuxtLink> for homes and fleets.
+                We specialize in <NuxtLink to="/home-builds/" class="text-brand-orange font-semibold hover:underline">new home electrical wiring</NuxtLink>,
+                <NuxtLink to="/home-remodeling/" class="text-brand-orange font-semibold hover:underline">electrical remodeling</NuxtLink> for kitchens, basements, and additions,
+                <NuxtLink to="/commercial-lighting/" class="text-brand-orange font-semibold hover:underline">commercial lighting</NuxtLink> retrofits and design,
+                and <NuxtLink to="/ev-charger-installation/" class="text-brand-orange font-semibold hover:underline">EV charger installation</NuxtLink> for homes and fleets.
                 Whether it's a single outlet repair or a full commercial buildout, we bring the same attention to detail and professionalism.
             </p>
 
@@ -40,7 +41,7 @@
                 Whether you're planning a remodel, upgrading a panel or just need a
                 quick repair, we're ready to help.
                 <NuxtLink
-                    to="/contact"
+                    to="/contact/"
                     class="text-brand-orange font-semibold hover:underline"
                     data-analytics-event="cta_click"
                     data-analytics-label="about_request_quote_inline"
@@ -54,6 +55,11 @@
             <NuxtImg
               src="/aboutFamily.jpeg"
               alt="The owner's family of Your Electrician"
+              width="448"
+              height="597"
+              sizes="xs:100vw sm:100vw md:448px"
+              format="webp"
+              loading="lazy"
               class="w-full max-w-md mx-auto mt-10 rounded-lg shadow-md object-cover"
             />
         </section>
@@ -62,7 +68,7 @@
             <p>
                 Need an electrician near you?
                 <NuxtLink
-                    to="/contact"
+                    to="/contact/"
                     class="text-brand-orange font-semibold hover:underline"
                     data-analytics-event="cta_click"
                     data-analytics-label="about_request_quote_footer"
@@ -87,16 +93,11 @@ const breadcrumbSchema = {
 }
 
 const pageTitle = 'About Us | Your Electrician | Minneapolis MN'
-const pageDescription = 'Your Electrician is a family-owned electrical company serving Minneapolis-St. Paul. We handle residential and commercial projects from new builds to repairs.'
+const pageDescription = 'Your Electrician is a family-owned electrical company serving Minneapolis-St. Paul, MN. Residential and commercial work from new builds to repairs.'
 
 useHead({
     title: pageTitle,
-    meta: [
-        { name: 'description', content: pageDescription },
-        { property: 'og:title', content: pageTitle },
-        { property: 'og:description', content: pageDescription },
-        { property: 'og:url', content: siteUrl('/about') }
-    ],
+    meta: socialMeta({ title: pageTitle, description: pageDescription, url: siteUrl('/about') }),
     link: [
         { rel: 'canonical', href: siteUrl('/about') }
     ],

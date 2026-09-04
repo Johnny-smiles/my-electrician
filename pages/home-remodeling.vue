@@ -2,14 +2,17 @@
     <main>
         <!-- HERO -->
         <section class="relative h-[50vh] bg-black">
-            <!-- Optional background image (uncomment & replace when ready) -->
+            <!-- Above-the-fold hero: eager + high priority, never lazy.
+                 width/height are the file's real pixel size (1024x1024). -->
             <NuxtImg
                 src="/residentalRemodel.png"
                 alt="Electrician upgrading kitchen wiring"
-                width="1800"
-                height="900"
-                sizes="(max-width: 1024px) 100vw, 1200px"
+                width="1024"
+                height="1024"
+                sizes="xs:100vw sm:100vw md:100vw lg:1200px"
+                format="webp"
                 preload
+                loading="eager"
                 fetchpriority="high"
                 class="absolute inset-0 w-full h-full object-cover opacity-70"
             />
@@ -24,7 +27,7 @@
                 </p>
                 <!-- Call to Action Button -->
                 <NuxtLink
-                    to="/contact"
+                    to="/contact/"
                     data-analytics-event="cta_click"
                     data-analytics-label="remodeling_request_quote"
                     data-analytics-type="form"
@@ -97,15 +100,8 @@ const serviceSchema = {
     '@context': 'https://schema.org',
     '@type': 'Service',
     name: 'Home Electrical Remodeling',
-    provider: {
-        '@type': 'Electrician',
-        '@id': `${siteUrl()}#business`,
-        name: 'Your Electrician',
-        telephone: '763-248-9801',
-        email: 'hireyourelectrician@gmail.com',
-        address: { '@type': 'PostalAddress', addressLocality: 'Minneapolis', addressRegion: 'MN', postalCode: '55401', addressCountry: 'US' }
-    },
-    areaServed: { '@type': 'City', name: 'Minneapolis', containedInPlace: { '@type': 'State', name: 'Minnesota' } },
+    provider: businessRef(),
+    areaServed: cityNode('Minneapolis'),
     serviceType: 'Electrical Remodeling Services',
     description: 'Upgrade and remodel your home\'s electrical system including rewiring, smart-home integration, and code-compliance corrections.'
 }
@@ -132,12 +128,7 @@ const pageDescription = 'Electrical remodeling services for home upgrades, room 
 
 useHead({
     title: pageTitle,
-    meta: [
-        { name: 'description', content: pageDescription },
-        { property: 'og:title', content: pageTitle },
-        { property: 'og:description', content: pageDescription },
-        { property: 'og:url', content: siteUrl('/home-remodeling') }
-    ],
+    meta: socialMeta({ title: pageTitle, description: pageDescription, url: siteUrl('/home-remodeling') }),
     link: [
         { rel: 'canonical', href: siteUrl('/home-remodeling') }
     ],

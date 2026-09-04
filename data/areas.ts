@@ -22,7 +22,7 @@ export const serviceAreas: ServiceArea[] = [
     {
         name: 'Minneapolis',
         slug: 'minneapolis',
-        metaDescription: 'Licensed electrician in Minneapolis, MN. Knob-and-tube rewiring, panel upgrades, EV chargers, and remodel wiring from Northeast to Linden Hills. Call 763-248-9801.',
+        metaDescription: 'Licensed electrician in Minneapolis, MN. Knob-and-tube rewiring, panel upgrades, EV chargers, and remodel wiring from Uptown to Camden. Call 763-248-9801.',
         intro: 'Your Electrician provides licensed electrical services across Minneapolis — from Northeast and Uptown to Longfellow, Linden Hills, and Camden. Whether you\'re updating a 1920s bungalow or adding power to a detached garage off the alley, our team handles residential wiring, panel upgrades, EV charger installation, commercial lighting, and remodel electrical work throughout the city.',
         housingNote: 'Much of Minneapolis\'s housing stock predates 1940, and we work on it every week: knob-and-tube remediation, 60-amp fuse panel replacements, grounded outlet retrofits, and whole-house rewires during remodels. Detached alley garages are common here too — we run sub-panels and conduit for garage power, heaters, and EV charging. We pull the electrical permit and schedule the inspection on every Minneapolis job.',
         localAreas: ['Northeast', 'Uptown', 'Longfellow', 'Linden Hills', 'Powderhorn', 'Nokomis', 'North Loop', 'Camden'],
@@ -34,7 +34,7 @@ export const serviceAreas: ServiceArea[] = [
     {
         name: 'St. Paul',
         slug: 'st-paul',
-        metaDescription: 'Licensed electrician in St. Paul, MN. Fuse box and panel upgrades, rewiring for older homes, EV chargers, and remodels from Highland Park to Como. Call 763-248-9801.',
+        metaDescription: 'Licensed electrician in St. Paul, MN. Fuse box and panel upgrades, rewiring for older homes, and EV chargers from Highland Park to Como. Call 763-248-9801.',
         intro: 'Your Electrician serves homes and businesses across St. Paul — Highland Park, Mac-Groveland, Como, Summit Hill, Payne-Phalen, and beyond. From Victorian-era rewires to modern EV charger installs, our team handles residential wiring, panel upgrades, commercial lighting, and remodel electrical work throughout the city.',
         housingNote: 'St. Paul\'s Victorian and early-1900s homes bring the electrical work we know best: fuse-box-to-breaker panel upgrades, knob-and-tube replacement, grounded circuits for older outlets, and kitchen or bath remodel wiring that brings a century-old home up to today\'s code. We pull the electrical permit and schedule the inspection on every St. Paul project.',
         localAreas: ['Highland Park', 'Mac-Groveland', 'Como Park', 'Summit Hill', 'Payne-Phalen', 'St. Anthony Park', 'Dayton\'s Bluff'],
@@ -46,7 +46,7 @@ export const serviceAreas: ServiceArea[] = [
     {
         name: 'Bloomington',
         slug: 'bloomington',
-        metaDescription: 'Licensed electrician in Bloomington, MN. Panel upgrades for mid-century homes, basement finish wiring, EV chargers, and commercial lighting off I-494. Call 763-248-9801.',
+        metaDescription: 'Licensed electrician in Bloomington, MN. Panel upgrades, basement finish wiring, EV chargers, and commercial lighting off I-494. Call 763-248-9801.',
         intro: 'Your Electrician provides licensed electrical services throughout Bloomington — east and west side alike. From mid-century ramblers to businesses along the I-494 corridor, our team handles panel upgrades, basement finish wiring, EV charger installation, and commercial lighting across the city.',
         housingNote: 'Bloomington\'s housing stock is heavy on 1950s–70s ramblers and split-levels, so we see a lot of original panels near end of life, ungrounded two-prong outlets, and basements ready to be finished. We upgrade panels, add dedicated circuits for appliances and workshops, and wire basement finishes from rough-in to trim. For businesses near the I-494 strip we handle LED retrofits and parking lot lighting.',
         localAreas: ['East Bloomington', 'West Bloomington', 'Oxboro', 'Penn-American district'],
@@ -70,7 +70,7 @@ export const serviceAreas: ServiceArea[] = [
     {
         name: 'Maple Grove',
         slug: 'maple-grove',
-        metaDescription: 'Licensed electrician in Maple Grove, MN. New construction wiring, EV chargers, basement finishes, and commercial lighting near Arbor Lakes. Call 763-248-9801.',
+        metaDescription: 'Licensed electrician in Maple Grove, MN. New construction wiring, EV chargers, basement finishes, and lighting near Arbor Lakes. Call 763-248-9801.',
         intro: 'Your Electrician provides licensed electrical services across Maple Grove — one of the metro\'s fastest-growing cities. From new construction wiring to EV chargers and basement finishes, our team serves homeowners, builders, and businesses from Arbor Lakes to Weaver Lake and Rush Creek.',
         housingNote: 'Much of our Maple Grove work is in newer homes: Level 2 EV charger installs, basement finishes, hot tub hookups, landscape and holiday lighting circuits, and smart-home wiring. For new builds we work directly with builders and GCs — load calcs and panel schedules up front, then rough-in and trim on schedule. For businesses around Arbor Lakes we handle commercial lighting and tenant build-outs.',
         localAreas: ['Arbor Lakes', 'Weaver Lake', 'Fish Lake', 'Rush Creek', 'Osseo', 'Brooklyn Park'],

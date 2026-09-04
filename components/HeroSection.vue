@@ -2,14 +2,15 @@
     <section class="relative h-[40vh] min-h-[260px] md:h-[50vh] flex items-center justify-center">
 
         <NuxtImg
-            src="/hero.png"
-            alt="Electrician working on breaker panel"
-            width="1800"
-            height="900"
-            sizes="(max-width: 1024px) 100vw, 1200px"
+            :src="src"
+            :alt="alt"
+            :width="width"
+            :height="height"
+            sizes="xs:100vw sm:100vw md:100vw lg:1200px"
+            format="webp"
             preload
+            loading="eager"
             fetchpriority="high"
-            placeholder
             class="absolute inset-0 w-full h-full object-cover opacity-70"
         />
 
@@ -23,7 +24,7 @@
                 Providing reliable electrical services for your home&nbsp;or&nbsp;business.
             </p>
             <NuxtLink
-                to="/contact"
+                to="/contact/"
                 data-analytics-event="cta_click"
                 data-analytics-label="hero_request_quote"
                 data-analytics-type="form"
@@ -35,9 +36,45 @@
     </section>
 </template>
 
-<style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+<script lang="ts">
+import { defineComponent } from 'vue'
 
+export default defineComponent({
+    name: 'HeroSection',
+    props: {
+        /** Path of the hero background image under /public. */
+        src: {
+            type: String,
+            default: '/hero.png'
+        },
+        /** Alt text for the background image. Describe the actual photo. */
+        alt: {
+            type: String,
+            default: 'Electrician working on a residential breaker panel'
+        },
+        /**
+         * Intrinsic pixel width of `src`. Must be the file's REAL width —
+         * @nuxt/image derives the srcset height from width/height, so a wrong
+         * ratio ships mis-cropped variants. Default matches /hero.png (1915x821).
+         * Check a new image with: sips -g pixelWidth -g pixelHeight public/<file>
+         */
+        width: {
+            type: [Number, String],
+            default: 1915
+        },
+        /** Intrinsic pixel height of `src`. See `width`. Default: /hero.png. */
+        height: {
+            type: [Number, String],
+            default: 821
+        }
+    }
+})
+</script>
+
+<style scoped>
+/* 'Russo One' is loaded once via the Google Fonts <link> in nuxt.config.ts.
+   Do not @import it here — scoped styles are inlined as critical CSS and an
+   @import there is render-blocking. */
 .font-logo {
     font-family: 'Russo One', sans-serif;
 }
@@ -50,5 +87,3 @@
         6px 6px 0 rgba(0, 0, 0, 0.3); /* dark drop shadow */
 }
 </style>
-<script setup lang="ts">
-</script>

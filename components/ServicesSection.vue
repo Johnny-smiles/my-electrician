@@ -6,7 +6,7 @@
             </h2>
 
             <div class="grid gap-12 md:grid-cols-2">
-                <NuxtLink to="/home-builds" class="block hover:no-underline">
+                <NuxtLink to="/home-builds/" class="block hover:no-underline">
                     <ServiceCard
                         title="Home Builds"
                         :items="[
@@ -17,7 +17,7 @@
                     />
                 </NuxtLink>
 
-                <NuxtLink to="/home-remodeling" class="block hover:no-underline">
+                <NuxtLink to="/home-remodeling/" class="block hover:no-underline">
                     <ServiceCard
                         title="Home Remodeling"
                         :items="[
@@ -28,7 +28,7 @@
                     />
                 </NuxtLink>
 
-                <NuxtLink to="/commercial-lighting" class="block hover:no-underline">
+                <NuxtLink to="/commercial-lighting/" class="block hover:no-underline">
                     <ServiceCard
                         title="Office & Commercial Lighting"
                         :items="[
@@ -39,7 +39,7 @@
                     />
                 </NuxtLink>
 
-                <NuxtLink to="/ev-charger-installation" class="block hover:no-underline">
+                <NuxtLink to="/ev-charger-installation/" class="block hover:no-underline">
                     <ServiceCard
                         title="EV Charger Installation"
                         :items="[

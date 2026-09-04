@@ -48,10 +48,7 @@ export default defineNuxtComponent({
             title: pageTitle,
             meta: [
                 { name: 'robots', content: 'noindex, follow' },
-                { name: 'description', content: pageDescription },
-                { property: 'og:title', content: pageTitle },
-                { property: 'og:description', content: pageDescription },
-                { property: 'og:url', content: siteUrl('/thank-you') }
+                ...socialMeta({ title: pageTitle, description: pageDescription, url: siteUrl('/thank-you') })
             ],
             link: [
                 { rel: 'canonical', href: siteUrl('/thank-you') }

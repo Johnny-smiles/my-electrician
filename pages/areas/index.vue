@@ -20,7 +20,7 @@
                 <NuxtLink
                     v-for="area in serviceAreas"
                     :key="area.slug"
-                    :to="`/areas/${area.slug}`"
+                    :to="`/areas/${area.slug}/`"
                     class="block p-6 bg-white border border-brand-dark/10 rounded-lg shadow-sm hover:shadow-md transition"
                 >
                     <h2 class="text-xl font-semibold text-brand-orange mb-1">Electrician in {{ area.name }}</h2>
@@ -28,7 +28,7 @@
                 </NuxtLink>
             </div>
             <p class="text-brand-dark/60 mt-6 text-sm">
-                Don't see your city? <NuxtLink to="/contact" class="text-brand-orange hover:underline">Contact us</NuxtLink>—we likely cover your area.
+                Don't see your city? <NuxtLink to="/contact/" class="text-brand-orange hover:underline">Contact us</NuxtLink>—we likely cover your area.
             </p>
         </section>
 
@@ -36,7 +36,7 @@
             <p class="text-center text-lg">
                 Need an electrician now?
                 <NuxtLink
-                    to="/contact"
+                    to="/contact/"
                     class="text-brand-orange font-semibold hover:underline"
                     data-analytics-event="cta_click"
                     data-analytics-label="areas_request_quote_footer"
@@ -64,16 +64,11 @@ const breadcrumbSchema = {
 }
 
 const pageTitle = 'Areas We Serve | Minneapolis–St. Paul MN | Your Electrician'
-const pageDescription = 'Your Electrician serves the Minneapolis–St. Paul metro: Minneapolis, St. Paul, Bloomington, Plymouth, and Maple Grove. Licensed residential and commercial work.'
+const pageDescription = 'Your Electrician serves Minneapolis, St. Paul, Bloomington, Plymouth, and Maple Grove, MN. Licensed residential and commercial electrical work.'
 
 useHead({
     title: pageTitle,
-    meta: [
-        { name: 'description', content: pageDescription },
-        { property: 'og:title', content: pageTitle },
-        { property: 'og:description', content: pageDescription },
-        { property: 'og:url', content: siteUrl('/areas') }
-    ],
+    meta: socialMeta({ title: pageTitle, description: pageDescription, url: siteUrl('/areas') }),
     link: [
         { rel: 'canonical', href: siteUrl('/areas') }
     ],
