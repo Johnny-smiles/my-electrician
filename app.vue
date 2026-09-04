@@ -1,15 +1,8 @@
 <template>
     <div>
-        <!-- Google Tag Manager (noscript) -->
-        <noscript>
-            <iframe
-                src="https://www.googletagmanager.com/ns.html?id=GTM-WH87J4BK"
-                height="0"
-                width="0"
-                style="display:none;visibility:hidden"
-            ></iframe>
-        </noscript>
-        <!-- End Google Tag Manager (noscript) -->
+        <ClientOnly>
+            <GoogleTagManager />
+        </ClientOnly>
 
         <NavBar />
         <NuxtPage />
@@ -22,6 +15,7 @@
 </template>
 
 <script setup>
+import GoogleTagManager from '~/components/GoogleTagManager.vue'
 import NavBar from '~/components/NavBar.vue'
 import Footer from '~/components/Footer.vue'
 </script>

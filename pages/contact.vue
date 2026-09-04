@@ -37,17 +37,10 @@
                 </p>
             </div>
 
-            <!-- Confirmation message -->
-            <div
-                v-if="showConfirmation"
-                class="mb-8 p-4 rounded-md bg-green-100 text-green-800 border border-green-300 text-lg font-medium"
-            >
-                Thank you! Your request has been received. We'll be in touch soon.
-            </div>
-
             <form
                 name="contact"
                 method="POST"
+                action="/thank-you/"
                 data-netlify="true"
                 data-netlify-honeypot="bot-field"
                 class="space-y-6"
@@ -110,8 +103,6 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
-
 const breadcrumbSchema = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -138,19 +129,5 @@ useHead({
     script: [
         { type: 'application/ld+json', children: JSON.stringify(breadcrumbSchema) }
     ]
-})
-
-const showConfirmation = ref(false)
-
-onMounted(() => {
-    if (typeof window !== 'undefined') {
-        const params = new URLSearchParams(window.location.search)
-        if (params.has('success') || window.location.hash === '#success') {
-            showConfirmation.value = true
-        }
-        if (window.location.pathname.endsWith('/thanks/')) {
-            showConfirmation.value = true
-        }
-    }
 })
 </script>

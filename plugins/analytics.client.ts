@@ -8,6 +8,11 @@ declare global {
     }
 }
 
+const pushAnalyticsEvent = (payload: DataLayerEvent): void => {
+    window.dataLayer = window.dataLayer || []
+    window.dataLayer.push(payload)
+}
+
 export default defineNuxtPlugin((nuxtApp) => {
     if (process.server) {
         return
@@ -41,12 +46,15 @@ export default defineNuxtPlugin((nuxtApp) => {
             payload.cta_destination = target.dataset.analyticsDestination || undefined
         }
 
-        window.dataLayer = window.dataLayer || []
-        window.dataLayer.push(payload)
+        pushAnalyticsEvent(payload)
     }
 
     window.addEventListener('click', handler, true)
     nuxtApp.hook('app:unmounted', () => {
         window.removeEventListener('click', handler, true)
     })
+
+    return {
+        provide: { pushAnalyticsEvent }
+    }
 })

@@ -51,21 +51,6 @@ export default defineNuxtConfig({
           defer: true,
           'data-domain': 'yourelectrician.co',
           'data-exclude': '/wp-admin/*,/wp-login.php,/wp-content/*,/wp-includes/*,/wp-config.php,/xmlrpc.php,/wordpress/*,/phpmyadmin/*,/pma/*,/myadmin/*,/administrator/*,/admin.php,/.env,/.env.*,/.git/*,/.aws/*,/.ssh/*,/.htaccess,/shell.php,/cmd.php,/eval.php,/cgi-bin/*'
-        },
-        {
-          type: 'text/javascript',
-          innerHTML: `
-      (function(w,d,s,l,i){
-        w[l]=w[l]||[];
-        w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});
-        var f=d.getElementsByTagName(s)[0],
-            j=d.createElement(s),
-            dl=l!='dataLayer'?'&l='+l:'';
-        j.async=true;
-        j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
-        f.parentNode.insertBefore(j,f);
-      })(window,document,'script','dataLayer','GTM-WH87J4BK');
-    `
         }
       ],
     }
@@ -93,6 +78,18 @@ export default defineNuxtConfig({
     name: 'your-electrician',
     // Netlify serves pages at trailing-slash URLs; sitemap entries must match.
     trailingSlash: true
+  },
+
+  sitemap: {
+    // Post-submit page: noindex, never worth listing.
+    exclude: ['/thank-you', '/thank-you/']
+  },
+
+  runtimeConfig: {
+    public: {
+      // Per-client GTM container. Set NUXT_PUBLIC_GTM_ID on Netlify; blank = no tag loads.
+      gtmId: process.env.NUXT_PUBLIC_GTM_ID || ''
+    }
   },
 
   // Compatibility date
