@@ -207,6 +207,19 @@
   Permissions-Policy = "camera=(), microphone=(), geolocation=()"
   Strict-Transport-Security = "max-age=63072000; includeSubDomains; preload"
 
+# 404.html and 200.html are crawlable duplicates of the home shell.
+# Keep them fetchable (Netlify serves them as fallbacks) but out of the index.
+[[headers]]
+  for = "/404.html"
+  [headers.values]
+  X-Robots-Tag = "noindex"
+
+[[headers]]
+  for = "/200.html"
+  [headers.values]
+  X-Robots-Tag = "noindex"
+
+# ─────────────────────────────────────────────────────────────
 # Canonical redirect for Netlify subdomain → custom domain
 # Uncomment and set the values once the client's custom domain is live.
 # [[redirects]]

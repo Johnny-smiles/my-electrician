@@ -12,31 +12,31 @@ Your Electrician is a family-owned electrical business serving homeowners and bu
 - Email: hireyourelectrician@gmail.com
 - Address: Minneapolis, MN 55401, US
 - Hours: Mon–Fri 8:00am–6:00pm, Sat 9:00am–2:00pm
-- Request a quote: https://yourelectrician.co/contact
+- Request a quote: https://yourelectrician.co/contact/
 
 ## Services
 
-- [New Home Electrical Wiring](https://yourelectrician.co/home-builds): Turnkey electrical for new builds and custom homes — service and panels, rough-in to final trim, lighting, and EV/solar prewire.
-- [Home Electrical Remodeling](https://yourelectrician.co/home-remodeling): Circuits, lighting, outlets, and panel upgrades for kitchen, bath, basement, and addition remodels.
-- [Commercial Lighting](https://yourelectrician.co/commercial-lighting): LED retrofits, smart controls, exit and emergency lighting, and maintenance plans for offices, retail, warehouses, and restaurants.
-- [EV Charger Installation](https://yourelectrician.co/ev-charger-installation): Level 2 charging stations for homes and fleets, including load calculations, dedicated 240V circuits, and panel upgrades.
+- [New Home Electrical Wiring](https://yourelectrician.co/home-builds/): Turnkey electrical for new builds and custom homes — service and panels, rough-in to final trim, lighting, and EV/solar prewire.
+- [Home Electrical Remodeling](https://yourelectrician.co/home-remodeling/): Circuits, lighting, outlets, and panel upgrades for kitchen, bath, basement, and addition remodels.
+- [Commercial Lighting](https://yourelectrician.co/commercial-lighting/): LED retrofits, smart controls, exit and emergency lighting, and maintenance plans for offices, retail, warehouses, and restaurants.
+- [EV Charger Installation](https://yourelectrician.co/ev-charger-installation/): Level 2 charging stations for homes and fleets, including load calculations, dedicated 240V circuits, and panel upgrades.
 
 ## Service Areas
 
 Serving the Minneapolis–St. Paul metro area, including:
 
-- [Minneapolis](https://yourelectrician.co/areas/minneapolis)
-- [St. Paul](https://yourelectrician.co/areas/st-paul)
-- [Bloomington](https://yourelectrician.co/areas/bloomington)
-- [Plymouth](https://yourelectrician.co/areas/plymouth)
-- [Maple Grove](https://yourelectrician.co/areas/maple-grove)
+- [Minneapolis](https://yourelectrician.co/areas/minneapolis/)
+- [St. Paul](https://yourelectrician.co/areas/st-paul/)
+- [Bloomington](https://yourelectrician.co/areas/bloomington/)
+- [Plymouth](https://yourelectrician.co/areas/plymouth/)
+- [Maple Grove](https://yourelectrician.co/areas/maple-grove/)
 
 ## Key Pages
 
-- [About](https://yourelectrician.co/about): Family-owned company background and areas of expertise.
-- [Contact / Request a Quote](https://yourelectrician.co/contact): Free, no-obligation estimates with a response within one business day.
-- [Recent Work](https://yourelectrician.co/recent-work): Gallery of completed wiring, lighting, and EV charging projects.
-- [Services Overview](https://yourelectrician.co/services): Full list of residential and commercial electrical services.
+- [About](https://yourelectrician.co/about/): Family-owned company background and areas of expertise.
+- [Contact / Request a Quote](https://yourelectrician.co/contact/): Free, no-obligation estimates with a response within one business day.
+- [Recent Work](https://yourelectrician.co/recent-work/): Gallery of completed wiring, lighting, and EV charging projects.
+- [Services Overview](https://yourelectrician.co/services/): Full list of residential and commercial electrical services.
 
 ## Key Facts
 
@@ -44,4 +44,3 @@ Serving the Minneapolis–St. Paul metro area, including:
 - Licensed, bonded, and insured in Minnesota
 - Residential and commercial electrical work
 - Free estimates; most estimates scheduled within 1–2 business days
-- 24/7 emergency electrical repair available
