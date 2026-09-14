@@ -1,7 +1,7 @@
 <template>
     <main>
         <!-- HERO -->
-        <section class="relative h-[50vh] bg-black">
+        <section class="service-hero relative bg-black">
             <!-- Above-the-fold hero: eager + high priority, never lazy.
                  width/height are the file's real pixel size (1536x1024). -->
             <NuxtImg
@@ -18,9 +18,9 @@
             />
 
             <div
-                class="relative z-10 flex flex-col justify-center items-center h-full text-white text-center px-4"
+                class="relative z-10 flex flex-col justify-center items-center text-white text-center px-4"
             >
-                <h1 class="text-4xl md:text-6xl font-logo electrician-text uppercase mb-2">
+                <h1 class="service-hero-title mb-2">
                     Office &amp; Commercial Lighting
                 </h1>
                 <p class="text-xl max-w-xl">
@@ -32,7 +32,7 @@
                     data-analytics-event="cta_click"
                     data-analytics-label="commercial_lighting_request_quote"
                     data-analytics-type="form"
-                    class="inline-block mt-8 px-8 py-3 rounded-md bg-orange-500 text-white font-semibold hover:bg-orange-600 transition"
+                    class="button-primary mt-8"
                 >
                     Request Quote
                 </NuxtLink>
@@ -159,17 +159,3 @@ useHead({
     ]
 })
 </script>
-
-<style scoped>
-.font-logo {
-    font-family: 'Russo One', sans-serif;
-}
-
-.electrician-text {
-    color: white;
-    text-shadow:
-        2px 2px 0 #7c3aed,
-        4px 4px 0 #f97316,
-        6px 6px 0 rgba(0, 0, 0, 0.3);
-}
-</style>

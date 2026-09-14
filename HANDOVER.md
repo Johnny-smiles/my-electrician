@@ -47,10 +47,42 @@ Lift this into the template repo.
 
 ## Not done / open
 
-- FAQ data is duplicated between `components/FaqSection.vue` and the
-  FAQPage JSON-LD in `pages/services.vue` (component keeps it in a
-  `<script setup>` const). Export it from `data/` to dedupe.
+- FAQ duplication resolved in the September 13 refresh: `data/faqs.ts`
+  supplies the native HTML disclosures and FAQPage schema on home/services.
 - `nitro.prerender.routes` in `nuxt.config.ts` still lists slash-less
   input paths (harmless, output is normalised).
 - WebKit could not be crawled in the sandbox (content filter); Chromium
   verified all routes.
+
+
+## UI and search-content refresh — 2026-09-13
+
+- New homepage with local business introduction, descriptive service links,
+  existing project photography, service-area links, and accessible FAQs.
+- Shared navy, warm white, and orange styling across navigation, footer,
+  service heroes, and quote buttons; one Inter font request replaces three families.
+- Mobile navigation exposes its state, closes on navigation/Escape, and restores
+  focus on Escape. Added skip link and reduced-motion styles.
+- Contact form has a responsive layout, associated labels, and autocomplete;
+  Netlify form name, fields, POST action, and honeypot remain intact.
+- FAQ answers now exist in initial HTML even when collapsed. Shared data also
+  generates the JSON-LD. Build checks enforce text/schema and cross-page parity.
+- Removed scheduling guarantees from the shared FAQs and llms.txt to match the
+  revised contact copy. Current availability is discussed with the business.
+
+### Remaining business input and measurement
+
+Confirm the actual business address/service-area profile, map coordinates, hours,
+license number, stable Facebook profile URL, and emergency service availability.
+The existing schema's downtown Minneapolis coordinates are not proof of a shop
+location. Project photos still need verified city, scope, and outcome details
+before they can support local case studies. No reviews or new credentials were
+invented for the refresh.
+
+After deployment, use Search Console to inspect indexing and compare qualified
+search traffic and quote requests. Bing Webmaster Tools' AI Performance report
+can help track citations. Technical work does not guarantee rankings or citations.
+
+Google's AI guidance says standard SEO applies; no special AI file/schema is
+required: https://developers.google.com/search/docs/appearance/ai-features
+Bing measurement: https://www.bing.com/webmasters/help/ai-performance-9f8e7d6c

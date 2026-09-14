@@ -45,9 +45,7 @@
         </section>
 
         <!-- boxed FAQ area -->
-        <section class="my-6 max-w-7xl mx-auto w-full px-6">
-            <FaqSection />
-        </section>
+        <FaqSection />
 
         <!-- Service Areas for local SEO -->
         <section class="max-w-4xl mx-auto w-full px-6 py-10">
@@ -96,40 +94,6 @@ const breadcrumbSchema = {
     ]
 }
 
-/*
- * NOTE: this FAQPage mirrors the visible Q&A in components/FaqSection.vue.
- * That component keeps its questions in a local `const`, so there is no array
- * to import; if FaqSection is ever refactored to export its FAQ data (or read
- * it from data/), delete this literal and build the schema from that source so
- * the two can't drift apart.
- */
-const faqSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: [
-        {
-            '@type': 'Question',
-            name: 'Do you provide electrical services in Minneapolis and St. Paul, MN?',
-            acceptedAnswer: { '@type': 'Answer', text: 'Yes — Your Electrician is fully licensed, bonded, and insured for residential and commercial electrical work throughout Minneapolis, St. Paul, and the surrounding Twin Cities metro.' }
-        },
-        {
-            '@type': 'Question',
-            name: 'What types of electrical work do you do in the Minneapolis metro?',
-            acceptedAnswer: { '@type': 'Answer', text: 'We handle new home wiring, panel upgrades, whole-house rewiring, EV charger installation, commercial lighting retrofits, kitchen and basement remodeling, smart home integration, and emergency electrical repair.' }
-        },
-        {
-            '@type': 'Question',
-            name: 'How quickly can you schedule an electrician in Minneapolis or St. Paul?',
-            acceptedAnswer: { '@type': 'Answer', text: 'Most estimates are scheduled within 1–2 business days. Use the "Request Quote" button or call 763-248-9801.' }
-        },
-        {
-            '@type': 'Question',
-            name: 'Which Twin Cities suburbs do you serve?',
-            acceptedAnswer: { '@type': 'Answer', text: 'We serve Minneapolis, St. Paul, and surrounding communities including Bloomington, Plymouth, Maple Grove, Eagan, Eden Prairie, Burnsville, Minnetonka, Edina, Woodbury, and more. Contact us to confirm your area.' }
-        }
-    ]
-}
-
 const pageTitle = 'Minneapolis–St. Paul Electrical Services | Your Electrician'
 const pageDescription = 'Your Electrician is a licensed electrical contractor in Minneapolis, MN. Home wiring, remodeling, commercial lighting, EV chargers, and panel upgrades.'
 
@@ -140,7 +104,6 @@ useHead({
         { rel: 'canonical', href: siteUrl('/services') }
     ],
     script: [
-        { type: 'application/ld+json', children: JSON.stringify(faqSchema) },
         { type: 'application/ld+json', children: JSON.stringify(breadcrumbSchema) }
     ]
 })

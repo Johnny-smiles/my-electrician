@@ -14,14 +14,14 @@ export const content = [
 export const theme = {
   extend: {
     colors: {
-      'brand-dark': '#1f2937',   // dark slate — body text / headings
-      'brand-orange': '#f38b2a', // accent / CTA
-      'brand-light': '#f4f5f7',  // light-grey header/footer
-      'brand-sand': '#fdf3e7',   // warm cream section background (tints the orange accent)
+      'brand-dark': '#182b38',   // dark slate — body text / headings
+      'brand-orange': '#b94e15', // accent / CTA
+      'brand-light': '#faf9f6',  // light-grey header/footer
+      'brand-sand': '#f3f0e9',   // warm cream section background (tints the orange accent)
       'brand-brown': '#7c4a1d',  // deep warm brown — dividers / muted accents
     },
     fontFamily: {
-      heading: ['Montserrat', 'sans-serif'],
+      heading: ['Inter', 'sans-serif'],
       body: ['Inter', 'sans-serif'],
     },
   },

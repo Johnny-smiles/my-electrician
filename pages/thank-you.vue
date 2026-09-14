@@ -15,7 +15,7 @@
             <div class="flex flex-wrap justify-center gap-4">
                 <a
                     href="tel:7632489801"
-                    class="px-8 py-3 bg-orange-500 text-white font-semibold rounded-md hover:bg-orange-600 transition"
+                    class="button-primary"
                     data-analytics-event="cta_click"
                     data-analytics-label="thankyou_call_now"
                     data-analytics-type="phone"
@@ -24,7 +24,7 @@
                 </a>
                 <NuxtLink
                     to="/"
-                    class="px-8 py-3 border-2 border-brand-dark text-brand-dark font-semibold rounded-md hover:bg-brand-dark hover:text-white transition"
+                    class="button-dark"
                     data-analytics-event="cta_click"
                     data-analytics-label="thankyou_home"
                     data-analytics-type="link"

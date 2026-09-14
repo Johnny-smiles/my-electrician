@@ -4,8 +4,9 @@
             <GoogleTagManager />
         </ClientOnly>
 
+        <a href="#main-content" class="skip-link">Skip to content</a>
         <NavBar />
-        <NuxtPage />
+        <div id="main-content" tabindex="-1"><NuxtPage /></div>
         <Footer
             name="Your Electrician"
             phone="763-248-9801"

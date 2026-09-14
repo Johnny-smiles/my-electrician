@@ -34,7 +34,7 @@ Serving the Minneapolis–St. Paul metro area, including:
 ## Key Pages
 
 - [About](https://yourelectrician.co/about/): Family-owned company background and areas of expertise.
-- [Contact / Request a Quote](https://yourelectrician.co/contact/): Free, no-obligation estimates with a response within one business day.
+- [Contact / Request a Quote](https://yourelectrician.co/contact/): Request a free, no-obligation estimate for an electrical project.
 - [Recent Work](https://yourelectrician.co/recent-work/): Gallery of completed wiring, lighting, and EV charging projects.
 - [Services Overview](https://yourelectrician.co/services/): Full list of residential and commercial electrical services.
 
@@ -43,4 +43,4 @@ Serving the Minneapolis–St. Paul metro area, including:
 - Family-owned business
 - Licensed, bonded, and insured in Minnesota
 - Residential and commercial electrical work
-- Free estimates; most estimates scheduled within 1–2 business days
+- Free, no-obligation estimates; contact the business for current scheduling availability

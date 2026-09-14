@@ -1,49 +1,24 @@
 <template>
-    <main class="flex flex-col bg-brand-sand">
-        <HeroSection />
-
-        
-
-        <!-- boxed services section with top/bottom spacing -->
-        <section class="my-12 max-w-7xl mx-auto w-full px-6">
-            <HomepageServices />
-        </section>
-
-        <section class="max-w-4xl mx-auto w-full px-6 py-10 text-lg text-brand-dark/80">
-            <div class="prose max-w-none">
-                <p class="mb-4">
-                    <strong>Your Electrician</strong> provides professional electrical services throughout the Minneapolis–St. Paul metro area, MN.
-                    Whether you need residential wiring for a new home build, commercial lighting upgrades, EV charger installation,
-                    or electrical remodeling for your kitchen or basement, our licensed and insured electricians deliver code-compliant
-                    work on time and on budget.
-                </p>
-                
-                <p class="mb-4">
-                    We specialize in <strong>residential electrical services</strong> including panel upgrades, whole-house rewiring, 
-                    smart home integration, and dedicated circuits for appliances. For businesses, we handle <strong>commercial lighting</strong> 
-                    retrofits, exit lighting installations, occupancy sensors, and routine maintenance. Our <strong>EV charger installation</strong> 
-                    services help homeowners and fleet operators set up reliable Level 2 charging stations.
-                </p>
-                
-                <p>
-                    Serving Minneapolis, St. Paul, and surrounding communities, we bring years of experience and a commitment to safety
-                    and quality. Contact us today for a free estimate from an electrician near you.
-                </p>
-            </div>
-        </section>
-
-        <!-- Service Areas for local SEO -->
-        <section class="max-w-4xl mx-auto w-full px-6 py-10 border-t border-brand-dark/10">
-            <h2 class="text-2xl font-semibold mb-4 text-center">Proudly Serving the Twin Cities Metro</h2>
-            <p class="text-brand-dark/70 text-center mb-4">
-                We provide residential and commercial electrical services throughout the Minneapolis-St. Paul area, including:
-            </p>
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-x-8 gap-y-1 text-center text-sm">
-                <NuxtLink v-for="area in serviceAreas" :key="area.slug" :to="`/areas/${area.slug}/`" class="text-brand-orange hover:underline">{{ area.name }}</NuxtLink>
-            </div>
-        </section>
-
-    </main>
+  <main class="home-page">
+    <HeroSection />
+    <div class="home-trust-bar"><div class="site-container"><span>Local people. Personal service.</span><span>Free, no-obligation estimates</span><span>Serving the Minneapolis–St. Paul metro</span></div></div>
+    <HomepageServices />
+    <section class="work-section section-space" aria-labelledby="work-heading">
+      <div class="site-container work-grid">
+        <div class="work-photo-wrap">
+          <NuxtImg src="/recent/IMG_1596.jpeg" alt="Weather-protected outdoor outlet installed on exterior siding" width="600" height="720" fit="cover" sizes="xs:100vw sm:100vw md:50vw lg:600px" format="webp" loading="lazy" class="work-photo" />
+          <span class="work-photo-caption">FROM OUR PROJECT GALLERY <span aria-hidden="true">↗</span></span>
+        </div>
+        <div class="work-copy"><p class="eyebrow">YOUR HOME. OUR ATTENTION TO DETAIL.</p><h2 id="work-heading">The little things<br />make a big difference.</h2><p>Well-placed outlets. Lighting that fits the room. Power ready for whatever comes next. We help homeowners and businesses make practical improvements, from a single circuit to a complete build.</p><p>We’re a family-owned business, and we bring a personal approach to the places you call home and work.</p><div class="flex flex-wrap gap-6 mt-8"><NuxtLink to="/recent-work/" class="button-dark">Take a look at our work <span aria-hidden="true">↗</span></NuxtLink><NuxtLink to="/about/" class="text-link">Meet Your Electrician <span aria-hidden="true">→</span></NuxtLink></div></div>
+      </div>
+    </section>
+    <section class="site-container section-space areas-section" aria-labelledby="areas-heading">
+      <div><p class="eyebrow">RIGHT HERE IN YOUR NEIGHBORHOOD</p><h2 id="areas-heading">Twin Cities roots.<br />Metro-wide service.</h2><p class="mt-5 text-brand-dark/70 leading-relaxed">Based in the Minneapolis–St. Paul metro, we provide residential and commercial electrical services across these communities.</p><NuxtLink to="/areas/" class="text-link mt-6">Explore our service areas <span aria-hidden="true">↗</span></NuxtLink></div>
+      <div class="area-link-grid"><NuxtLink v-for="area in serviceAreas" :key="area.slug" :to="`/areas/${area.slug}/`">{{ area.name }} <span aria-hidden="true">↗</span></NuxtLink></div>
+    </section>
+    <div class="faq-background"><FaqSection /></div>
+    <section class="quote-banner"><div class="site-container"><div><p class="eyebrow">LET’S GET TO WORK</p><h2>What’s your next project?</h2><p>Tell us what you have in mind. We’ll help with the next step.</p></div><NuxtLink to="/contact/" class="button-primary" data-analytics-event="cta_click" data-analytics-label="home_bottom_quote" data-analytics-type="form">Get a free quote <span aria-hidden="true">↗</span></NuxtLink></div></section>
+  </main>
 </template>
 
 <script setup lang="ts">
@@ -75,7 +50,3 @@ useHead({
     ]
 })
 </script>
-
-<style scoped>
-/* Optional extra tweaks (can be empty or removed entirely) */
-</style>

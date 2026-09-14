@@ -15,7 +15,7 @@
                     data-analytics-event="cta_click"
                     :data-analytics-label="`area_${area.slug}_request_quote`"
                     data-analytics-type="form"
-                    class="inline-block px-8 py-3 rounded-md bg-orange-500 text-white font-semibold hover:bg-orange-600 transition"
+                    class="button-primary"
                 >
                     Request a Free Quote
                 </NuxtLink>
@@ -87,7 +87,7 @@
                 data-analytics-event="cta_click"
                 :data-analytics-label="`area_${area.slug}_cta_bottom`"
                 data-analytics-type="form"
-                class="inline-block px-8 py-3 rounded-md bg-orange-500 text-white font-semibold hover:bg-orange-600 transition"
+                class="button-primary"
             >
                 Get a Free Estimate
             </NuxtLink>

@@ -1,103 +1,30 @@
 <template>
-    <main>
-        <section class="max-w-4xl mx-auto px-6 py-20">
-            <h1 class="text-4xl md:text-5xl font-bold mb-4">Request a Free Electrical Quote</h1>
-
-            <p class="text-lg text-brand-dark/80 mb-4">
-                <strong>Your Electrician</strong> provides licensed electrical services in Minneapolis–St. Paul, MN.
-                Contact us for a free, no-obligation estimate on your residential or commercial project —
-                trusted electricians near you in the Twin Cities.
-            </p>
-
-            <p class="text-lg text-brand-dark/80 mb-6">
-                Fill out the form below and we'll respond within one business day with a detailed, no-obligation estimate
-                for your project. Whether it's a panel upgrade, kitchen remodel, EV charger, or commercial lighting retrofit,
-                we're happy to help scope it out.
-            </p>
-
-            <div class="space-y-4 text-lg text-brand-dark/80 mb-8">
-                <p>
-                    Not sure what to include? Browse our
-                    <NuxtLink to="/services/" class="text-brand-orange font-semibold hover:underline">
-                        full list of electrical services
-                    </NuxtLink>
-                    to get ideas and note the upgrades you need.
-                </p>
-                <p>
-                    Want to know who will show up at your door?
-                    <NuxtLink to="/about/" class="text-brand-orange font-semibold hover:underline">
-                        Learn about our local team
-                    </NuxtLink>
-                    before you submit the form.
-                </p>
-                <p>
-                    Prefer to call? Reach us at
-                    <a href="tel:7632489801" class="text-brand-orange font-semibold hover:underline">763-248-9801</a>
-                    during business hours (Mon-Fri 8am-6pm, Sat 9am-2pm).
-                </p>
+    <main class="contact-page">
+        <section class="site-container section-space contact-layout" aria-labelledby="contact-heading">
+            <div class="contact-intro">
+                <p class="eyebrow">REQUEST A QUOTE</p>
+                <h1 id="contact-heading">Tell us about your electrical project.</h1>
+                <p class="contact-lede">Your Electrician provides licensed residential and commercial electrical services throughout Minneapolis–St. Paul. Share a few details and we’ll follow up about your project.</p>
+                <div class="contact-details">
+                    <div><p class="contact-detail-label">Prefer to talk it through?</p><a href="tel:7632489801" class="contact-phone">763-248-9801 <span aria-hidden="true">↗</span></a><p>Mon–Fri 8am–6pm · Sat 9am–2pm</p></div>
+                    <div class="contact-note"><span aria-hidden="true">→</span><p>Not sure where to begin? Browse our <NuxtLink to="/services/">electrical services</NuxtLink> or learn more <NuxtLink to="/about/">about our team</NuxtLink>.</p></div>
+                </div>
             </div>
-
-            <form
-                name="contact"
-                method="POST"
-                action="/thank-you/"
-                data-netlify="true"
-                data-netlify-honeypot="bot-field"
-                class="space-y-6"
-            >
-                <!-- Netlify required hidden input -->
-                <input type="hidden" name="form-name" value="contact" />
-                <p class="hidden">
-                    <label>Don't fill this out <input name="bot-field" /></label>
-                </p>
-
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div>
-                        <label class="block font-medium mb-1">Name</label>
-                        <input
-                            type="text"
-                            name="name"
-                            required
-                            class="w-full border-2 border-gray-400 rounded-md px-4 py-2 focus:outline-brand-orange"
-                        />
+            <div class="contact-form-wrap">
+                <div class="form-heading"><h2>Project details</h2><p><span aria-hidden="true">*</span> Required fields</p></div>
+                <form name="contact" method="POST" action="/thank-you/" data-netlify="true" data-netlify-honeypot="bot-field" class="contact-form">
+                    <!-- Netlify required hidden input -->
+                    <input type="hidden" name="form-name" value="contact" />
+                    <p class="hidden"><label>Don't fill this out <input name="bot-field" /></label></p>
+                    <div class="form-grid">
+                        <div class="form-field"><label for="contact-name">Name <span aria-hidden="true">*</span></label><input id="contact-name" type="text" name="name" autocomplete="name" required /></div>
+                        <div class="form-field"><label for="contact-email">Email <span aria-hidden="true">*</span></label><input id="contact-email" type="email" name="email" autocomplete="email" required /></div>
                     </div>
-                    <div>
-                        <label class="block font-medium mb-1">Email <span class="text-red-500">*</span></label>
-                        <input
-                            type="email"
-                            name="email"
-                            required
-                            class="w-full border-2 border-gray-400 rounded-md px-4 py-2 focus:outline-brand-orange"
-                        />
-                    </div>
-                </div>
-
-                <div>
-                    <label class="block font-medium mb-1">Phone <span class="text-red-500">*</span></label>
-                    <input
-                        type="tel"
-                        name="phone"
-                        required
-                        class="w-full border-2 border-gray-400 rounded-md px-4 py-2 focus:outline-brand-orange"
-                    />
-                </div>
-
-                <div>
-                    <label class="block font-medium mb-1">Project Details</label>
-                    <textarea
-                        name="message"
-                        rows="5"
-                        class="w-full border-2 border-gray-400 rounded-md px-4 py-2 focus:outline-brand-orange"
-                    ></textarea>
-                </div>
-
-                <button
-                    type="submit"
-                    class="px-8 py-3 bg-orange-500 text-white font-semibold rounded-md hover:bg-orange-600 transition"
-                >
-                    Send Request
-                </button>
-            </form>
+                    <div class="form-field"><label for="contact-phone">Phone <span aria-hidden="true">*</span></label><input id="contact-phone" type="tel" name="phone" autocomplete="tel" required /></div>
+                    <div class="form-field"><label for="contact-message">How can we help?</label><textarea id="contact-message" name="message" rows="6" placeholder="For example: panel upgrade, remodel, EV charger, or lighting project"></textarea></div>
+                    <button type="submit" class="button-primary">Send request <span aria-hidden="true">↗</span></button>
+                </form>
+            </div>
         </section>
     </main>
 </template>
@@ -126,3 +53,13 @@ useHead({
     ]
 })
 </script>
+
+<style scoped>
+.contact-layout { display: grid; grid-template-columns: minmax(0, .9fr) minmax(420px, 1.1fr); gap: clamp(48px, 8vw, 120px); align-items: start; }
+.contact-intro { padding-top: 14px; } .contact-intro h1 { max-width: 500px; font-size: clamp(40px, 4.2vw, 59px); line-height: 1.06; letter-spacing: -.055em; } .contact-lede { max-width: 490px; margin-top: 25px; color: #52616a; font-size: 15px; line-height: 1.85; }
+.contact-details { display: grid; gap: 30px; margin-top: 48px; padding-top: 28px; border-top: 1px solid #deded6; color: #52616a; font-size: 13px; line-height: 1.75; } .contact-detail-label { color: #182b38; font-size: 11px; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; } .contact-phone { display: inline-flex; gap: 12px; margin-block: 5px 1px; color: #182b38; font-size: 21px; font-weight: 700; letter-spacing: -.03em; } .contact-phone span, .contact-note > span { color: var(--brand-orange); } .contact-note { display: flex; align-items: start; gap: 12px; max-width: 410px; } .contact-note > span { padding-top: 1px; font-size: 16px; } .contact-note a { color: #182b38; font-weight: 700; text-decoration: underline; text-decoration-color: var(--brand-orange); text-underline-offset: 3px; }
+.contact-form-wrap { padding: clamp(26px, 4vw, 44px); background: #fff; border: 1px solid #deded6; border-radius: 7px; box-shadow: 0 14px 36px #182b3808; } .form-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 20px; padding-bottom: 24px; border-bottom: 1px solid #e7e6e1; } .form-heading h2 { font-size: 24px; letter-spacing: -.04em; } .form-heading p { color: #69767e; font-size: 11px; white-space: nowrap; } .form-heading p span, .form-field label span { color: var(--brand-orange); }
+.contact-form { display: grid; gap: 22px; margin-top: 27px; } .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; } .form-field { display: grid; gap: 8px; } .form-field label { color: #182b38; font-size: 12px; font-weight: 700; } .form-field input, .form-field textarea { width: 100%; border: 1px solid #cbd0cc; border-radius: 4px; background: #fff; padding: 12px 13px; color: #182b38; font-size: 14px; line-height: 1.4; transition: border-color .2s, box-shadow .2s; } .form-field textarea { min-height: 142px; resize: vertical; } .form-field input::placeholder, .form-field textarea::placeholder { color: #7b8589; } .form-field input:focus, .form-field textarea:focus { border-color: var(--brand-orange); box-shadow: 0 0 0 3px #f4944530; outline: none; } .contact-form .button-primary { justify-self: start; margin-top: 5px; border: 0; cursor: pointer; }
+@media (max-width: 850px) { .contact-layout { grid-template-columns: 1fr; gap: 42px; } .contact-intro { padding-top: 0; } .contact-lede { max-width: 610px; } .contact-details { margin-top: 34px; } }
+@media (max-width: 520px) { .contact-form-wrap { padding: 24px 20px; } .form-heading { align-items: start; flex-direction: column; gap: 7px; } .form-grid { grid-template-columns: 1fr; gap: 22px; } .contact-form .button-primary { width: 100%; } }
+</style>

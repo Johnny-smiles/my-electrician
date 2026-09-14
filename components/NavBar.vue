@@ -1,129 +1,41 @@
 <template>
-    <!-- top header -->
-    <nav
-        class="sticky top-0 z-50 bg-[#f4f5f7] border-b border-brand-dark/10">
-        <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
-
-            <!-- logo -->
-            <NuxtLink to="/" class="flex items-center gap-3">
-                <NuxtImg
-                    src="/logo1.png"
-                    alt="Your Electrician logo"
-                    width="356"
-                    height="80"
-                    sizes="356px"
-                    format="webp"
-                    loading="eager"
-                    class="max-h-20 w-auto"
-                />
-            </NuxtLink>
-
-            <!-- mobile hamburger -->
-            <button
-                class="sm:hidden flex flex-col gap-[6px] focus:outline-none"
-                @click="isOpen = !isOpen"
-                aria-label="Toggle navigation"
-            >
-                <span class="w-6 h-[2px] bg-orange-500 transition-transform"
-                      :class="{ 'rotate-45 translate-y-[8px]': isOpen }" />
-                <span class="w-6 h-[2px] bg-orange-500"
-                      :class="{ 'opacity-0': isOpen }" />
-                <span class="w-6 h-[2px] bg-orange-500 transition-transform"
-                      :class="{ '-rotate-45 -translate-y-[8px]': isOpen }" />
-            </button>
-
-            <!-- desktop / mobile links -->
-            <ul
-              :class="[
-                'list-none text-lg font-semibold tracking-wide',
-                isOpen
-                  ? 'absolute top-full right-0 w-full bg-white shadow-md flex flex-col items-end px-6 py-6 space-y-4 z-50'
-                  : 'hidden sm:flex gap-12 items-center'
-              ]"
-            >
-              <li><NuxtLink to="/"        class="hover:text-brand-orange" @click="isOpen = false">Home</NuxtLink></li>
-              <li><NuxtLink to="/about/"   class="hover:text-brand-orange" @click="isOpen = false">About</NuxtLink></li>
-
-              <!-- Services dropdown (desktop only, click-based) -->
-              <li class="relative hidden sm:block">
-                <span
-                  class="cursor-pointer hover:text-brand-orange select-none"
-                  @click="servicesOpen = !servicesOpen"
-                  @keydown.enter.space.prevent="servicesOpen = !servicesOpen"
-                  tabindex="0"
-                >
-                  Services ▾
-                </span>
-                <ul
-                  v-if="servicesOpen"
-                  class="absolute bg-white shadow-lg rounded-md mt-2 py-2 w-56 text-sm z-50"
-                >
-                  <li><NuxtLink to="/home-builds/"     class="block px-4 py-2 hover:bg-brand-light" @click="closeMenus">Residential</NuxtLink></li>
-                  <li><NuxtLink to="/home-remodeling/" class="block px-4 py-2 hover:bg-brand-light" @click="closeMenus">Remodeling</NuxtLink></li>
-                  <li><NuxtLink to="/commercial-lighting/"      class="block px-4 py-2 hover:bg-brand-light" @click="closeMenus">Commercial</NuxtLink></li>
-                  <li><NuxtLink to="/ev-charger-installation/"              class="block px-4 py-2 hover:bg-brand-light" @click="closeMenus">EV Chargers</NuxtLink></li>
-                  <li class="border-t mx-2 my-1"></li>
-                  <li><NuxtLink to="/recent-work/" class="block px-4 py-2 hover:bg-brand-light" @click="closeMenus">Recent&nbsp;Work</NuxtLink></li>
-                </ul>
-              </li>
-
-              <!-- Services + recent‑work sublinks in mobile drawer -->
-              <li class="sm:hidden flex flex-col items-end space-y-2 w-full">
-                <NuxtLink to="/home-builds/"     class="hover:text-brand-orange" @click="isOpen = false">Residential</NuxtLink>
-                <NuxtLink to="/home-remodeling/" class="hover:text-brand-orange" @click="isOpen = false">Remodeling</NuxtLink>
-                <NuxtLink to="/commercial-lighting/"      class="hover:text-brand-orange" @click="isOpen = false">Commercial</NuxtLink>
-                <NuxtLink to="/ev-charger-installation/"  class="hover:text-brand-orange" @click="isOpen = false">EV&nbsp;Chargers</NuxtLink>
-                <NuxtLink to="/recent-work/" class="hover:text-brand-orange" @click="isOpen = false">Recent&nbsp;Work</NuxtLink>
-              </li>
-
-              <!-- Recent‑work top‑level link (desktop) -->
-              <li class="hidden sm:block">
-                <NuxtLink to="/recent-work/" class="hover:text-brand-orange" @click="closeMenus">Recent&nbsp;Work</NuxtLink>
-              </li>
-
-              <!-- CTA buttons (desktop) -->
-              <li class="hidden sm:block">
-                <a href="tel:7632489801"
-                   data-analytics-event="cta_click"
-                   data-analytics-label="nav_call_now"
-                   data-analytics-type="phone"
-                   class="inline-block bg-orange-500 text-white px-4 py-2 rounded-md mr-3 font-semibold hover:bg-orange-600 transition">
-                  Call Now
-                </a>
-                <NuxtLink to="/contact/"
-                   data-analytics-event="cta_click"
-                   data-analytics-label="nav_request_quote"
-                   data-analytics-type="form"
-                   class="inline-block bg-orange-500 text-white px-4 py-2 rounded-md font-semibold hover:bg-orange-600 transition">
-                  Request Quote
-                </NuxtLink>
-              </li>
-            </ul>
-        </div>
+  <header class="site-header" @keydown.esc="closeMenu(true)">
+    <div class="utility-bar">
+      <div class="site-container flex items-center justify-between gap-4">
+        <span>Family-owned. Twin Cities local.</span>
+        <a :href="`tel:${siteConfig.phone}`" data-analytics-event="cta_click" data-analytics-label="header_phone" data-analytics-type="phone">Call 763-248-9801 <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+    <nav aria-label="Main navigation" class="site-container nav-inner">
+      <NuxtLink to="/" aria-label="Your Electrician home" class="shrink-0" @click="closeMenu()">
+        <NuxtImg src="/logo1.png" alt="Your Electrician" width="244" height="55" sizes="244px" format="webp" loading="eager" class="nav-logo" />
+      </NuxtLink>
+      <button ref="menuButton" type="button" class="menu-toggle" :aria-expanded="isOpen" aria-controls="main-navigation" :aria-label="isOpen ? 'Close navigation' : 'Open navigation'" @click="isOpen = !isOpen">
+        <span>{{ isOpen ? 'Close' : 'Menu' }}</span>
+        <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path :d="isOpen ? 'M6 6l12 12M6 18L18 6' : 'M3 6h18M3 12h18M3 18h18'" /></svg>
+      </button>
+      <div id="main-navigation" class="nav-links" :class="{ 'is-open': isOpen }">
+        <NuxtLink v-for="link in links" :key="link.to" :to="link.to" @click="closeMenu()">{{ link.label }}</NuxtLink>
+        <NuxtLink to="/contact/" class="button-primary" data-analytics-event="cta_click" data-analytics-label="nav_request_quote" data-analytics-type="form" @click="closeMenu()">Get a free quote <span aria-hidden="true">↗</span></NuxtLink>
+      </div>
     </nav>
+  </header>
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onBeforeUnmount } from 'vue'
+import { siteConfig } from '~/site.config'
 const isOpen = ref(false)
-const servicesOpen = ref(false)
-
-function closeMenus() {
+const menuButton = ref<HTMLButtonElement | null>(null)
+const route = useRoute()
+const links = [
+  { to: '/services/', label: 'Services' },
+  { to: '/recent-work/', label: 'Our work' },
+  { to: '/about/', label: 'About us' },
+  { to: '/areas/', label: 'Service areas' }
+]
+function closeMenu(restoreFocus = false) {
   isOpen.value = false
-  servicesOpen.value = false
+  if (restoreFocus) menuButton.value?.focus()
 }
-
-// Optional: Close dropdown when clicking outside
-function handleClickOutside(event: MouseEvent) {
-  const nav = document.querySelector('nav')
-  if (nav && !nav.contains(event.target as Node)) {
-    servicesOpen.value = false
-  }
-}
-onMounted(() => {
-  document.addEventListener('click', handleClickOutside)
-})
-onBeforeUnmount(() => {
-  document.removeEventListener('click', handleClickOutside)
-})
+watch(() => route.fullPath, () => closeMenu())
 </script>

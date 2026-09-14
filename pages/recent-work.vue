@@ -1,7 +1,7 @@
 <template>
     <main>
         <!-- HERO -------------------------------------------------------- -->
-        <section class="relative h-[40vh] md:h-[50vh] bg-black">
+        <section class="service-hero relative bg-black">
             <!-- Above-the-fold hero: eager + high priority, never lazy.
                  width/height are the file's real pixel size (1536x1024). -->
             <NuxtImg
@@ -18,8 +18,8 @@
             />
 
             <div
-                class="relative z-10 flex flex-col justify-center items-center h-full text-center px-4 text-white">
-                <h1 class="text-4xl md:text-6xl font-logo electrician-text uppercase mb-2">
+                class="relative z-10 flex flex-col justify-center items-center text-center px-4 text-white">
+                <h1 class="service-hero-title mb-2">
                     Recent&nbsp;Work
                 </h1>
                 <p class="text-xl max-w-xl">
@@ -35,7 +35,7 @@
                   data-analytics-event="cta_click"
                   data-analytics-label="recent_work_facebook"
                   data-analytics-type="social"
-                  class="inline-flex items-center gap-2 mt-8 px-8 py-3 rounded-md bg-orange-500 text-white font-semibold hover:bg-orange-600 transition"
+                  class="button-primary mt-8"
                 >
                   <!-- Facebook icon -->
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5">
@@ -69,7 +69,7 @@
                 <button
                   ref="prevEl"
                   aria-label="Previous"
-                  class="hidden md:flex absolute left-[-3rem] top-1/2 -translate-y-1/2 z-20 bg-orange-500 hover:bg-orange-600 text-white rounded-full w-12 h-12 items-center justify-center shadow transition"
+                  class="hidden md:flex absolute left-3 top-1/2 -translate-y-1/2 z-20 bg-brand-dark hover:bg-[#304c5e] text-white rounded-full w-12 h-12 items-center justify-center shadow transition"
                   type="button"
                 >
                   <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -79,7 +79,7 @@
                 <button
                   ref="nextEl"
                   aria-label="Next"
-                  class="hidden md:flex absolute right-[-3rem] top-1/2 -translate-y-1/2 z-20 bg-orange-500 hover:bg-orange-600 text-white rounded-full w-12 h-12 items-center justify-center shadow transition"
+                  class="hidden md:flex absolute right-3 top-1/2 -translate-y-1/2 z-20 bg-brand-dark hover:bg-[#304c5e] text-white rounded-full w-12 h-12 items-center justify-center shadow transition"
                   type="button"
                 >
                   <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -130,7 +130,7 @@
                     data-analytics-event="cta_click"
                     data-analytics-label="recent_work_request_quote"
                     data-analytics-type="form"
-                    class="inline-block mt-4 px-6 py-3 bg-orange-500 text-white rounded-md font-medium hover:bg-orange-600 transition">
+                    class="button-primary mt-4">
                     Request&nbsp;Quote
                 </NuxtLink>
             </div>
@@ -242,18 +242,6 @@ useHead({
 </script>
 
 <style scoped>
-.font-logo {
-    font-family: 'Russo One', sans-serif;
-}
-
-.electrician-text {
-    color: white;
-    text-shadow:
-        2px 2px 0 #7c3aed,
-        4px 4px 0 #f97316,
-        6px 6px 0 rgba(0, 0, 0, 0.3);
-}
-
 /* Swiper grab cursor indication */
 :deep(.swiper-grab) {
     cursor: grab;

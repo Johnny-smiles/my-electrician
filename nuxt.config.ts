@@ -23,7 +23,7 @@ const recentWorkImages: string[] = readdirSync(fileURLToPath(new URL('./public/r
  * duplicating <url> blocks — provided the loc matches (trailing slash).
  */
 const sitemapImages: { loc: string, images: { loc: string }[] }[] = [
-  { path: '/',                          images: ['hero.png'] },
+  { path: '/',                          images: ['hero.png', 'recent/IMG_1596.jpeg'] },
   { path: '/about/',                    images: ['aboutFamily.jpeg'] },
   { path: '/commercial-lighting/',      images: ['commercialLighting.png'] },
   { path: '/ev-charger-installation/',  images: ['EVCharger.png'] },
@@ -84,11 +84,10 @@ export default defineNuxtConfig({
         { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
         { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
         { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
-        // Single request for every family assets/main.css actually declares:
-        // Inter (body), Montserrat (headings), Russo One (logo/hero wordmark).
+        // One font family for body copy and headings.
         {
           rel: 'stylesheet',
-          href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@700&family=Russo+One&display=swap'
+          href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap'
         }
       ],
       script: [
