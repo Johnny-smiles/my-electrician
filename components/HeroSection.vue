@@ -9,7 +9,7 @@
           <NuxtLink to="/contact/" class="button-primary" data-analytics-event="cta_click" data-analytics-label="hero_request_quote" data-analytics-type="form">Get a free quote <span aria-hidden="true">↗</span></NuxtLink>
           <NuxtLink to="/services/" class="text-link">Explore our services <span aria-hidden="true">→</span></NuxtLink>
         </div>
-        <div class="hero-assurance"><span aria-hidden="true">✓</span> Licensed, bonded &amp; insured <span class="assurance-divider" /> Residential &amp; commercial</div>
+        <div class="hero-assurance"><span>Licensed, bonded &amp; insured</span><span>Residential &amp; commercial</span></div>
       </div>
       <div class="hero-visual">
         <!-- hero.png is a 1915x821 banner with the subject on the right. fit="cover" crops server-side
