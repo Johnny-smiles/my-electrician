@@ -12,7 +12,9 @@
         <div class="hero-assurance"><span aria-hidden="true">✓</span> Licensed, bonded &amp; insured <span class="assurance-divider" /> Residential &amp; commercial</div>
       </div>
       <div class="hero-visual">
-        <NuxtImg src="/hero.png" alt="Electrician working on a wall outlet in a home" width="720" height="640" fit="cover" sizes="xs:100vw sm:100vw md:50vw lg:640px" format="webp" preload loading="eager" fetchpriority="high" class="hero-photo" />
+        <!-- hero.png is a 1915x821 banner with the subject on the right. fit="cover" crops server-side
+             (CSS object-position can't recover cropped pixels), so anchor the crop right or the outlet and hands are cut off. -->
+        <NuxtImg src="/hero.png" alt="Electrician working on a wall outlet in a home" width="720" height="640" fit="cover" :modifiers="{ position: 'right' }" sizes="xs:100vw sm:100vw md:50vw lg:640px" format="webp" preload loading="eager" fetchpriority="high" class="hero-photo" />
         <div class="hero-photo-label"><span class="photo-mark" aria-hidden="true">↗</span><div><strong>Powering your everyday.</strong><span>Homes. Businesses. What’s next.</span></div></div>
       </div>
     </div>
